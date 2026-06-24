@@ -2,12 +2,16 @@
 
 @section('title', 'YesWeCange — Ne suivez pas le troupeau. Démarquez-vous.')
 
+@push('head')
+  <link rel="preload" as="image" href="{{ asset('images/troupeau-mouton-noir.webp') }}" fetchpriority="high">
+@endpush
+
 @section('content')
 
   <!-- HERO -->
   <section id="top" class="relative overflow-hidden bg-ywc-bg">
     <div class="absolute inset-0">
-      <img src="{{ asset('images/troupeau-mouton-noir.png') }}" alt="Un mouton noir au milieu d'un troupeau blanc" class="block h-full w-full object-cover" style="object-position: 36% center;">
+      <img src="{{ asset('images/troupeau-mouton-noir.webp') }}" alt="Un mouton noir au milieu d'un troupeau blanc" width="1600" height="1000" fetchpriority="high" decoding="async" class="block h-full w-full object-cover" style="object-position: 36% center;">
       <div class="absolute inset-0 bg-ywc-ink/5"></div>
       <div class="absolute inset-x-0 bottom-0 h-[130px] bg-gradient-to-t from-ywc-bg/95 to-transparent"></div>
     </div>
@@ -131,28 +135,28 @@
     <div data-breveal class="grid grid-cols-2 gap-4 lg:grid-cols-4">
       <div class="transition hover:-translate-y-2">
         <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/chainewhatsapp.png') }}" alt="Chaîne WhatsApp" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/chainewhatsapp.webp') }}" alt="Chaîne WhatsApp" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top">
         </div>
         <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">Chaîne WhatsApp</div>
         <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">Diffusion & relation 1:1</div>
       </div>
       <div class="transition hover:-translate-y-2">
         <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/com-digital.png') }}" alt="Communication digitale" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/com-digital.webp') }}" alt="Communication digitale" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top">
         </div>
         <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">Communication digitale</div>
         <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">Contenus & social media</div>
       </div>
       <div class="transition hover:-translate-y-2">
         <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/chatbot2.png') }}" alt="Chatbot" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/chatbot2.webp') }}" alt="Chatbot" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top">
         </div>
         <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">Chatbot</div>
         <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">Automatisation 24/7</div>
       </div>
       <div class="transition hover:-translate-y-2">
         <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/publicité.png') }}" alt="Publicité en ligne" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/publicité.webp') }}" alt="Publicité en ligne" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top">
         </div>
         <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">Publicité en ligne</div>
         <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">Acquisition & ROI</div>

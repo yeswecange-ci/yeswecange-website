@@ -6,7 +6,7 @@
         <div>
           <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em] text-white">Discutons de votre projet.</h2>
           <p class="mt-3.5 mb-7 max-w-[430px] text-[17px] leading-[1.55] text-[#d4dbff]">Contactez-nous dès maintenant pour un devis gratuit. On vous répond sous 24h.</p>
-          <a href="#" class="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-[15px] text-base font-bold text-ywc-blue no-underline">Demander un devis →</a>
+          <a href="{{ route('quote') }}" class="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-[15px] text-base font-bold text-ywc-blue no-underline">Demander un devis →</a>
         </div>
         <div class="grid content-start gap-5">
           <div>

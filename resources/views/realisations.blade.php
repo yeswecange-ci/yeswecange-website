@@ -28,7 +28,7 @@
 
       <div data-breveal data-category="chatbots" class="group sm:col-span-2">
         <div class="relative aspect-[16/9] overflow-hidden rounded-[18px] border border-ywc-border sm:aspect-[2/1]">
-          <img src="{{ asset('images/chainewhatsapp.png') }}" alt="Chaîne WhatsApp" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/chainewhatsapp.webp') }}" alt="Chaîne WhatsApp" width="1200" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top">
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Chatbots</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -38,7 +38,7 @@
 
       <div data-breveal data-category="communication" class="group">
         <div class="relative aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/com-digital.png') }}" alt="Communication digitale" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/com-digital.webp') }}" alt="Communication digitale" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top">
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Communication</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -48,7 +48,7 @@
 
       <div data-breveal data-category="chatbots" class="group">
         <div class="relative aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/chatbot2.png') }}" alt="Chatbot Messenger" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/chatbot2.webp') }}" alt="Chatbot Messenger" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top">
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Chatbots</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -58,7 +58,7 @@
 
       <div data-breveal data-category="publicite" class="group">
         <div class="relative aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/publicité.png') }}" alt="Publicité en ligne" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/publicité.webp') }}" alt="Publicité en ligne" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top">
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Publicité</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
