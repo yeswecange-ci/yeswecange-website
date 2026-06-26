@@ -1,6 +1,6 @@
 @extends('layouts.site')
 
-@section('title', 'YesWeCange — Ne suivez pas le troupeau. Démarquez-vous.')
+@section('title', 'YesWeCange — Démarquez-vous.')
 
 @section('content')
 
@@ -17,7 +17,7 @@
           <span class="h-[7px] w-[7px] rounded-full bg-ywc-blue"></span>L'agence qui vous démarque · Paris × Abidjan
         </div>
         <h1 data-bhero class="m-0 mb-[22px] font-display text-[clamp(40px,5.6vw,84px)] font-bold leading-[0.97] tracking-[-0.04em] text-ywc-ink">
-          Ne suivez pas<br>le troupeau.<br><span class="bg-gradient-to-r from-ywc-blue to-ywc-blue-soft bg-clip-text text-transparent">Démarquez-vous.</span>
+        <span class="text-white bg-clip-text ">Démarquez-vous.</span>
         </h1>
         <p data-bhero class="m-0 mb-8 max-w-[470px] text-[clamp(17px,1.4vw,20px)] leading-[1.55] text-white">Bien plus qu'une présence en ligne : nous façonnons votre identité digitale pour vous démarquer et surclasser votre concurrence. Le digital à 360° pour dominer votre marché.</p>
         <div data-bhero class="flex flex-wrap gap-[13px]">
