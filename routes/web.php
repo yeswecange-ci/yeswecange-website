@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,4 +14,6 @@ Route::get('/services', function () {
 Route::get('/realisations', function () {
     return view('realisations');
 })->name('realisations');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
