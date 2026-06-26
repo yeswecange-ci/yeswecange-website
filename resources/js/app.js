@@ -17,22 +17,19 @@ window.ScrollTrigger = ScrollTrigger;
   const bento = root.querySelector('[data-bbento]');
   if (bento) {
     const items = [
-      { t: 'Chatbots & WhatsApp', d: 'On automatise la conversation 24/7 et on qualifie vos leads en continu.', tag: 'À la une', col: 'span 3', row: 'span 2', dark: true, icon: '💬' },
-      { t: 'Stratégie & Conception', d: 'Positionnement, message, plan d’action à forte valeur ajoutée.', col: 'span 3', row: 'span 1', icon: '🎯' },
-      { t: 'Social Media & Comm 360°', d: 'Des contenus qui font réagir, sur tous les canaux.', col: 'span 3', row: 'span 1', icon: '📣' },
-      { t: 'Marketing Intelligence', d: 'Marketing 3.0 et social business, décidés par la data.', col: 'span 2', row: 'span 1', icon: '🧠' },
-      { t: 'Data Mining & Tech', d: 'Vos données deviennent audiences et leads.', col: 'span 2', row: 'span 1', icon: '🛰️' },
-      { t: 'Référencement SEO', d: 'Trouvé au bon moment par les bonnes personnes.', col: 'span 2', row: 'span 1', icon: '🔎' },
-      { t: 'Branding & Lean Marketing', d: 'Une marque qui crée l’émotion et marque les esprits.', col: 'span 3', row: 'span 1', icon: '✦' },
-      { t: 'Formation', d: 'On vous donne les clés du digital, en pratique.', col: 'span 3', row: 'span 1', icon: '🎓' },
+      { t: 'Chatbots & WhatsApp', d: 'On automatise la conversation 24/7 et on qualifie vos leads en continu.', tag: 'À la une', col: 'span 3', row: 'span 2', dark: true },
+      { t: 'Stratégie & Conception', d: 'Positionnement, message, plan d’action à forte valeur ajoutée.', col: 'span 3', row: 'span 1' },
+      { t: 'Social Media & Comm 360°', d: 'Des contenus qui font réagir, sur tous les canaux.', col: 'span 3', row: 'span 1' },
+      { t: 'Marketing Intelligence', d: 'Marketing 3.0 et social business, décidés par la data.', col: 'span 2', row: 'span 1' },
+      { t: 'Data Mining & Tech', d: 'Vos données deviennent audiences et leads.', col: 'span 2', row: 'span 1' },
+      { t: 'Référencement SEO', d: 'Trouvé au bon moment par les bonnes personnes.', col: 'span 2', row: 'span 1' },
+      { t: 'Branding & Lean Marketing', d: 'Une marque qui crée l’émotion et marque les esprits.', col: 'span 3', row: 'span 1' },
+      { t: 'Formation', d: 'On vous donne les clés du digital, en pratique.', col: 'span 3', row: 'span 1' },
     ];
     bento.innerHTML = items.map(s => {
       const dark = s.dark;
       return `<div data-bcard class="b-bento__card ${dark ? 'b-bento__card--dark' : 'b-bento__card--light'}" style="grid-column:${s.col};grid-row:${s.row};">
-        <div class="b-bento__top">
-          <span class="b-bento__icon">${s.icon}</span>
-          ${s.tag ? `<span class="b-bento__tag">${s.tag}</span>` : ''}
-        </div>
+        ${s.tag ? `<div class="b-bento__top"><span class="b-bento__tag">${s.tag}</span></div>` : ''}
         <div class="b-bento__bottom ${dark ? 'b-bento__bottom--dark' : ''}">
           <h3 class="b-bento__title ${dark ? 'b-bento__title--large' : ''}">${s.t}</h3>
           <p class="b-bento__desc ${dark ? 'b-bento__desc--light' : ''}">${s.d}</p>
@@ -192,4 +189,27 @@ window.ScrollTrigger = ScrollTrigger;
       });
     });
   });
+})();
+
+// ===== mobile burger menu =====
+(function () {
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const panel = document.querySelector('[data-menu-panel]');
+  if (!toggle || !panel) return;
+  const icon = toggle.querySelector('[data-menu-icon]');
+
+  const close = () => {
+    panel.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (icon) icon.textContent = '☰';
+  };
+
+  toggle.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    panel.classList.toggle('hidden', isOpen);
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    if (icon) icon.textContent = isOpen ? '☰' : '✕';
+  });
+
+  panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
 })();

@@ -1,7 +1,7 @@
   <!-- PAGE HEADER -->
   <section class="relative overflow-hidden bg-ywc-bg">
     <div class="absolute -top-24 -right-24 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(43,77,255,0.12),transparent_65%)]"></div>
-    <div class="relative mx-auto max-w-7xl px-5 py-20 sm:px-[30px] sm:py-[96px]">
+    <div class="relative mx-auto max-w-7xl px-5 pt-28 pb-20 sm:px-[30px] sm:pt-[120px] sm:pb-[96px]">
       <div data-bhero class="mb-[18px] inline-flex items-center gap-[9px] whitespace-nowrap rounded-full border border-ywc-border-blue bg-[#eef2ff]/86 px-[15px] py-[7px] text-[13px] font-semibold text-ywc-blue backdrop-blur-sm">
         <span class="h-[7px] w-[7px] rounded-full bg-ywc-blue"></span>{{ $eyebrow }}
       </div>

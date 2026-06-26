@@ -68,7 +68,7 @@
 
       <div data-breveal data-category="branding" class="group">
         <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-ywc-border bg-[#eef2ff]">
-          <span class="text-4xl">✦</span>
+          
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Branding</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -78,7 +78,7 @@
 
       <div data-breveal data-category="social" class="group">
         <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-ywc-border bg-[#eef2ff]">
-          <span class="text-4xl">📣</span>
+          
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Social Media</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -88,7 +88,7 @@
 
       <div data-breveal data-category="chatbots" class="group row-span-2">
         <div class="relative h-[calc(100%-2.4rem)] min-h-[170px] overflow-hidden rounded-[18px] border border-ywc-border bg-[#eef2ff]">
-          <div class="flex h-full items-center justify-center"><span class="text-4xl">📊</span></div>
+          <div class="flex h-full items-center justify-center"></div>
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Chatbots</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -98,7 +98,7 @@
 
       <div data-breveal data-category="communication" class="group">
         <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-ywc-border bg-[#eef2ff]">
-          <span class="text-4xl">🌐</span>
+          
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Communication</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -108,7 +108,7 @@
 
       <div data-breveal data-category="social" class="group">
         <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-ywc-border bg-[#eef2ff]">
-          <span class="text-4xl">🎮</span>
+          
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Social Media</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>

@@ -7,11 +7,11 @@
   <!-- HERO -->
   <section id="top" class="relative overflow-hidden bg-ywc-bg">
     <div class="absolute inset-0">
-      <img src="{{ asset('images/troupeau-mouton-noir.png') }}" alt="Un mouton noir au milieu d'un troupeau blanc" class="block h-full w-full object-cover" style="object-position: 36% center;">
+      <video src="{{ asset('images/hero-landscape-v2.mp4') }}" autoplay loop muted playsinline class="block h-full w-full object-cover" style="object-position: 50% center;"></video>
       <div class="absolute inset-0 bg-ywc-ink/5"></div>
       <div class="absolute inset-x-0 bottom-0 h-[130px] bg-gradient-to-t from-ywc-bg/95 to-transparent"></div>
     </div>
-    <div class="relative mx-auto flex min-h-[84vh] max-w-7xl flex-col justify-center px-5 py-16 sm:px-[30px] sm:py-[88px]">
+    <div class="relative mx-auto flex min-h-[84vh] max-w-7xl flex-col justify-center px-5 pt-28 pb-16 sm:px-[30px] sm:pt-32 sm:pb-[88px]">
       <div class="max-w-[600px]">
         <div data-bhero class="mb-[26px] inline-flex items-center gap-[9px] whitespace-nowrap rounded-full border border-ywc-border-blue bg-[#eef2ff]/86 px-[15px] py-[7px] text-[13px] font-semibold text-ywc-blue backdrop-blur-sm">
           <span class="h-[7px] w-[7px] rounded-full bg-ywc-blue"></span>L'agence qui vous démarque · Paris × Abidjan
@@ -92,12 +92,12 @@
           <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em] text-white">Une conversation,<br>six canaux, <span class="text-ywc-blue-pale">zéro pause.</span></h2>
           <p class="mt-3.5 mb-[30px] max-w-[470px] text-[17.5px] leading-[1.6] text-[#a8afc0]">On automatise la relation client là où elle se joue : WhatsApp, web, Messenger, SMS. Chaque échange nourrit votre data et qualifie vos leads.</p>
           <div class="grid max-w-[520px] grid-cols-3 gap-2.5">
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">💬</div><div class="text-[13.5px] font-bold">Chaîne WhatsApp</div></div>
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">🌐</div><div class="text-[13.5px] font-bold">Assistant web</div></div>
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">📨</div><div class="text-[13.5px] font-bold">Messenger</div></div>
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">📞</div><div class="text-[13.5px] font-bold">Call & SMS Bot</div></div>
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">📊</div><div class="text-[13.5px] font-bold">Data Mining</div></div>
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">🎮</div><div class="text-[13.5px] font-bold">Gamification</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Chaîne WhatsApp</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Assistant web</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Messenger</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Call & SMS Bot</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Devloppement Web & Mobile</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Gamification</div></div>
           </div>
         </div>
         <div data-breveal class="flex justify-center" style="perspective: 1200px;">

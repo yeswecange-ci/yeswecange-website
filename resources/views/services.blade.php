@@ -21,7 +21,7 @@
 
       <div class="grid items-center gap-5 rounded-[18px] border border-ywc-border bg-white p-6 lg:grid-cols-[auto_1fr_auto]">
         <div class="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-1.5">
-          <span class="text-2xl">🎯</span>
+          
           <span class="font-display text-xs text-ywc-text-pale">01</span>
         </div>
         <div>
@@ -38,7 +38,7 @@
 
       <div class="grid items-center gap-5 rounded-[18px] border border-ywc-border bg-white p-6 lg:grid-cols-[auto_1fr_auto]">
         <div class="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-1.5">
-          <span class="text-2xl">📣</span>
+          
           <span class="font-display text-xs text-ywc-text-pale">02</span>
         </div>
         <div>
@@ -55,7 +55,7 @@
 
       <div class="grid items-center gap-5 rounded-[18px] border border-ywc-border bg-white p-6 lg:grid-cols-[auto_1fr_auto]">
         <div class="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-1.5">
-          <span class="text-2xl">🧠</span>
+          
           <span class="font-display text-xs text-ywc-text-pale">03</span>
         </div>
         <div>
@@ -72,11 +72,11 @@
 
       <div class="grid items-center gap-5 rounded-[18px] border border-ywc-border bg-white p-6 lg:grid-cols-[auto_1fr_auto]">
         <div class="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-1.5">
-          <span class="text-2xl">🛰️</span>
+          
           <span class="font-display text-xs text-ywc-text-pale">04</span>
         </div>
         <div>
-          <h3 class="m-0 mb-1.5 font-display text-lg font-bold tracking-[-0.01em]">Data Mining & Technologie</h3>
+          <h3 class="m-0 mb-1.5 font-display text-lg font-bold tracking-[-0.01em]">Développement Web & Mobile</h3>
           <p class="m-0 max-w-[520px] text-[13.5px] leading-[1.5] text-ywc-text-soft">On collecte, structure et active vos données pour construire des audiences ciblées et générer des leads qualifiés.</p>
         </div>
         <div class="flex flex-wrap gap-2 lg:max-w-[260px] lg:justify-end">
@@ -89,7 +89,7 @@
 
       <div class="grid items-center gap-5 rounded-[18px] bg-gradient-to-br from-ywc-blue to-[#1b33d6] p-6 text-white shadow-[0_30px_60px_-24px_rgba(43,77,255,0.55)] lg:grid-cols-[auto_1fr_auto]">
         <div class="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-1.5">
-          <span class="text-2xl">💬</span>
+          
           <span class="font-display text-xs text-white/60">05</span>
         </div>
         <div>
@@ -106,7 +106,7 @@
 
       <div class="grid items-center gap-5 rounded-[18px] border border-ywc-border bg-white p-6 lg:grid-cols-[auto_1fr_auto]">
         <div class="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-1.5">
-          <span class="text-2xl">🔍</span>
+          
           <span class="font-display text-xs text-ywc-text-pale">06</span>
         </div>
         <div>
@@ -123,7 +123,7 @@
 
       <div class="grid items-center gap-5 rounded-[18px] border border-ywc-border bg-white p-6 lg:grid-cols-[auto_1fr_auto]">
         <div class="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-1.5">
-          <span class="text-2xl">✦</span>
+          
           <span class="font-display text-xs text-ywc-text-pale">07</span>
         </div>
         <div>
@@ -140,7 +140,7 @@
 
       <div class="grid items-center gap-5 rounded-[18px] border border-ywc-border bg-white p-6 lg:grid-cols-[auto_1fr_auto]">
         <div class="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-1.5">
-          <span class="text-2xl">🎓</span>
+          
           <span class="font-display text-xs text-ywc-text-pale">08</span>
         </div>
         <div>
@@ -201,10 +201,10 @@
           <a href="{{ route('home') }}#chatbots" class="inline-flex items-center gap-2 rounded-xl bg-ywc-blue px-6 py-3 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">Découvrir la plateforme →</a>
         </div>
         <div class="grid grid-cols-2 gap-3">
-          <div class="rounded-[14px] border border-ywc-border bg-white p-4"><span class="text-lg">💬</span><div class="mt-2 text-[13px] font-bold">Chaîne WhatsApp</div></div>
-          <div class="rounded-[14px] border border-ywc-border bg-white p-4"><span class="text-lg">🌐</span><div class="mt-2 text-[13px] font-bold">Assistant web</div></div>
-          <div class="rounded-[14px] border border-ywc-border bg-white p-4"><span class="text-lg">📨</span><div class="mt-2 text-[13px] font-bold">Messenger</div></div>
-          <div class="rounded-[14px] border border-ywc-border bg-white p-4"><span class="text-lg">📊</span><div class="mt-2 text-[13px] font-bold">Data Mining</div></div>
+          <div class="rounded-[14px] border border-ywc-border bg-white p-4"><div class="mt-2 text-[13px] font-bold">Chaîne WhatsApp</div></div>
+          <div class="rounded-[14px] border border-ywc-border bg-white p-4"><div class="mt-2 text-[13px] font-bold">Assistant web</div></div>
+          <div class="rounded-[14px] border border-ywc-border bg-white p-4"><div class="mt-2 text-[13px] font-bold">Messenger</div></div>
+          <div class="rounded-[14px] border border-ywc-border bg-white p-4"><div class="mt-2 text-[13px] font-bold">Data Mining</div></div>
         </div>
       </div>
     </div>

@@ -13,19 +13,34 @@
 <div id="ywc-b" class="overflow-x-hidden">
 
   <!-- NAV -->
-  <header class="sticky top-0 z-50 border-b border-ywc-border-soft bg-white/80 backdrop-blur-md backdrop-saturate-150">
-    <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-[30px] py-[15px]">
-      <a href="{{ route('home') }}" class="flex items-center gap-[11px] text-ywc-ink no-underline">
+  <header class="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-black/5 bg-white px-3 py-2.5 shadow-[0_10px_30px_-10px_rgba(10,10,15,0.18)] sm:px-5">
+      <a href="{{ route('home') }}" class="flex items-center gap-[9px] text-ywc-ink no-underline">
         <span class="flex h-8 w-8 items-center justify-center rounded-[9px] bg-gradient-to-br from-ywc-blue to-ywc-blue-mid font-display text-[19px] font-bold text-white">y</span>
-        <span class="font-display text-xl font-bold tracking-[-0.02em]">yeswecange</span>
+        <span class="font-display text-lg font-bold tracking-[-0.02em]">yeswecange</span>
       </a>
-      <nav class="hidden items-center gap-2 md:flex">
+
+      <nav class="hidden items-center gap-1 md:flex">
+        <a href="{{ route('home') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('home') ? 'text-ywc-blue' : 'text-ywc-text' }}">Accueil</a>
         <a href="{{ route('services') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('services') ? 'text-ywc-blue' : 'text-ywc-text' }}">Services</a>
-        <a href="{{ request()->routeIs('home') ? '#clients' : route('home').'#clients' }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold text-ywc-text no-underline transition hover:bg-ywc-bg-soft">Clients</a>
-        <a href="{{ request()->routeIs('home') ? '#chatbots' : route('home').'#chatbots' }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold text-ywc-text no-underline transition hover:bg-ywc-bg-soft">Chatbots</a>
         <a href="{{ route('realisations') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('realisations') ? 'text-ywc-blue' : 'text-ywc-text' }}">Réalisations</a>
-        <a href="{{ request()->routeIs('home') ? '#equipe' : route('home').'#equipe' }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold text-ywc-text no-underline transition hover:bg-ywc-bg-soft">Équipe</a>
-        <a href="{{ request()->routeIs('home') ? '#contact' : route('home').'#contact' }}" class="ml-2 rounded-full bg-ywc-blue px-[18px] py-2.5 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">Devis gratuit</a>
+        <span class="mx-2 h-5 w-px bg-ywc-border-soft"></span>
+        <a href="{{ request()->routeIs('home') ? '#contact' : route('home').'#contact' }}" class="rounded-full bg-ywc-blue px-5 py-2.5 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">Devis gratuit</a>
+      </nav>
+
+      <div class="flex items-center gap-2 md:hidden">
+        <a href="{{ request()->routeIs('home') ? '#contact' : route('home').'#contact' }}" class="rounded-full bg-ywc-blue px-4 py-2 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">Devis gratuit</a>
+        <button type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu" class="flex h-9 w-9 items-center justify-center rounded-full text-ywc-ink transition hover:bg-ywc-bg-soft">
+          <span data-menu-icon class="text-xl leading-none">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" data-menu-panel class="hidden mx-auto mt-2 max-w-6xl rounded-3xl border border-black/5 bg-white p-2 shadow-[0_10px_30px_-10px_rgba(10,10,15,0.18)] md:hidden">
+      <nav class="flex flex-col gap-1 p-1.5">
+        <a href="{{ route('home') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('home') ? 'text-ywc-blue' : 'text-ywc-text' }}">Accueil</a>
+        <a href="{{ route('services') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('services') ? 'text-ywc-blue' : 'text-ywc-text' }}">Services</a>
+        <a href="{{ route('realisations') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('realisations') ? 'text-ywc-blue' : 'text-ywc-text' }}">Réalisations</a>
       </nav>
     </div>
   </header>
