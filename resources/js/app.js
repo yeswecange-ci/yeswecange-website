@@ -55,12 +55,14 @@ window.ScrollTrigger = ScrollTrigger;
       { n: 'Terra', f: "'Manrope',sans-serif", w: 700, ls: '-.01em', mark: '▲' },
       { n: 'cobra', f: "'Space Grotesk',sans-serif", w: 700, ls: '-.02em', mark: '' },
     ];
-    cgrid.innerHTML = logos.map(l => {
+    const cards = logos.map(l => {
       return `<div class="b-client">
         ${l.mark ? `<span class="b-client__mark">${l.mark}</span>` : ''}
         <span class="b-client__name" style="font-family:${l.f};font-weight:${l.w};letter-spacing:${l.ls};">${l.n}</span>
       </div>`;
     }).join('');
+    // Piste dupliquée pour un défilement infini et fluide
+    cgrid.innerHTML = `<div class="b-marquee__track">${cards}${cards}</div>`;
   }
 
   // ===== chat bubbles =====

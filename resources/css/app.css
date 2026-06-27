@@ -153,11 +153,27 @@
     }
 
     .b-client-grid {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        position: relative;
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    }
+    .b-marquee__track {
+        display: flex;
         gap: 12px;
+        width: max-content;
+        animation: ywc-marquee 45s linear infinite;
+    }
+    .b-client-grid:hover .b-marquee__track {
+        animation-play-state: paused;
+    }
+    @keyframes ywc-marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
     }
     .b-client {
+        flex: 0 0 auto;
+        width: 190px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -189,14 +205,6 @@
         }
         .b-bento__card {
             grid-column: span 2 !important;
-        }
-        .b-client-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-    @media (max-width: 640px) {
-        .b-client-grid {
-            grid-template-columns: repeat(2, 1fr);
         }
     }
 
