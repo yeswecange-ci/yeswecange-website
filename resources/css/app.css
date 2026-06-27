@@ -330,42 +330,35 @@
 .ywc-loader__scene {
     perspective: 900px;
 }
-.ywc-cube {
+.ywc-coin {
     position: relative;
-    width: 88px;
-    height: 88px;
+    width: 112px;
+    height: 112px;
     transform-style: preserve-3d;
-    animation: ywc-cube-spin 2.8s infinite cubic-bezier(0.6, 0.05, 0.4, 0.95);
+    animation: ywc-coin-spin 2.6s infinite cubic-bezier(0.62, 0.02, 0.38, 1);
 }
-.ywc-cube__face {
+.ywc-coin__face {
     position: absolute;
-    width: 88px;
-    height: 88px;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #2b4dff, #1b33d6);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 55px rgba(43, 77, 255, 0.35);
-}
-.ywc-cube__face img {
-    width: 58px;
-    height: 58px;
-}
-.ywc-cube__face--front,
-.ywc-cube__face--back {
+    border-radius: 50%;
     background: #fff;
-    box-shadow: inset 0 0 0 1px rgba(43, 77, 255, 0.12), 0 0 55px rgba(43, 77, 255, 0.4);
+    box-shadow: inset 0 0 0 1px rgba(43, 77, 255, 0.12), 0 0 60px rgba(43, 77, 255, 0.45);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
-.ywc-cube__face--front  { transform: rotateY(0deg) translateZ(44px); }
-.ywc-cube__face--back   { transform: rotateY(180deg) translateZ(44px); }
-.ywc-cube__face--right  { transform: rotateY(90deg) translateZ(44px); background: linear-gradient(135deg, #5b73ff, #2b4dff); }
-.ywc-cube__face--left   { transform: rotateY(-90deg) translateZ(44px); background: linear-gradient(135deg, #5b73ff, #2b4dff); }
-.ywc-cube__face--top    { transform: rotateX(90deg) translateZ(44px); background: linear-gradient(135deg, #8fa1ff, #5b73ff); }
-.ywc-cube__face--bottom { transform: rotateX(-90deg) translateZ(44px); background: linear-gradient(135deg, #1b33d6, #0a0a0f); }
-@keyframes ywc-cube-spin {
-    0%   { transform: rotateX(-24deg) rotateY(0deg); }
-    100% { transform: rotateX(-24deg) rotateY(360deg); }
+.ywc-coin__face img {
+    width: 74px;
+    height: 74px;
+}
+.ywc-coin__face--back {
+    transform: rotateY(180deg);
+}
+@keyframes ywc-coin-spin {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(360deg); }
 }
 .ywc-loader__brand {
     font-family: var(--font-display), sans-serif;

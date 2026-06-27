@@ -1,12 +1,8 @@
 <div id="ywc-loader" class="ywc-loader" role="status" aria-label="Chargement">
   <div class="ywc-loader__scene">
-    <div class="ywc-cube">
-      <span class="ywc-cube__face ywc-cube__face--front"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange"></span>
-      <span class="ywc-cube__face ywc-cube__face--back"><img src="{{ asset('images/logo_mark.png') }}" alt=""></span>
-      <span class="ywc-cube__face ywc-cube__face--right"></span>
-      <span class="ywc-cube__face ywc-cube__face--left"></span>
-      <span class="ywc-cube__face ywc-cube__face--top"></span>
-      <span class="ywc-cube__face ywc-cube__face--bottom"></span>
+    <div class="ywc-coin">
+      <span class="ywc-coin__face ywc-coin__face--front"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange"></span>
+      <span class="ywc-coin__face ywc-coin__face--back"><img src="{{ asset('images/logo_mark.png') }}" alt=""></span>
     </div>
   </div>
   <div class="ywc-loader__brand">yeswecange</div>
