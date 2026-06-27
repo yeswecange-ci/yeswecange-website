@@ -33,10 +33,7 @@ window.ScrollTrigger = ScrollTrigger;
       const watermark = dark ? `<img src="/images/logo_mark.png" alt="" class="b-bento__watermark">` : '';
       return `<a href="${s.href}" data-bcard class="b-bento__card ${dark ? 'b-bento__card--dark' : 'b-bento__card--light'}" style="grid-column:${s.col};grid-row:${s.row};">
         ${watermark}
-        <div class="b-bento__top">
-          <span class="b-bento__icon">${s.icon}</span>
-          ${right}
-        </div>
+        <div class="b-bento__top">${right}</div>
         <div class="b-bento__bottom ${dark ? 'b-bento__bottom--dark' : ''}">
           <h3 class="b-bento__title ${dark ? 'b-bento__title--large' : ''}">${s.t}</h3>
           <p class="b-bento__desc ${dark ? 'b-bento__desc--light' : ''}">${s.d}</p>

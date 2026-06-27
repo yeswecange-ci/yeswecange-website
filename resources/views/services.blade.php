@@ -38,9 +38,7 @@
             @isset($s['img'])
               <img src="{{ asset('images/' . $s['img']) }}" alt="{{ $s['t'] }}" width="600" height="375" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
             @else
-              <div class="flex h-full w-full items-center justify-center bg-gradient-to-br {{ $s['grad'] }}">
-                <span class="text-[52px] drop-shadow">{{ $s['icon'] }}</span>
-              </div>
+              <div class="h-full w-full bg-gradient-to-br {{ $s['grad'] }}"></div>
             @endisset
             <span class="absolute left-3.5 top-3.5 rounded-full bg-white/90 px-2.5 py-1 font-display text-[11px] font-bold text-ywc-blue shadow-sm">{{ $s['n'] }}</span>
           </div>
