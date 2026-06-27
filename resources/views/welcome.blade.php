@@ -13,8 +13,8 @@
     </div>
     <div class="relative mx-auto flex min-h-[84vh] max-w-7xl flex-col justify-center px-5 pt-28 pb-16 sm:px-[30px] sm:pt-32 sm:pb-[88px]">
       <div class="max-w-[600px]">
-        <div data-bhero class="mb-[26px] inline-flex items-center gap-[9px] whitespace-nowrap rounded-full border border-ywc-border-blue bg-[#eef2ff]/86 px-[15px] py-[7px] text-[13px] font-semibold text-ywc-blue backdrop-blur-sm">
-          <span class="h-[7px] w-[7px] rounded-full bg-ywc-blue"></span>L'agence qui vous démarque · Paris × Abidjan
+        <div data-bhero class="mb-[26px] inline-flex items-center gap-[9px] rounded-full border border-ywc-border-blue bg-[#eef2ff]/86 px-[15px] py-[7px] text-[13px] font-semibold text-ywc-blue backdrop-blur-sm">
+          <span class="h-[7px] w-[7px] shrink-0 rounded-full bg-ywc-blue"></span>L'agence qui vous démarque · Paris × Abidjan
         </div>
         <h1 data-bhero class="m-0 mb-[22px] font-display text-[clamp(40px,5.6vw,84px)] font-bold leading-[0.97] tracking-[-0.04em] text-ywc-ink">
         <span class="text-white bg-clip-text ">Démarquez-vous.</span>
@@ -85,13 +85,13 @@
   <section id="chatbots" class="relative overflow-hidden bg-ywc-ink text-white">
     <div class="absolute -top-32 -right-44 h-[640px] w-[640px] rounded-full bg-[radial-gradient(circle,rgba(43,77,255,0.34),transparent_60%)]"></div>
     <div class="animate-ywcb-dash absolute inset-x-0 bottom-0 h-[340px] [background-image:linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:46px_46px] [mask-image:linear-gradient(to_top,#000,transparent)]"></div>
-    <div class="relative mx-auto max-w-7xl px-[30px] py-24">
+    <div class="relative mx-auto max-w-7xl px-5 py-24 sm:px-[30px]">
       <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-[60px]">
         <div data-breveal>
           <div class="mb-3.5 text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue-pale">La plateforme conversationnelle</div>
           <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em] text-white">Une conversation,<br>six canaux, <span class="text-ywc-blue-pale">zéro pause.</span></h2>
           <p class="mt-3.5 mb-[30px] max-w-[470px] text-[17.5px] leading-[1.6] text-[#a8afc0]">On automatise la relation client là où elle se joue : WhatsApp, web, Messenger, SMS. Chaque échange nourrit votre data et qualifie vos leads.</p>
-          <div class="grid max-w-[520px] grid-cols-3 gap-2.5">
+          <div class="grid max-w-[520px] grid-cols-2 gap-2.5 sm:grid-cols-3">
             <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Chaîne WhatsApp</div></div>
             <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Assistant web</div></div>
             <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Messenger</div></div>
@@ -101,7 +101,7 @@
           </div>
         </div>
         <div data-breveal class="flex justify-center" style="perspective: 1200px;">
-          <div class="w-[310px] rounded-[36px] border border-[#262936] bg-[#15171f] p-[11px] shadow-[0_60px_100px_-36px_rgba(0,0,0,0.8)]" style="transform: rotateY(13deg) rotateX(5deg); transform-style: preserve-3d;">
+          <div class="w-full max-w-[310px] rounded-[36px] border border-[#262936] bg-[#15171f] p-[11px] shadow-[0_60px_100px_-36px_rgba(0,0,0,0.8)]" style="transform: rotateY(13deg) rotateX(5deg); transform-style: preserve-3d;">
             <div class="overflow-hidden rounded-[26px] bg-white">
               <div class="flex items-center gap-2.5 bg-ywc-whatsapp px-4 py-[15px] text-white">
                 <span class="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-white font-display font-bold text-ywc-whatsapp">y</span>
