@@ -7,8 +7,8 @@
   <!-- HERO -->
   <section id="top" class="relative overflow-hidden bg-ywc-bg">
     <div class="absolute inset-0">
-      <video src="{{ asset('images/hero-landscape-v2.mp4') }}" autoplay loop muted playsinline class="block h-full w-full object-cover" style="object-position: 50% center;"></video>
-      <div class="absolute inset-0 bg-ywc-ink/5"></div>
+      <video src="{{ asset('images/hero-landscape-v2.mp4') }}" autoplay loop muted playsinline preload="metadata" poster="{{ asset('images/troupeau-mouton-noir.webp') }}" aria-hidden="true" class="block h-full w-full object-cover" style="object-position: 50% center;"></video>
+      <div class="absolute inset-0 bg-gradient-to-r from-ywc-ink/65 via-ywc-ink/30 to-transparent"></div>
       <div class="absolute inset-x-0 bottom-0 h-[130px] bg-gradient-to-t from-ywc-bg/95 to-transparent"></div>
     </div>
     <div class="relative mx-auto flex min-h-[84vh] max-w-7xl flex-col justify-center px-5 pt-28 pb-16 sm:px-[30px] sm:pt-32 sm:pb-[88px]">
@@ -16,8 +16,8 @@
         <div data-bhero class="mb-[26px] inline-flex items-center gap-[9px] rounded-full border border-ywc-border-blue bg-[#eef2ff]/86 px-[15px] py-[7px] text-[13px] font-semibold text-ywc-blue backdrop-blur-sm">
           <span class="h-[7px] w-[7px] shrink-0 rounded-full bg-ywc-blue"></span>L'agence qui vous démarque · Paris × Abidjan
         </div>
-        <h1 data-bhero class="m-0 mb-[22px] font-display text-[clamp(40px,5.6vw,84px)] font-bold leading-[0.97] tracking-[-0.04em] text-ywc-ink">
-        <span class="text-white bg-clip-text ">Démarquez-vous.</span>
+        <h1 data-bhero class="m-0 mb-[22px] font-display text-[clamp(40px,5.6vw,84px)] font-bold leading-[0.97] tracking-[-0.04em] text-white [text-shadow:0_2px_30px_rgba(10,10,15,0.45)]">
+          Ne suivez pas<br>le troupeau.<br><span class="bg-gradient-to-r from-ywc-blue-pale to-white bg-clip-text text-transparent">Démarquez-vous.</span>
         </h1>
         <p data-bhero class="m-0 mb-8 max-w-[470px] text-[clamp(17px,1.4vw,20px)] leading-[1.55] text-white">Bien plus qu'une présence en ligne : nous façonnons votre identité digitale pour vous démarquer et surclasser votre concurrence. Le digital à 360° pour dominer votre marché.</p>
         <div data-bhero class="flex flex-wrap gap-[13px]">
@@ -92,12 +92,12 @@
           <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em] text-white">Une conversation,<br>six canaux, <span class="text-ywc-blue-pale">zéro pause.</span></h2>
           <p class="mt-3.5 mb-[30px] max-w-[470px] text-[17.5px] leading-[1.6] text-[#a8afc0]">On automatise la relation client là où elle se joue : WhatsApp, web, Messenger, SMS. Chaque échange nourrit votre data et qualifie vos leads.</p>
           <div class="grid max-w-[520px] grid-cols-2 gap-2.5 sm:grid-cols-3">
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Chaîne WhatsApp</div></div>
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Assistant web</div></div>
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Messenger</div></div>
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Call & SMS Bot</div></div>
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Devloppement Web & Mobile</div></div>
-            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg"></div><div class="text-[13.5px] font-bold">Gamification</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">💬</div><div class="text-[13.5px] font-bold">Chaîne WhatsApp</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">🌐</div><div class="text-[13.5px] font-bold">Assistant web</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">📨</div><div class="text-[13.5px] font-bold">Messenger</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">📞</div><div class="text-[13.5px] font-bold">Call & SMS Bot</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">📊</div><div class="text-[13.5px] font-bold">Data Mining</div></div>
+            <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] p-[15px]"><div class="mb-2 text-lg">🎮</div><div class="text-[13.5px] font-bold">Gamification</div></div>
           </div>
         </div>
         <div data-breveal class="flex justify-center" style="perspective: 1200px;">
@@ -129,34 +129,64 @@
       <a href="{{ route('realisations') }}" class="rounded-full bg-ywc-ink px-[22px] py-[13px] text-[14.5px] font-bold text-white no-underline transition hover:bg-ywc-text">En savoir plus →</a>
     </div>
     <div data-breveal class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-      <div class="transition hover:-translate-y-2">
+      <a href="{{ route('realisations') }}" class="group block text-ywc-ink no-underline transition hover:-translate-y-2">
         <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/chainewhatsapp.png') }}" alt="Chaîne WhatsApp" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/chainewhatsapp.webp') }}" alt="Chaîne WhatsApp" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
         </div>
         <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">Chaîne WhatsApp</div>
         <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">Diffusion & relation 1:1</div>
-      </div>
-      <div class="transition hover:-translate-y-2">
+      </a>
+      <a href="{{ route('realisations') }}" class="group block text-ywc-ink no-underline transition hover:-translate-y-2">
         <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/com-digital.png') }}" alt="Communication digitale" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/com-digital.webp') }}" alt="Communication digitale" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
         </div>
         <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">Communication digitale</div>
         <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">Contenus & social media</div>
-      </div>
-      <div class="transition hover:-translate-y-2">
+      </a>
+      <a href="{{ route('realisations') }}" class="group block text-ywc-ink no-underline transition hover:-translate-y-2">
         <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/chatbot2.png') }}" alt="Chatbot" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/chatbot2.webp') }}" alt="Chatbot" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
         </div>
         <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">Chatbot</div>
         <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">Automatisation 24/7</div>
-      </div>
-      <div class="transition hover:-translate-y-2">
+      </a>
+      <a href="{{ route('realisations') }}" class="group block text-ywc-ink no-underline transition hover:-translate-y-2">
         <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/publicité.png') }}" alt="Publicité en ligne" class="h-full w-full object-cover object-top">
+          <img src="{{ asset('images/publicité.webp') }}" alt="Publicité en ligne" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
         </div>
         <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">Publicité en ligne</div>
         <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">Acquisition & ROI</div>
-      </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- TEMOIGNAGES -->
+  <section class="mx-auto max-w-7xl px-5 py-20 sm:px-[30px]">
+    <div data-breveal class="mx-auto mb-12 max-w-[680px] text-center">
+      <div class="mb-[14px] text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">Témoignages</div>
+      <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">Ils ont osé se démarquer</h2>
+    </div>
+    @php
+      $testimonials = [
+        ['q' => "YesWeCange a transformé notre relation client : le chatbot WhatsApp qualifie nos leads 24/7 et notre équipe ne perd plus une seule demande.", 'n' => 'Awa K.', 'r' => 'Directrice marketing · Retail', 'i' => 'AK'],
+        ['q' => "Une équipe qui comprend autant l'Europe que l'Afrique. Nos campagnes ont enfin une vraie cohérence sur les deux marchés.", 'n' => 'Julien M.', 'r' => 'CEO · Startup SaaS', 'i' => 'JM'],
+        ['q' => "Du branding à la data, tout est piloté par les résultats. +38% de leads qualifiés en un trimestre. On recommande les yeux fermés.", 'n' => 'Fatou D.', 'r' => 'Responsable digital · PME', 'i' => 'FD'],
+      ];
+    @endphp
+    <div data-breveal class="grid gap-5 md:grid-cols-3">
+      @foreach ($testimonials as $t)
+        <figure class="m-0 flex flex-col rounded-[20px] border border-ywc-border bg-white p-7">
+          <div class="mb-3 flex gap-0.5 text-ywc-blue" aria-label="5 / 5">★★★★★</div>
+          <blockquote class="m-0 flex-1 text-[15px] leading-[1.6] text-ywc-text">« {{ $t['q'] }} »</blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <span class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gradient-to-br from-ywc-blue to-ywc-blue-mid font-display text-[13px] font-bold text-white">{{ $t['i'] }}</span>
+            <span class="leading-[1.3]">
+              <span class="block font-display text-[14px] font-bold tracking-[-0.01em]">{{ $t['n'] }}</span>
+              <span class="block text-[12.5px] text-ywc-text-muted">{{ $t['r'] }}</span>
+            </span>
+          </figcaption>
+        </figure>
+      @endforeach
     </div>
   </section>
 
