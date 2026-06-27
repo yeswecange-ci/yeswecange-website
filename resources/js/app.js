@@ -17,24 +17,32 @@ window.ScrollTrigger = ScrollTrigger;
   const bento = root.querySelector('[data-bbento]');
   if (bento) {
     const items = [
-      { t: 'Chatbots & WhatsApp', d: 'On automatise la conversation 24/7 et on qualifie vos leads en continu.', tag: 'À la une', col: 'span 3', row: 'span 2', dark: true },
-      { t: 'Stratégie & Conception', d: 'Positionnement, message, plan d’action à forte valeur ajoutée.', col: 'span 3', row: 'span 1' },
-      { t: 'Social Media & Comm 360°', d: 'Des contenus qui font réagir, sur tous les canaux.', col: 'span 3', row: 'span 1' },
-      { t: 'Marketing Intelligence', d: 'Marketing 3.0 et social business, décidés par la data.', col: 'span 2', row: 'span 1' },
-      { t: 'Data Mining & Tech', d: 'Vos données deviennent audiences et leads.', col: 'span 2', row: 'span 1' },
-      { t: 'Référencement SEO', d: 'Trouvé au bon moment par les bonnes personnes.', col: 'span 2', row: 'span 1' },
-      { t: 'Branding & Lean Marketing', d: 'Une marque qui crée l’émotion et marque les esprits.', col: 'span 3', row: 'span 1' },
-      { t: 'Formation', d: 'On vous donne les clés du digital, en pratique.', col: 'span 3', row: 'span 1' },
+      { t: 'Chatbots & WhatsApp', d: 'On automatise la conversation 24/7 et on qualifie vos leads en continu.', tag: 'À la une', icon: '💬', col: 'span 3', row: 'span 2', dark: true, href: '#chatbots', pills: ['WhatsApp', 'Web', 'Messenger', 'SMS'] },
+      { t: 'Stratégie & Conception', d: 'Positionnement, message, plan d’action à forte valeur ajoutée.', icon: '🎯', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'Social Media & Comm 360°', d: 'Des contenus qui font réagir, sur tous les canaux.', icon: '📱', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'Marketing Intelligence', d: 'Marketing 3.0 et social business, décidés par la data.', icon: '📊', col: 'span 2', row: 'span 1', href: '/services' },
+      { t: 'Data Mining & Tech', d: 'Vos données deviennent audiences et leads.', icon: '🛰️', col: 'span 2', row: 'span 1', href: '/services' },
+      { t: 'Référencement SEO', d: 'Trouvé au bon moment par les bonnes personnes.', icon: '🔍', col: 'span 2', row: 'span 1', href: '/services' },
+      { t: 'Branding & Lean Marketing', d: 'Une marque qui crée l’émotion et marque les esprits.', icon: '🎨', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'Formation', d: 'On vous donne les clés du digital, en pratique.', icon: '🎓', col: 'span 3', row: 'span 1', href: '/services' },
     ];
     bento.innerHTML = items.map(s => {
       const dark = s.dark;
-      return `<div data-bcard class="b-bento__card ${dark ? 'b-bento__card--dark' : 'b-bento__card--light'}" style="grid-column:${s.col};grid-row:${s.row};">
-        ${s.tag ? `<div class="b-bento__top"><span class="b-bento__tag">${s.tag}</span></div>` : ''}
+      const right = s.tag ? `<span class="b-bento__tag">${s.tag}</span>` : `<span class="b-bento__arrow">→</span>`;
+      const pills = s.pills ? `<div class="b-bento__pills">${s.pills.map(p => `<span>${p}</span>`).join('')}</div>` : '';
+      const watermark = dark ? `<img src="/images/logo_mark.png" alt="" class="b-bento__watermark">` : '';
+      return `<a href="${s.href}" data-bcard class="b-bento__card ${dark ? 'b-bento__card--dark' : 'b-bento__card--light'}" style="grid-column:${s.col};grid-row:${s.row};">
+        ${watermark}
+        <div class="b-bento__top">
+          <span class="b-bento__icon">${s.icon}</span>
+          ${right}
+        </div>
         <div class="b-bento__bottom ${dark ? 'b-bento__bottom--dark' : ''}">
           <h3 class="b-bento__title ${dark ? 'b-bento__title--large' : ''}">${s.t}</h3>
           <p class="b-bento__desc ${dark ? 'b-bento__desc--light' : ''}">${s.d}</p>
+          ${pills}
         </div>
-      </div>`;
+      </a>`;
     }).join('');
   }
 

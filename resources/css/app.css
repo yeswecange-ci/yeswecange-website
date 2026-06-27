@@ -75,14 +75,21 @@
         gap: 14px;
     }
     .b-bento__card {
+        position: relative;
+        overflow: hidden;
         border-radius: 20px;
         padding: 24px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        text-decoration: none;
+        color: inherit;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         will-change: transform;
         transform-style: preserve-3d;
+    }
+    .b-bento__card--light:hover {
+        border-color: var(--color-ywc-border-blue);
     }
     .b-bento__card--light {
         background: #fff;
@@ -150,6 +157,49 @@
     .b-bento__desc--light {
         font-size: 15px;
         color: rgba(255, 255, 255, 0.88);
+    }
+    .b-bento__top {
+        position: relative;
+        z-index: 1;
+    }
+    .b-bento__bottom {
+        position: relative;
+        z-index: 1;
+    }
+    .b-bento__arrow {
+        font-size: 18px;
+        line-height: 1;
+        color: var(--color-ywc-text-pale);
+        transition: color 0.25s ease, transform 0.25s ease;
+    }
+    .b-bento__card:hover .b-bento__arrow {
+        color: var(--color-ywc-blue);
+        transform: translateX(3px);
+    }
+    .b-bento__pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 16px;
+    }
+    .b-bento__pills span {
+        font-size: 11px;
+        font-weight: 700;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.16);
+        padding: 4px 10px;
+        border-radius: 999px;
+    }
+    .b-bento__watermark {
+        position: absolute;
+        right: -28px;
+        bottom: -28px;
+        width: 230px;
+        height: auto;
+        opacity: 0.13;
+        filter: brightness(0) invert(1);
+        pointer-events: none;
+        z-index: 0;
     }
 
     .b-client-grid {
