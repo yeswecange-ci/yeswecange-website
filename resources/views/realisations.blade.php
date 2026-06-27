@@ -67,8 +67,8 @@
       </div>
 
       <div data-breveal data-category="branding" class="group">
-        <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-ywc-border bg-[#eef2ff]">
-          
+        <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-transparent bg-gradient-to-br from-[#6366f1] to-[#a855f7]">
+          <span class="text-[56px] drop-shadow">🎨</span>
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Branding</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -77,8 +77,8 @@
       </div>
 
       <div data-breveal data-category="social" class="group">
-        <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-ywc-border bg-[#eef2ff]">
-          
+        <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-transparent bg-gradient-to-br from-ywc-blue to-ywc-blue-mid">
+          <span class="text-[56px] drop-shadow">📱</span>
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Social Media</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -87,8 +87,9 @@
       </div>
 
       <div data-breveal data-category="chatbots" class="group row-span-2">
-        <div class="relative h-[calc(100%-2.4rem)] min-h-[170px] overflow-hidden rounded-[18px] border border-ywc-border bg-[#eef2ff]">
-          <div class="flex h-full items-center justify-center"></div>
+        <div class="relative h-[calc(100%-2.4rem)] min-h-[170px] overflow-hidden rounded-[18px] border border-transparent bg-gradient-to-br from-ywc-ink to-[#1b33d6]">
+          <div class="animate-ywcb-dash absolute inset-0 [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:30px_30px]"></div>
+          <div class="relative flex h-full items-center justify-center"><span class="text-[64px] drop-shadow">📊</span></div>
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Chatbots</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -97,8 +98,8 @@
       </div>
 
       <div data-breveal data-category="communication" class="group">
-        <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-ywc-border bg-[#eef2ff]">
-          
+        <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-transparent bg-gradient-to-br from-[#0ea5e9] to-ywc-blue">
+          <span class="text-[56px] drop-shadow">💻</span>
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Communication</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -107,8 +108,8 @@
       </div>
 
       <div data-breveal data-category="social" class="group">
-        <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-ywc-border bg-[#eef2ff]">
-          
+        <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[18px] border border-transparent bg-gradient-to-br from-ywc-green to-[#0ea5e9]">
+          <span class="text-[56px] drop-shadow">🎮</span>
           <span class="absolute top-3.5 right-3.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-ywc-blue shadow-sm">Social Media</span>
           <span class="absolute bottom-3.5 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ywc-ink shadow-sm transition group-hover:bg-white">↗</span>
         </div>
@@ -138,7 +139,7 @@
           <div class="w-[260px] rounded-[30px] border border-[#262936] bg-[#15171f] p-[10px] shadow-[0_50px_90px_-36px_rgba(0,0,0,0.8)]" style="transform: rotateY(-10deg) rotateX(4deg); transform-style: preserve-3d;">
             <div class="overflow-hidden rounded-[22px] bg-white">
               <div class="flex items-center gap-2.5 bg-ywc-whatsapp px-3.5 py-3 text-white">
-                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-white font-display text-sm font-bold text-ywc-whatsapp">y</span>
+                <span class="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange" class="h-6 w-6"></span>
                 <div class="leading-[1.2]"><div class="text-[13px] font-bold">YesWeCange</div><div class="text-[10px] opacity-80">WhatsApp Business</div></div>
               </div>
               <div class="flex min-h-[220px] flex-col gap-2 bg-[#e9e2db] p-3 [background-image:radial-gradient(rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:14px_14px]">

@@ -29,7 +29,7 @@
       <!-- floating chatbot card over the photo -->
       <div data-bfloat class="relative mt-9 w-full overflow-hidden rounded-[22px] border border-ywc-border bg-white text-left shadow-[0_50px_90px_-30px_rgba(10,10,15,0.45)] sm:absolute sm:right-[30px] sm:bottom-12 sm:mt-0 sm:w-[296px]">
         <div class="flex items-center gap-2.5 border-b border-[#f0f1f5] px-[18px] py-[15px]">
-          <span class="flex h-[30px] w-[30px] items-center justify-center rounded-[9px] bg-gradient-to-br from-ywc-blue to-ywc-blue-mid font-display font-bold text-white">y</span>
+          <span class="flex h-[30px] w-[30px] items-center justify-center overflow-hidden rounded-[9px] border border-ywc-border bg-white"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange" class="h-[26px] w-[26px]"></span>
           <div class="leading-[1.2]">
             <div class="text-[13.5px] font-bold">Assistant YesWeCange</div>
             <div class="flex items-center gap-[5px] text-[11px] text-ywc-green"><span class="h-1.5 w-1.5 rounded-full bg-ywc-green"></span>répond en moins d'une minute</div>
@@ -104,7 +104,7 @@
           <div class="w-full max-w-[310px] rounded-[36px] border border-[#262936] bg-[#15171f] p-[11px] shadow-[0_60px_100px_-36px_rgba(0,0,0,0.8)]" style="transform: rotateY(13deg) rotateX(5deg); transform-style: preserve-3d;">
             <div class="overflow-hidden rounded-[26px] bg-white">
               <div class="flex items-center gap-2.5 bg-ywc-whatsapp px-4 py-[15px] text-white">
-                <span class="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-white font-display font-bold text-ywc-whatsapp">y</span>
+                <span class="flex h-[34px] w-[34px] items-center justify-center overflow-hidden rounded-full bg-white"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange" class="h-[28px] w-[28px]"></span>
                 <div class="leading-[1.2]"><div class="text-[14.5px] font-bold">YesWeCange</div><div class="text-[11px] opacity-80">WhatsApp Business</div></div>
               </div>
               <div id="ywc-chatb2" class="flex min-h-[308px] flex-col gap-2.5 bg-[#e9e2db] p-3.5 [background-image:radial-gradient(rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:14px_14px]"></div>
