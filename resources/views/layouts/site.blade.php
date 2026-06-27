@@ -29,11 +29,11 @@
         <a href="{{ route('contact') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('contact') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.contact') }}</a>
         <span class="mx-2 h-5 w-px bg-ywc-border-soft"></span>
         @include('partials.lang-switcher')
-        <a href="{{ request()->routeIs('home') ? '#contact' : route('home').'#contact' }}" class="rounded-full bg-ywc-blue px-5 py-2.5 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">{{ __('site.nav.quote') }}</a>
+        <a href="{{ route('quote') }}" class="rounded-full bg-ywc-blue px-5 py-2.5 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">{{ __('site.nav.quote') }}</a>
       </nav>
 
       <div class="flex items-center gap-2 lg:hidden">
-        <a href="{{ request()->routeIs('home') ? '#contact' : route('home').'#contact' }}" class="rounded-full bg-ywc-blue px-4 py-2 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">{{ __('site.nav.quote') }}</a>
+        <a href="{{ route('quote') }}" class="rounded-full bg-ywc-blue px-4 py-2 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">{{ __('site.nav.quote') }}</a>
         <button type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="{{ __('site.nav.menu') }}" class="flex h-9 w-9 items-center justify-center rounded-full text-ywc-ink transition hover:bg-ywc-bg-soft">
           <span data-menu-icon class="text-xl leading-none">☰</span>
         </button>
