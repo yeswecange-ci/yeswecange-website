@@ -159,6 +159,7 @@ window.ScrollTrigger = ScrollTrigger;
     }
 
     bindTilt(gsap);
+    bindTilt3d(gsap);
   }
 
   function bindTilt(gsap) {
@@ -173,6 +174,30 @@ window.ScrollTrigger = ScrollTrigger;
       const onLeave = () => gsap.to(card, { rotateY: 0, rotateX: 0, y: 0, duration: 0.6, ease: 'power3.out' });
       card.addEventListener('mousemove', onMove);
       card.addEventListener('mouseleave', onLeave);
+    });
+  }
+
+  // Tilt 3D interactif et marqué pour les simulateurs (carte chat + mockups téléphone)
+  function bindTilt3d(gsap) {
+    root.querySelectorAll('[data-tilt3d]').forEach(el => {
+      const ry = parseFloat(el.dataset.restY || '0');
+      const rx = parseFloat(el.dataset.restX || '0');
+      const glare = el.querySelector('[data-glare]');
+      gsap.set(el, { transformPerspective: 1000, transformOrigin: 'center', rotateY: ry, rotateX: rx });
+      const zone = el.closest('[data-tilt3d-zone]') || el;
+      const onMove = (e) => {
+        const r = zone.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(el, { rotateY: ry + px * 20, rotateX: rx - py * 16, duration: 0.5, ease: 'power2.out', transformPerspective: 1000 });
+        if (glare) gsap.to(glare, { opacity: 0.55, '--gx': (50 + px * 80) + '%', '--gy': (50 + py * 80) + '%', duration: 0.4 });
+      };
+      const onLeave = () => {
+        gsap.to(el, { rotateY: ry, rotateX: rx, duration: 0.9, ease: 'power3.out' });
+        if (glare) gsap.to(glare, { opacity: 0, duration: 0.6 });
+      };
+      zone.addEventListener('mousemove', onMove);
+      zone.addEventListener('mouseleave', onLeave);
     });
   }
 

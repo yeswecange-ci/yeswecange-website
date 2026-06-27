@@ -372,3 +372,15 @@
     0%, 100% { opacity: 0.4; }
     50%      { opacity: 1; }
 }
+
+/* ===== Reflet pour les simulateurs en 3D ===== */
+.sim-glare {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 6;
+    background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 55%);
+    mix-blend-mode: screen;
+}

@@ -27,7 +27,8 @@
       </div>
 
       <!-- floating chatbot card over the photo -->
-      <div data-bfloat class="relative mt-9 w-full overflow-hidden rounded-[22px] border border-ywc-border bg-white text-left shadow-[0_50px_90px_-30px_rgba(10,10,15,0.45)] sm:absolute sm:right-[30px] sm:bottom-12 sm:mt-0 sm:w-[296px]">
+      <div data-bfloat data-tilt3d data-rest-y="0" data-rest-x="0" class="relative mt-9 w-full overflow-hidden rounded-[22px] border border-ywc-border bg-white text-left shadow-[0_50px_90px_-30px_rgba(10,10,15,0.45)] sm:absolute sm:right-[30px] sm:bottom-12 sm:mt-0 sm:w-[296px]">
+        <div data-glare class="sim-glare"></div>
         <div class="flex items-center gap-2.5 border-b border-[#f0f1f5] px-[18px] py-[15px]">
           <span class="flex h-[30px] w-[30px] items-center justify-center overflow-hidden rounded-[9px] border border-ywc-border bg-white"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange" class="h-[26px] w-[26px]"></span>
           <div class="leading-[1.2]">
@@ -100,8 +101,9 @@
             <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] px-[15px] py-[18px]"><div class="text-[13.5px] font-bold">Gamification</div></div>
           </div>
         </div>
-        <div data-breveal class="flex justify-center" style="perspective: 1200px;">
-          <div class="w-full max-w-[310px] rounded-[36px] border border-[#262936] bg-[#15171f] p-[11px] shadow-[0_60px_100px_-36px_rgba(0,0,0,0.8)]" style="transform: rotateY(13deg) rotateX(5deg); transform-style: preserve-3d;">
+        <div data-breveal data-tilt3d-zone class="flex justify-center">
+          <div data-tilt3d data-rest-y="13" data-rest-x="5" class="relative w-full max-w-[310px] rounded-[36px] border border-[#262936] bg-[#15171f] p-[11px] shadow-[0_60px_100px_-36px_rgba(0,0,0,0.8)]" style="transform-style: preserve-3d;">
+            <div data-glare class="sim-glare"></div>
             <div class="overflow-hidden rounded-[26px] bg-white">
               <div class="flex items-center gap-2.5 bg-ywc-whatsapp px-4 py-[15px] text-white">
                 <span class="flex h-[34px] w-[34px] items-center justify-center overflow-hidden rounded-full bg-white"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange" class="h-[28px] w-[28px]"></span>

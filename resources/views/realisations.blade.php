@@ -131,8 +131,9 @@
             <div><div class="font-display text-2xl font-bold text-white">24/7</div><div class="mt-0.5 text-[12px] text-[#7c869c]">disponibilité</div></div>
           </div>
         </div>
-        <div class="flex justify-center" style="perspective: 1200px;">
-          <div class="w-[260px] rounded-[30px] border border-[#262936] bg-[#15171f] p-[10px] shadow-[0_50px_90px_-36px_rgba(0,0,0,0.8)]" style="transform: rotateY(-10deg) rotateX(4deg); transform-style: preserve-3d;">
+        <div data-tilt3d-zone class="flex justify-center">
+          <div data-tilt3d data-rest-y="-10" data-rest-x="4" class="relative w-[260px] rounded-[30px] border border-[#262936] bg-[#15171f] p-[10px] shadow-[0_50px_90px_-36px_rgba(0,0,0,0.8)]" style="transform-style: preserve-3d;">
+            <div data-glare class="sim-glare"></div>
             <div class="overflow-hidden rounded-[22px] bg-white">
               <div class="flex items-center gap-2.5 bg-ywc-whatsapp px-3.5 py-3 text-white">
                 <span class="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange" class="h-6 w-6"></span>
