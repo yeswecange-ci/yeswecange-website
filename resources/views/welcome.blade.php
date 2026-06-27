@@ -13,9 +13,6 @@
     </div>
     <div class="relative mx-auto flex min-h-[84vh] max-w-7xl flex-col justify-center px-5 pt-28 pb-16 sm:px-[30px] sm:pt-32 sm:pb-[88px]">
       <div class="max-w-[600px]">
-        <div data-bhero class="mb-[26px] inline-flex items-center gap-[9px] rounded-full border border-ywc-border-blue bg-[#eef2ff]/86 px-[15px] py-[7px] text-[13px] font-semibold text-ywc-blue backdrop-blur-sm">
-          <span class="h-[7px] w-[7px] shrink-0 rounded-full bg-ywc-blue"></span>L'agence qui vous démarque · Paris × Abidjan
-        </div>
         <h1 data-bhero class="m-0 mb-[22px] font-display text-[clamp(40px,5.6vw,84px)] font-bold leading-[0.97] tracking-[-0.04em] text-white [text-shadow:0_2px_30px_rgba(10,10,15,0.45)]">
           Ne suivez pas<br>le troupeau.<br><span class="bg-gradient-to-r from-ywc-blue-pale to-white bg-clip-text text-transparent">Démarquez-vous.</span>
         </h1>
@@ -24,19 +21,6 @@
           <a href="#contact" class="rounded-xl bg-ywc-blue px-7 py-[15px] text-base font-bold text-white no-underline shadow-[0_14px_34px_-10px_rgba(43,77,255,0.6)] transition hover:bg-ywc-blue-mid">Lancer mon projet →</a>
           <a href="#chatbots" class="rounded-xl border-[1.5px] border-ywc-border bg-white/85 px-7 py-[15px] text-base font-bold text-ywc-ink no-underline backdrop-blur-sm transition hover:border-ywc-text-pale">Voir la plateforme chatbot</a>
         </div>
-      </div>
-
-      <!-- floating chatbot card over the photo -->
-      <div data-bfloat data-tilt3d data-rest-y="0" data-rest-x="0" class="relative mt-9 w-full overflow-hidden rounded-[22px] border border-ywc-border bg-white text-left shadow-[0_50px_90px_-30px_rgba(10,10,15,0.45)] sm:absolute sm:right-[30px] sm:bottom-12 sm:mt-0 sm:w-[296px]">
-        <div data-glare class="sim-glare"></div>
-        <div class="flex items-center gap-2.5 border-b border-[#f0f1f5] px-[18px] py-[15px]">
-          <span class="flex h-[30px] w-[30px] items-center justify-center overflow-hidden rounded-[9px] border border-ywc-border bg-white"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange" class="h-[26px] w-[26px]"></span>
-          <div class="leading-[1.2]">
-            <div class="text-[13.5px] font-bold">Assistant YesWeCange</div>
-            <div class="flex items-center gap-[5px] text-[11px] text-ywc-green"><span class="h-1.5 w-1.5 rounded-full bg-ywc-green"></span>répond en moins d'une minute</div>
-          </div>
-        </div>
-        <div id="ywc-chatb" class="flex min-h-[196px] flex-col gap-2.5 bg-ywc-bg-faint p-4"></div>
       </div>
     </div>
   </section>
