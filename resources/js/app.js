@@ -160,6 +160,42 @@ window.ScrollTrigger = ScrollTrigger;
 
     bindTilt(gsap);
     bindTilt3d(gsap);
+    bindSim3d(gsap);
+  }
+
+  // Scène 3D "vivante" : le téléphone flotte/pivote en continu et réagit au curseur
+  function bindSim3d(gsap) {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    root.querySelectorAll('[data-sim-scene]').forEach(function (scene) {
+      var stage = scene.querySelector('[data-sim-stage]');
+      if (!stage) return;
+      gsap.set(stage, { transformPerspective: 1100, transformOrigin: 'center center' });
+
+      if (reduce) { gsap.set(stage, { rotateY: 0, rotateX: 4 }); return; }
+
+      // Flottement propre des cartes
+      scene.querySelectorAll('[data-sim-card]').forEach(function (c, i) {
+        gsap.to(c, { y: '+=12', duration: 2.2 + i * 0.5, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: i * 0.3 });
+      });
+
+      // Animation idle : rotation + flottement en continu
+      var idle = gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 3.6, ease: 'sine.inOut' } })
+        .fromTo(stage, { rotateY: -9, rotateX: 6, y: -10 }, { rotateY: 9, rotateX: 2, y: 10 });
+
+      var hovering = false;
+      scene.addEventListener('mouseenter', function () { hovering = true; idle.pause(); });
+      scene.addEventListener('mousemove', function (e) {
+        if (!hovering) return;
+        var r = scene.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(stage, { rotateY: px * 32, rotateX: -py * 22, y: 0, duration: 0.5, ease: 'power2.out' });
+      });
+      scene.addEventListener('mouseleave', function () {
+        hovering = false;
+        gsap.to(stage, { rotateY: 0, rotateX: 4, y: 0, duration: 0.8, ease: 'power3.out', onComplete: function () { idle.restart(); } });
+      });
+    });
   }
 
   function bindTilt(gsap) {

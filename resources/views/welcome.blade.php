@@ -85,20 +85,42 @@
             <div data-bbot class="rounded-[13px] border border-[#20222e] bg-white/[0.02] px-[15px] py-[18px]"><div class="text-[13.5px] font-bold">Gamification</div></div>
           </div>
         </div>
-        <div data-breveal data-tilt3d-zone class="flex justify-center">
-          <div data-tilt3d data-rest-y="13" data-rest-x="5" class="relative w-full max-w-[310px] rounded-[36px] border border-[#262936] bg-[#15171f] p-[11px] shadow-[0_60px_100px_-36px_rgba(0,0,0,0.8)]" style="transform-style: preserve-3d;">
-            <div data-glare class="sim-glare"></div>
-            <div class="overflow-hidden rounded-[26px] bg-white">
-              <div class="flex items-center gap-2.5 bg-ywc-whatsapp px-4 py-[15px] text-white">
-                <span class="flex h-[34px] w-[34px] items-center justify-center overflow-hidden rounded-full bg-white"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange" class="h-[28px] w-[28px]"></span>
-                <div class="leading-[1.2]"><div class="text-[14.5px] font-bold">YesWeCange</div><div class="text-[11px] opacity-80">WhatsApp Business</div></div>
+        <div data-breveal class="relative flex justify-center py-6">
+          {{-- Halo --}}
+          <div class="pointer-events-none absolute left-1/2 top-1/2 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(43,77,255,0.4),transparent_62%)] blur-2xl"></div>
+
+          <div data-sim-scene class="relative" style="perspective: 1100px;">
+            <div data-sim-stage class="relative" style="transform-style: preserve-3d;">
+
+              {{-- Cartes flottantes en profondeur --}}
+              <div data-sim-card class="absolute -left-12 top-10 z-20 hidden items-center gap-2.5 rounded-2xl border border-white/12 bg-white/[0.08] px-3.5 py-2.5 shadow-[0_24px_50px_-24px_rgba(0,0,0,0.7)] backdrop-blur-md sm:flex" style="transform: translateZ(95px);">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-ywc-green/20 text-[15px] font-bold text-ywc-green">✓</span>
+                <div class="leading-tight"><div class="text-[12px] font-bold text-white">Nouveau lead</div><div class="text-[10.5px] text-[#a8afc0]">qualifié à l'instant</div></div>
               </div>
-              <div id="ywc-chatb2" class="flex min-h-[308px] flex-col gap-2.5 bg-[#e9e2db] p-3.5 [background-image:radial-gradient(rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:14px_14px]"></div>
-              <div class="flex items-center gap-2.5 bg-[#f2f2f2] px-3.5 py-[11px]">
-                <div class="flex-1 rounded-full bg-white px-3.5 py-2 text-[12.5px] text-ywc-text-faint">Écrivez un message…</div>
-                <span class="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-ywc-whatsapp text-white">➤</span>
+
+              <div data-sim-card class="absolute -right-10 bottom-24 z-20 hidden items-center gap-2.5 rounded-2xl border border-white/12 bg-white/[0.08] px-3.5 py-2.5 shadow-[0_24px_50px_-24px_rgba(0,0,0,0.7)] backdrop-blur-md sm:flex" style="transform: translateZ(64px);">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-ywc-blue/25 text-[14px]">⚡</span>
+                <div class="leading-tight"><div class="text-[12px] font-bold text-white">Réponse instantanée</div><div class="text-[10.5px] text-[#a8afc0]">24/7, automatisée</div></div>
+              </div>
+
+              {{-- Téléphone --}}
+              <div data-sim-phone class="relative mx-auto w-full max-w-[300px] rounded-[36px] border border-[#262936] bg-[#15171f] p-[11px] shadow-[0_60px_110px_-36px_rgba(0,0,0,0.9)]" style="transform-style: preserve-3d;">
+                <div data-glare class="sim-glare"></div>
+                <div class="overflow-hidden rounded-[26px] bg-white">
+                  <div class="flex items-center gap-2.5 bg-ywc-whatsapp px-4 py-[15px] text-white">
+                    <span class="flex h-[34px] w-[34px] items-center justify-center overflow-hidden rounded-full bg-white"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange" class="h-[28px] w-[28px]"></span>
+                    <div class="leading-[1.2]"><div class="text-[14.5px] font-bold">YesWeCange</div><div class="text-[11px] opacity-80">WhatsApp Business</div></div>
+                  </div>
+                  <div id="ywc-chatb2" class="flex min-h-[308px] flex-col gap-2.5 bg-[#e9e2db] p-3.5 [background-image:radial-gradient(rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:14px_14px]"></div>
+                  <div class="flex items-center gap-2.5 bg-[#f2f2f2] px-3.5 py-[11px]">
+                    <div class="flex-1 rounded-full bg-white px-3.5 py-2 text-[12.5px] text-ywc-text-faint">Écrivez un message…</div>
+                    <span class="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-ywc-whatsapp text-white">➤</span>
+                  </div>
+                </div>
               </div>
             </div>
+            {{-- Reflet au sol --}}
+            <div class="pointer-events-none mx-auto mt-4 h-9 w-[68%] rounded-[50%] bg-black/50 blur-xl"></div>
           </div>
         </div>
       </div>
