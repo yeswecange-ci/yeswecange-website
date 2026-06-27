@@ -11,6 +11,9 @@
 @stack('head')
 </head>
 <body class="bg-white font-sans text-ywc-ink antialiased selection:bg-ywc-blue selection:text-white">
+@if (request()->routeIs('home'))
+  @include('partials.loader')
+@endif
 <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-ywc-blue focus:px-4 focus:py-2 focus:text-white">{{ app()->getLocale() === 'en' ? 'Skip to content' : 'Aller au contenu' }}</a>
 <div id="ywc-b" class="overflow-x-hidden">
 
