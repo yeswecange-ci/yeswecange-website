@@ -44,6 +44,7 @@ class ContactController extends Controller
             'budget' => ['nullable', 'string', 'max:60'],
             'message' => ['required', 'string', 'max:5000'],
             'type' => ['nullable', 'in:contact,quote'],
+            'consent' => ['accepted'],
         ]);
 
         // Fusionne le champ unique "service" (formulaire rapide) et le

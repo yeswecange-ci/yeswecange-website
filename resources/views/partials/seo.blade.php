@@ -9,6 +9,8 @@
 <link rel="canonical" href="{{ $canonical }}">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#2b4dff">
+<link rel="icon" type="image/png" href="{{ asset('images/logo_ywc.png') }}">
+<link rel="apple-touch-icon" href="{{ asset('images/logo_ywc.png') }}">
 
 {{-- Open Graph --}}
 <meta property="og:type" content="website">
@@ -38,7 +40,7 @@
     '@type' => 'Organization',
     'name' => 'YesWeCange',
     'url' => url('/'),
-    'logo' => asset('images/troupeau-mouton-noir.png'),
+    'logo' => asset('images/logo_ywc.png'),
     'description' => $seoDescription,
     'sameAs' => [
         'https://www.facebook.com/Yes-We-Cange-668925849823227/',

@@ -15,6 +15,8 @@ class SeoController extends Controller
             ['name' => 'home', 'priority' => '1.0', 'freq' => 'weekly'],
             ['name' => 'services', 'priority' => '0.9', 'freq' => 'monthly'],
             ['name' => 'realisations', 'priority' => '0.9', 'freq' => 'monthly'],
+            ['name' => 'about', 'priority' => '0.7', 'freq' => 'monthly'],
+            ['name' => 'faq', 'priority' => '0.6', 'freq' => 'monthly'],
             ['name' => 'contact', 'priority' => '0.7', 'freq' => 'yearly'],
             ['name' => 'quote', 'priority' => '0.8', 'freq' => 'yearly'],
             ['name' => 'legal.mentions', 'priority' => '0.2', 'freq' => 'yearly'],

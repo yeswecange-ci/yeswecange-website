@@ -8,6 +8,8 @@ return [
         'clients' => 'Clients',
         'chatbots' => 'Chatbots',
         'realisations' => 'Réalisations',
+        'about' => 'À propos',
+        'faq' => 'FAQ',
         'team' => 'Équipe',
         'quote' => 'Devis gratuit',
         'contact' => 'Contact',

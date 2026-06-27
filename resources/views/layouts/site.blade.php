@@ -17,15 +17,15 @@
   <!-- NAV -->
   <header class="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-black/5 bg-white px-3 py-2.5 shadow-[0_10px_30px_-10px_rgba(10,10,15,0.18)] sm:px-5">
-      <a href="{{ route('home') }}" class="flex items-center gap-[9px] text-ywc-ink no-underline" aria-label="YesWeCange">
-        <span class="flex h-8 w-8 items-center justify-center rounded-[9px] bg-gradient-to-br from-ywc-blue to-ywc-blue-mid font-display text-[19px] font-bold text-white">y</span>
-        <span class="font-display text-lg font-bold tracking-[-0.02em]">yeswecange</span>
+      <a href="{{ route('home') }}" class="flex items-center no-underline" aria-label="YesWeCange — {{ __('site.nav.home') }}">
+        <img src="{{ asset('images/logo_ywc.png') }}" alt="YesWeCange" width="225" height="225" class="h-11 w-auto">
       </a>
 
       <nav class="hidden items-center gap-1 md:flex" aria-label="Navigation principale">
         <a href="{{ route('home') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('home') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.home') }}</a>
         <a href="{{ route('services') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('services') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.services') }}</a>
         <a href="{{ route('realisations') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('realisations') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.realisations') }}</a>
+        <a href="{{ route('about') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('about') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.about') }}</a>
         <span class="mx-2 h-5 w-px bg-ywc-border-soft"></span>
         @include('partials.lang-switcher')
         <a href="{{ request()->routeIs('home') ? '#contact' : route('home').'#contact' }}" class="rounded-full bg-ywc-blue px-5 py-2.5 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">{{ __('site.nav.quote') }}</a>
@@ -44,6 +44,8 @@
         <a href="{{ route('home') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('home') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.home') }}</a>
         <a href="{{ route('services') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('services') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.services') }}</a>
         <a href="{{ route('realisations') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('realisations') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.realisations') }}</a>
+        <a href="{{ route('about') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('about') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.about') }}</a>
+        <a href="{{ route('faq') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('faq') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.faq') }}</a>
         <div class="mt-1.5 border-t border-ywc-border-soft px-2 pt-2.5">@include('partials.lang-switcher')</div>
       </nav>
     </div>
@@ -57,9 +59,8 @@
   <footer class="border-t border-ywc-border-soft bg-white">
     <div class="mx-auto grid max-w-7xl gap-10 px-[30px] py-14 sm:grid-cols-2 lg:grid-cols-4">
       <div class="lg:col-span-2">
-        <div class="flex items-center gap-[11px]">
-          <span class="flex h-[30px] w-[30px] items-center justify-center rounded-[9px] bg-gradient-to-br from-ywc-blue to-ywc-blue-mid font-display text-[17px] font-bold text-white">y</span>
-          <span class="font-display text-lg font-bold tracking-[-0.02em]">yeswecange</span>
+        <div class="flex items-center">
+          <img src="{{ asset('images/logo_ywc.png') }}" alt="YesWeCange" width="225" height="225" class="h-14 w-auto">
         </div>
         <p class="mt-4 max-w-[320px] text-[14px] leading-[1.6] text-ywc-text-soft">{{ __('site.footer.tagline') }}</p>
       </div>
@@ -69,6 +70,8 @@
         <ul class="flex flex-col gap-2 text-sm">
           <li><a href="{{ route('services') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.services') }}</a></li>
           <li><a href="{{ route('realisations') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.realisations') }}</a></li>
+          <li><a href="{{ route('about') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.about') }}</a></li>
+          <li><a href="{{ route('faq') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.faq') }}</a></li>
           <li><a href="{{ route('contact') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.contact') }}</a></li>
           <li><a href="{{ route('quote') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.quote') }}</a></li>
         </ul>

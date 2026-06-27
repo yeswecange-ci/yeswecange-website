@@ -78,7 +78,19 @@
               @error('message')<div class="mt-1 text-[12px] font-medium text-red-600">{{ $message }}</div>@enderror
             </div>
 
-            <button type="submit" class="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-ywc-blue px-7 py-3.5 text-base font-bold text-white transition hover:bg-ywc-blue-mid">Envoyer ma demande →</button>
+            {{-- Honeypot anti-spam --}}
+            <div class="absolute left-[-9999px]" aria-hidden="true">
+              <label>Ne pas remplir <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <label class="flex items-start gap-2.5 text-[12.5px] leading-[1.5] text-ywc-text-soft">
+              <input type="checkbox" name="consent" value="1" required @checked(old('consent'))
+                class="mt-0.5 h-4 w-4 flex-none rounded border-ywc-border text-ywc-blue focus:ring-ywc-blue/30">
+              <span>{{ __('site.contact.form_consent') }}</span>
+            </label>
+            @error('consent')<div class="text-[12px] font-medium text-red-600">{{ $message }}</div>@enderror
+
+            <button type="submit" class="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-ywc-blue px-7 py-3.5 text-base font-bold text-white transition hover:bg-ywc-blue-mid">{{ __('site.contact.submit') }}</button>
           </form>
         </div>
 

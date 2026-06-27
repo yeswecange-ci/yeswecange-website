@@ -115,4 +115,12 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Adresse de réception des leads (formulaires contact/devis)
+    |--------------------------------------------------------------------------
+    */
+
+    'contact_to' => env('MAIL_CONTACT_TO', env('MAIL_FROM_ADDRESS', 'contact@yeswecange.com')),
+
 ];
