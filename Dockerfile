@@ -16,7 +16,7 @@ RUN npm run build
 # ---------------------------------------------------------------------------
 # Étape 2 : image applicative (PHP-FPM + Nginx via serversideup/php)
 # ---------------------------------------------------------------------------
-FROM serversideup/php:8.3-fpm-nginx AS app
+FROM serversideup/php:8.4-fpm-nginx AS app
 
 # Extensions PHP (pdo_mysql pour la base MySQL)
 USER root
