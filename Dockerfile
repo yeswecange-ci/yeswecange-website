@@ -35,5 +35,8 @@ COPY --chown=www-data:www-data . .
 # Assets compilés récupérés depuis l'étape 1
 COPY --chown=www-data:www-data --from=assets /app/public/build ./public/build
 
-# Finalisation Composer (exécute les scripts une fois tout le code présent)
-RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+# Finalisation de l'autoloader optimisé.
+# --no-scripts : on n'exécute PAS artisan au build (pas de .env/APP_KEY disponible).
+# Laravel régénère le manifeste des packages automatiquement au 1er démarrage.
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --no-scripts \
+    && composer dump-autoload --optimize --no-scripts
