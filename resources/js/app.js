@@ -69,7 +69,13 @@ window.ScrollTrigger = ScrollTrigger;
       { n: 'Yamaha', file: 'yamaha.png' },
       { n: 'Toyota CI', file: 'toyota.png' },
       { n: 'Mitsubishi', file: 'mitsubishi.png' },
-      { n: 'cobra', file: 'cobra.png' },
+      { n: 'Solibra', file: 'solibra.png' },
+      { n: 'Lonaci', file: 'lonaci.png' },
+      { n: 'Brakina', file: 'brakina.png' },
+      { n: 'BAD', file: 'bad.png' },
+      { n: 'Ecobank', file: 'ecobank.png' },
+      { n: 'BNI', file: 'bni.png' },
+      { n: 'nhood', file: 'nhood.png' },
     ];
     const cards = logos.map(l => {
       return `<div class="b-client">
