@@ -12,6 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Derrière le reverse-proxy Coolify/Traefik : faire confiance aux
+        // en-têtes X-Forwarded-* pour que Laravel détecte le HTTPS et l'IP réelle.
+        $middleware->trustProxies(at: '*');
+
         $middleware->web(append: [
             \App\Http\Middleware\SetLocale::class,
         ]);
