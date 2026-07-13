@@ -1,6 +1,9 @@
 @php
-    $seoTitle = trim($__env->yieldContent('title', config('app.name') . ' — Ne suivez pas le troupeau. Démarquez-vous.'));
-    $seoDescription = trim($__env->yieldContent('meta_description', "YesWeCange, l'agence digitale 360° qui vous démarque. Stratégie, social media, data mining, chatbots WhatsApp, SEO et branding — entre Paris et Abidjan."));
+    $seoEn = app()->getLocale() === 'en';
+    $seoTitle = trim($__env->yieldContent('title', config('app.name') . ($seoEn ? ' — Don\'t follow the flock. Stand out.' : ' — Ne suivez pas le troupeau. Démarquez-vous.')));
+    $seoDescription = trim($__env->yieldContent('meta_description', $seoEn
+        ? 'YesWeCange, the 360° digital agency that makes you stand out. Strategy, social media, data mining, WhatsApp chatbots, SEO and branding — between Paris and Abidjan.'
+        : "YesWeCange, l'agence digitale 360° qui vous démarque. Stratégie, social media, data mining, chatbots WhatsApp, SEO et branding — entre Paris et Abidjan."));
     $seoImage = asset($__env->yieldContent('meta_image', 'images/troupeau-mouton-noir.png'));
     $canonical = $__env->yieldContent('canonical', url()->current());
 @endphp

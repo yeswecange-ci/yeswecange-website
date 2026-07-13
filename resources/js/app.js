@@ -9,6 +9,8 @@ window.ScrollTrigger = ScrollTrigger;
   const root = document.getElementById('ywc-b');
   if (!root) return;
 
+  const EN = window.YWC_LOCALE === 'en';
+
   // footer year
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -16,7 +18,16 @@ window.ScrollTrigger = ScrollTrigger;
   // ===== services bento =====
   const bento = root.querySelector('[data-bbento]');
   if (bento) {
-    const items = [
+    const items = EN ? [
+      { t: 'Chatbots & WhatsApp', d: 'We automate the conversation 24/7 and continuously qualify your leads.', tag: 'Featured', icon: '💬', col: 'span 3', row: 'span 2', dark: true, href: '#chatbots', pills: ['WhatsApp', 'Web', 'Messenger', 'SMS'] },
+      { t: 'Strategy & Design', d: 'Positioning, message, high-value action plan.', icon: '🎯', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'Social Media & 360° Comm', d: 'Content that sparks reactions, across every channel.', icon: '📱', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'Marketing Intelligence', d: 'Marketing 3.0 and social business, driven by data.', icon: '📊', col: 'span 2', row: 'span 1', href: '/services' },
+      { t: 'Data Mining & Tech', d: 'Your data becomes audiences and leads.', icon: '🛰️', col: 'span 2', row: 'span 1', href: '/services' },
+      { t: 'SEO', d: 'Found at the right time by the right people.', icon: '🔍', col: 'span 2', row: 'span 1', href: '/services' },
+      { t: 'Branding & Lean Marketing', d: 'A brand that creates emotion and leaves a mark.', icon: '🎨', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'Training', d: 'We hand you the keys to digital, in practice.', icon: '🎓', col: 'span 3', row: 'span 1', href: '/services' },
+    ] : [
       { t: 'Chatbots & WhatsApp', d: 'On automatise la conversation 24/7 et on qualifie vos leads en continu.', tag: 'À la une', icon: '💬', col: 'span 3', row: 'span 2', dark: true, href: '#chatbots', pills: ['WhatsApp', 'Web', 'Messenger', 'SMS'] },
       { t: 'Stratégie & Conception', d: 'Positionnement, message, plan d’action à forte valeur ajoutée.', icon: '🎯', col: 'span 3', row: 'span 1', href: '/services' },
       { t: 'Social Media & Comm 360°', d: 'Des contenus qui font réagir, sur tous les canaux.', icon: '📱', col: 'span 3', row: 'span 1', href: '/services' },
@@ -43,31 +54,30 @@ window.ScrollTrigger = ScrollTrigger;
     }).join('');
   }
 
-  // ===== client logo wall (placeholder wordmarks — swap with real logos) =====
+  // ===== client logo wall =====
   const cgrid = root.querySelector('[data-bclient-grid]');
   if (cgrid) {
     const logos = [
-      { n: 'Orange CI', f: "'Space Grotesk',sans-serif", w: 700, ls: '-.02em', mark: '●' },
-      { n: 'Biofar', f: "'Manrope',sans-serif", w: 700, ls: '-.01em', mark: '' },
-      { n: 'Bracongo', f: "'Space Grotesk',sans-serif", w: 700, ls: '.06em', mark: '' },
-      { n: 'CFAO group', f: "'Manrope',sans-serif", w: 800, ls: '-.01em', mark: '◆' },
-      { n: 'Bridge Bank', f: "'Manrope',sans-serif", w: 600, ls: '0', mark: '○' },
-      { n: 'Red Africa', f: "'Space Grotesk',sans-serif", w: 700, ls: '.02em', mark: '' },
-      { n: 'NSIA', f: "'Manrope',sans-serif", w: 700, ls: '-.01em', mark: '✦' },
-      { n: 'Total Énergie', f: "'Space Grotesk',sans-serif", w: 700, ls: '.04em', mark: '/' },
-      { n: 'SODIAM', f: "'Manrope',sans-serif", w: 700, ls: '-.01em', mark: '' },
-      { n: 'Toyota CI', f: "'Space Grotesk',sans-serif", w: 700, ls: '.06em', mark: '' },
-      { n: 'Terra', f: "'Manrope',sans-serif", w: 700, ls: '-.01em', mark: '▲' },
-      { n: 'cobra', f: "'Space Grotesk',sans-serif", w: 700, ls: '-.02em', mark: '' },
+      { n: 'Orange CI', file: 'orange-ci.png' },
+      { n: 'Biofar', file: 'biofar.png' },
+      { n: 'Bracongo', file: 'braconfologo.png' },
+      { n: 'Mercedes', file: 'mercedes.png' },
+      { n: 'Bridge Bank', file: 'bridge-bank.png' },
+      { n: 'Suzuki', file: 'suzuki.png' },
+      { n: 'NSIA', file: 'nsia.png' },
+      { n: 'Total Énergie', file: 'total-energie.png' },
+      { n: 'Yamaha', file: 'yamaha.png' },
+      { n: 'Toyota CI', file: 'toyota.png' },
+      { n: 'Mitsubishi', file: 'mitsubishi.png' },
+      { n: 'cobra', file: 'cobra.png' },
     ];
     const cards = logos.map(l => {
       return `<div class="b-client">
-        ${l.mark ? `<span class="b-client__mark">${l.mark}</span>` : ''}
-        <span class="b-client__name" style="font-family:${l.f};font-weight:${l.w};letter-spacing:${l.ls};">${l.n}</span>
+        <img src="/images/clients/${l.file}" alt="${l.n}" class="b-client__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+        <span class="b-client__name" style="display:none">${l.n}</span>
       </div>`;
     }).join('');
-    // Piste dupliquée pour un défilement infini et fluide
-    cgrid.innerHTML = `<div class="b-marquee__track">${cards}${cards}</div>`;
+    cgrid.innerHTML = cards;
   }
 
   // ===== chat bubbles =====
@@ -108,13 +118,23 @@ window.ScrollTrigger = ScrollTrigger;
 
   const c1 = root.querySelector('#ywc-chatb');
   const c2 = root.querySelector('#ywc-chatb2');
-  const s1 = [
+  const s1 = EN ? [
+    ['Hi, I want more clients 🚀', 'them'],
+    ['We’ve got you: strategy + chatbots.', 'me'],
+    ['Where are you based?', 'them'],
+    ['Paris & Abidjan 🌍', 'me'],
+  ] : [
     ['Bonjour, je veux plus de clients 🚀', 'them'],
     ['On s’en occupe : stratégie + chatbots.', 'me'],
     ['Vous êtes où ?', 'them'],
     ['Paris & Abidjan 🌍', 'me'],
   ];
-  const s2 = [
+  const s2 = EN ? [
+    ['Do you handle WhatsApp?', 'them'],
+    ['Yes! Broadcast + automated 1:1 ✅', 'me'],
+    ['And a quote?', 'them'],
+    ['Free, within 24h 🎉', 'me'],
+  ] : [
     ['Vous gérez WhatsApp ?', 'them'],
     ['Oui ! Diffusion + 1:1 automatisé ✅', 'me'],
     ['Et un devis ?', 'them'],
