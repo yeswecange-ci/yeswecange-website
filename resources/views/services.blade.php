@@ -50,6 +50,27 @@
     ];
   @endphp
 
+  @push('head')
+  <script type="application/ld+json">
+  {!! json_encode([
+      '@context' => 'https://schema.org',
+      '@type' => 'ItemList',
+      'name' => $en ? 'YesWeCange services' : 'Services YesWeCange',
+      'itemListElement' => collect($services)->values()->map(fn ($s, $i) => [
+          '@type' => 'ListItem',
+          'position' => $i + 1,
+          'item' => [
+              '@type' => 'Service',
+              'name' => $s['t'],
+              'description' => $s['d'],
+              'provider' => ['@type' => 'Organization', 'name' => 'YesWeCange', 'url' => url('/')],
+              'areaServed' => ['FR', 'CI'],
+          ],
+      ])->all(),
+  ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+  </script>
+  @endpush
+
   <section class="mx-auto max-w-7xl px-5 py-16 sm:px-[30px] sm:py-20">
     <div data-breveal class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       @foreach ($services as $s)

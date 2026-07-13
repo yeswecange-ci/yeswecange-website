@@ -2,6 +2,9 @@
 @extends('layouts.site')
 
 @section('title', 'YesWeCange — ' . ($en ? 'Stand out.' : 'Accélérer votre croissance.'))
+@section('meta_description', $en
+    ? 'YesWeCange is the 360° digital agency that makes you stand out: strategy, social media, data mining, WhatsApp chatbots, SEO/SEA and branding — between Paris and Abidjan.'
+    : "YesWeCange, l'agence digitale 360° qui vous démarque : stratégie, social media, data mining, chatbots WhatsApp, SEO/SEA et branding — entre Paris et Abidjan.")
 
 @section('content')
 
