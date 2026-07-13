@@ -1,7 +1,8 @@
+@php $en = app()->getLocale() === 'en'; @endphp
 @extends('layouts.site')
 
 @section('title', __('site.legal.terms_title') . ' — YesWeCange')
-@section('meta_description', 'Conditions générales de vente et d\'utilisation des prestations YesWeCange.')
+@section('meta_description', $en ? 'Terms of sale and use of YesWeCange services.' : 'Conditions générales de vente et d\'utilisation des prestations YesWeCange.')
 
 @section('content')
 
@@ -13,6 +14,68 @@
 
   <section class="mx-auto max-w-3xl px-5 py-16 sm:px-[30px] sm:py-20">
     <div data-breveal class="legal-prose">
+      @if($en)
+
+      <p>
+        These general terms govern the services provided by YesWeCange to its clients. Any order implies
+        unconditional acceptance of these terms. They may be supplemented by specific conditions set out in
+        the signed quote or contract.
+      </p>
+
+      <h2>1. Purpose & services</h2>
+      <p>
+        YesWeCange provides digital strategy, communication, social media, data mining, chatbots, search
+        optimisation, branding and training services, according to the scope defined in each quote.
+      </p>
+
+      <h2>2. Quotes & orders</h2>
+      <p>
+        Each service is the subject of a detailed quote. The quote is valid for 30 days. The order is
+        confirmed upon receipt of the signed quote and, where applicable, the agreed deposit.
+      </p>
+
+      <h2>3. Pricing & payment</h2>
+      <p>
+        Prices are shown excluding tax; applicable VAT is added in accordance with current regulations.
+        Unless otherwise stated, payment terms and the schedule are specified in the quote. Any late payment
+        incurs penalties at the legal rate as well as the fixed recovery indemnity provided for by law.
+      </p>
+
+      <h2>4. Client obligations</h2>
+      <p>
+        The client undertakes to provide, in due time, all the elements, access and approvals necessary for
+        the proper execution of the services. Delays attributable to the client may push back the schedule.
+      </p>
+
+      <h2>5. Intellectual property</h2>
+      <p>
+        Deliverables are only transferred to the client after full payment. YesWeCange retains the right to
+        reference the work as a portfolio piece, unless otherwise agreed under a confidentiality clause.
+      </p>
+
+      <h2>6. Confidentiality & data</h2>
+      <p>
+        Each party undertakes to preserve the confidentiality of the information exchanged. The processing of
+        personal data is governed by our
+        <a href="{{ route('legal.privacy') }}">privacy policy</a>.
+      </p>
+
+      <h2>7. Liability</h2>
+      <p>
+        YesWeCange is bound by a best-effort obligation. Its liability shall not exceed the amount actually
+        received for the service in question.
+      </p>
+
+      <h2>8. Governing law & disputes</h2>
+      <p>
+        These terms are governed by French law. In the event of a dispute, an amicable solution will be
+        sought before any legal action. Failing that, jurisdiction is granted to the courts of the district
+        of YesWeCange's registered office.
+      </p>
+
+      <p><em>[TO BE COMPLETED: specific conditions, applicable withdrawal periods, consumer mediator where relevant.]</em></p>
+
+      @else
 
       <p>
         Les présentes conditions générales régissent les prestations de services fournies par YesWeCange à ses
@@ -74,6 +137,7 @@
 
       <p><em>[À COMPLÉTER : conditions particulières, délais de rétractation éventuels, médiateur de la consommation le cas échéant.]</em></p>
 
+      @endif
     </div>
   </section>
 

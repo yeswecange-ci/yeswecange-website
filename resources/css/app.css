@@ -203,27 +203,22 @@
     }
 
     .b-client-grid {
-        position: relative;
-        overflow: hidden;
-        -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-        mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-    }
-    .b-marquee__track {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
-        width: max-content;
-        animation: ywc-marquee 45s linear infinite;
     }
-    .b-client-grid:hover .b-marquee__track {
-        animation-play-state: paused;
+    @media (min-width: 640px) {
+        .b-client-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
-    @keyframes ywc-marquee {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
+    @media (min-width: 1024px) {
+        .b-client-grid {
+            grid-template-columns: repeat(6, 1fr);
+        }
     }
     .b-client {
-        flex: 0 0 auto;
-        width: 190px;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -241,9 +236,17 @@
         border-color: var(--color-ywc-border-blue);
         transform: translateY(-3px);
     }
-    .b-client__mark {
-        font-size: 13px;
-        line-height: 1;
+    .b-client__logo {
+        max-width: 128px;
+        max-height: 36px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        filter: grayscale(1) opacity(0.55);
+        transition: filter 0.25s ease;
+    }
+    .b-client:hover .b-client__logo {
+        filter: grayscale(0) opacity(1);
     }
     .b-client__name {
         font-size: 21px;

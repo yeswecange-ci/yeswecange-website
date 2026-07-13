@@ -1,6 +1,9 @@
 @php
     $isQuote = ($type ?? 'contact') === 'quote';
-    $services = ['Stratégie', 'Social Media', 'Data Mining', 'Chatbots & WhatsApp', 'SEO / SEA', 'Branding', 'Formation'];
+    $en = app()->getLocale() === 'en';
+    $services = $en
+        ? ['Strategy', 'Social Media', 'Data Mining', 'Chatbots & WhatsApp', 'SEO / SEA', 'Branding', 'Training']
+        : ['Stratégie', 'Social Media', 'Data Mining', 'Chatbots & WhatsApp', 'SEO / SEA', 'Branding', 'Formation'];
 @endphp
 
 @if (session('lead_success'))

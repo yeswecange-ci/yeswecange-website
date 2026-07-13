@@ -1,7 +1,8 @@
+@php $en = app()->getLocale() === 'en'; @endphp
 @extends('layouts.site')
 
 @section('title', __('site.legal.cookies_title') . ' — YesWeCange')
-@section('meta_description', 'Politique de cookies du site YesWeCange : types de cookies, finalités et gestion du consentement.')
+@section('meta_description', $en ? 'YesWeCange cookie policy: cookie types, purposes and consent management.' : 'Politique de cookies du site YesWeCange : types de cookies, finalités et gestion du consentement.')
 
 @section('content')
 
@@ -13,6 +14,49 @@
 
   <section class="mx-auto max-w-3xl px-5 py-16 sm:px-[30px] sm:py-20">
     <div data-breveal class="legal-prose">
+      @if($en)
+
+      <p>
+        A cookie is a small file placed on your device when you visit a site. It allows your browser to be
+        recognised and certain information to be retained.
+      </p>
+
+      <h2>Cookies we use</h2>
+      <h3>Strictly necessary cookies</h3>
+      <p>
+        Essential for the site to function (session, security, remembering your language and cookie choice).
+        They do not require your consent.
+      </p>
+      <h3>Audience measurement cookies</h3>
+      <p>
+        We use analytics tools (e.g. Google Analytics) to understand and improve site usage. They are only
+        set after your consent.
+      </p>
+      <h3>Third-party cookies</h3>
+      <p>
+        Some content (social networks, chat tool) may set their own cookies, subject to the policies of their
+        respective publishers.
+      </p>
+
+      <h2>Managing your consent</h2>
+      <p>
+        On your first visit, a banner lets you accept or reject non-essential cookies. You can change your
+        choice at any time by deleting cookies from your browser, or via its settings:
+      </p>
+      <ul>
+        <li>Chrome: Settings → Privacy and security → Cookies</li>
+        <li>Firefox: Settings → Privacy & security</li>
+        <li>Safari: Preferences → Privacy</li>
+        <li>Edge: Settings → Cookies and site permissions</li>
+      </ul>
+
+      <h2>Learn more</h2>
+      <p>
+        For more information on how your data is processed, see our
+        <a href="{{ route('legal.privacy') }}">privacy policy</a>.
+      </p>
+
+      @else
 
       <p>
         Un cookie est un petit fichier déposé sur votre terminal lors de la visite d'un site. Il permet de
@@ -55,6 +99,7 @@
         <a href="{{ route('legal.privacy') }}">politique de confidentialité</a>.
       </p>
 
+      @endif
     </div>
   </section>
 
