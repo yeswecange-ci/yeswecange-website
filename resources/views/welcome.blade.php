@@ -11,7 +11,7 @@
   <!-- HERO -->
   <section id="top" class="relative overflow-hidden bg-ywc-bg">
     <div class="absolute inset-0">
-      <video src="{{ asset('images/videoywc.mp4') }}" autoplay loop muted playsinline preload="auto" poster="{{ asset('images/troupeau-mouton-noir.webp') }}" aria-hidden="true" class="block h-full w-full object-cover" style="object-position: 50% center;"></video>
+      <video src="{{ asset('images/videoywc.mp4') }}" autoplay loop muted playsinline preload="auto" poster="{{ asset('images/videoywc-poster.webp') }}" aria-hidden="true" class="block h-full w-full object-cover object-[68%_center] sm:object-[50%_center]"></video>
       <div class="absolute inset-0 bg-gradient-to-r from-ywc-ink/65 via-ywc-ink/30 to-transparent"></div>
       <div class="absolute inset-x-0 bottom-0 h-[130px] bg-gradient-to-t from-ywc-bg/95 to-transparent"></div>
     </div>
