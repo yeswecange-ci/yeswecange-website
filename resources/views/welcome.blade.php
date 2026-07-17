@@ -141,47 +141,6 @@
     </div>
   </section>
 
-  <!-- REALISATIONS -->
-  <section id="realisations" class="mx-auto max-w-7xl px-[30px] py-20">
-    <div data-breveal class="mb-[42px] flex flex-wrap items-end justify-between gap-[18px]">
-      <div>
-        <div class="mb-[14px] text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $en ? 'Our work' : 'Réalisations' }}</div>
-        <h2 class="m-0 max-w-[560px] font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">{{ $en ? 'We bring all your projects to life, with passion' : 'On réalise tous vos projets avec passion' }}</h2>
-      </div>
-      <a href="{{ route('realisations') }}" class="rounded-full bg-ywc-ink px-[22px] py-[13px] text-[14.5px] font-bold text-white no-underline transition hover:bg-ywc-text">{{ $en ? 'Learn more →' : 'En savoir plus →' }}</a>
-    </div>
-    <div data-breveal class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-      <a href="{{ route('realisations') }}" class="group block text-ywc-ink no-underline transition hover:-translate-y-2">
-        <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/chainewhatsapp.webp') }}" alt="{{ $en ? 'WhatsApp Broadcast' : 'Chaîne WhatsApp' }}" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
-        </div>
-        <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">{{ $en ? 'WhatsApp Broadcast' : 'Chaîne WhatsApp' }}</div>
-        <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">{{ $en ? 'Broadcast & 1:1 relationship' : 'Diffusion & relation 1:1' }}</div>
-      </a>
-      <a href="{{ route('realisations') }}" class="group block text-ywc-ink no-underline transition hover:-translate-y-2">
-        <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/com-digital.webp') }}" alt="{{ $en ? 'Digital communication' : 'Communication digitale' }}" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
-        </div>
-        <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">{{ $en ? 'Digital communication' : 'Communication digitale' }}</div>
-        <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">{{ $en ? 'Content & social media' : 'Contenus & social media' }}</div>
-      </a>
-      <a href="{{ route('realisations') }}" class="group block text-ywc-ink no-underline transition hover:-translate-y-2">
-        <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/chatbot2.webp') }}" alt="Chatbot" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
-        </div>
-        <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">Chatbot</div>
-        <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">{{ $en ? '24/7 automation' : 'Automatisation 24/7' }}</div>
-      </a>
-      <a href="{{ route('realisations') }}" class="group block text-ywc-ink no-underline transition hover:-translate-y-2">
-        <div class="aspect-square overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/publicité.webp') }}" alt="{{ $en ? 'Online advertising' : 'Publicité en ligne' }}" width="600" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
-        </div>
-        <div class="mt-[13px] font-display text-base font-bold tracking-[-0.01em]">{{ $en ? 'Online advertising' : 'Publicité en ligne' }}</div>
-        <div class="mt-0.5 text-[13.5px] text-ywc-text-muted">{{ $en ? 'Acquisition & ROI' : 'Acquisition & ROI' }}</div>
-      </a>
-    </div>
-  </section>
-
   <!-- TEMOIGNAGES -->
   <section class="mx-auto max-w-7xl px-5 py-20 sm:px-[30px]">
     <div data-breveal class="mx-auto mb-12 max-w-[680px] text-center">

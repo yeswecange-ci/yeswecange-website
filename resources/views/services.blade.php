@@ -30,23 +30,23 @@
   <!-- SERVICES GRID (visuel) -->
   @php
     $services = $en ? [
-      ['n' => '01', 't' => 'Strategy & Design', 'd' => "Positioning, message, audiences and action plan. Every decision guided by your business goals.", 'tags' => ['Positioning', 'Audit', 'Roadmap'], 'img' => 'strategiee.png', 'icon' => '🎯'],
-      ['n' => '02', 't' => 'Social Media & 360° Communication', 'd' => "Content that sparks reactions, adapted to every channel. We run your communities and orchestrate your campaigns.", 'tags' => ['Community management', 'Content', 'Campaigns'], 'img' => 'com-digital.webp'],
-      ['n' => '03', 't' => 'Marketing Intelligence', 'd' => "We turn data into decisions. Monitoring, social listening and performance-driven management.", 'tags' => ['Social listening', 'KPIs', 'Reporting'], 'img' => 'marketing.png', 'icon' => '📊'],
-      ['n' => '04', 't' => 'Web & Mobile Development', 'd' => "Custom sites, apps and platforms designed for performance and user experience.", 'tags' => ['Websites', 'Applications', 'UX/UI'], 'img' => 'chatbot2.webp'],
-      ['n' => '05', 't' => 'Chatbots & WhatsApp', 'd' => "Automate conversation 24/7 on WhatsApp, web, Messenger and SMS. Lead qualification and support.", 'tags' => ['WhatsApp', 'Web assistant', 'Messenger'], 'img' => 'chainewhatsapp.webp', 'feature' => true],
-      ['n' => '06', 't' => 'Search (SEO/SEA)', 'd' => "Be found at the right time by the right people. Organic search, paid campaigns and optimisation.", 'tags' => ['SEO', 'Google Ads', 'Social Ads'], 'img' => 'publicité.webp'],
-      ['n' => '07', 't' => 'Branding & Lean Marketing', 'd' => "A brand that creates emotion and leaves a mark. Consistent identity, design and experience everywhere.", 'tags' => ['Visual identity', 'Art direction', 'Print'], 'img' => 'branding.png', 'icon' => '🎨'],
-      ['n' => '08', 't' => 'Training', 'd' => "We hand you the keys to digital, in practice. Tailored workshops to make your teams self-sufficient.", 'tags' => ['Social media', 'Tools', 'Workshops'], 'img' => 'formation .png', 'icon' => '🎓'],
+      ['n' => '01', 't' => 'Strategy & Design', 'd' => "Positioning, message, audiences and action plan. Every decision guided by your business goals.", 'tags' => ['Positioning', 'Audit', 'Roadmap'], 'icon' => '🎯'],
+      ['n' => '02', 't' => 'Social Media & 360° Communication', 'd' => "Content that sparks reactions, adapted to every channel. We run your communities and orchestrate your campaigns.", 'tags' => ['Community management', 'Content', 'Campaigns']],
+      ['n' => '03', 't' => 'Marketing Intelligence', 'd' => "We turn data into decisions. Monitoring, social listening and performance-driven management.", 'tags' => ['Social listening', 'KPIs', 'Reporting'], 'icon' => '📊'],
+      ['n' => '04', 't' => 'Web & Mobile Development', 'd' => "Custom sites, apps and platforms designed for performance and user experience.", 'tags' => ['Websites', 'Applications', 'UX/UI']],
+      ['n' => '05', 't' => 'Chatbots & WhatsApp', 'd' => "Automate conversation 24/7 on WhatsApp, web, Messenger and SMS. Lead qualification and support.", 'tags' => ['WhatsApp', 'Web assistant', 'Messenger'], 'feature' => true],
+      ['n' => '06', 't' => 'Search (SEO/SEA)', 'd' => "Be found at the right time by the right people. Organic search, paid campaigns and optimisation.", 'tags' => ['SEO', 'Google Ads', 'Social Ads'], ],
+      ['n' => '07', 't' => 'Branding & Lean Marketing', 'd' => "A brand that creates emotion and leaves a mark. Consistent identity, design and experience everywhere.", 'tags' => ['Visual identity', 'Art direction', 'Print'], 'icon' => '🎨'],
+      ['n' => '08', 't' => 'Training', 'd' => "We hand you the keys to digital, in practice. Tailored workshops to make your teams self-sufficient.", 'tags' => ['Social media', 'Tools', 'Workshops'], 'icon' => '🎓'],
     ] : [
-      ['n' => '01', 't' => 'Stratégie omnicale', 'd' => "Positionnement, message, audiences et plan d'action. Chaque décision guidée par vos objectifs business.", 'tags' => ['Positionnement', 'Audit', 'Roadmap'], 'icon' => '🎯', 'img' => 'strategiee.png'],
-      ['n' => '02', 't' => 'Production des kits global', 'd' => "Des contenus qui font réagir, déclinés sur tous les canaux. On anime vos communautés et orchestre vos campagnes.", 'tags' => ['Community management', 'Contenu', 'Campagnes'], 'img' => 'com-digital.webp'],
-      ['n' => '03', 't' => 'Publicité Mobile', 'd' => "On transforme la donnée en décisions. Veille, social listening et pilotage par la performance.", 'tags' => ['Social listening', 'KPIs', 'Reporting'], 'icon' => '📊', 'img' => 'marketing.png'],
-      ['n' => '04', 't' => 'Referencement SEO & IA search', 'd' => "Sites, applications et plateformes sur-mesure, pensés pour la performance et l'expérience utilisateur.", 'tags' => ['Sites web', 'Applications', 'UX/UI'], 'img' => 'chatbot2.webp'],
-      ['n' => '05', 't' => 'Digitalisation IA / process', 'd' => "Automatisez la conversation 24/7 sur WhatsApp, web, Messenger et SMS. Qualification de leads et support.", 'tags' => ['WhatsApp', 'Assistant web', 'Messenger'], 'img' => 'chainewhatsapp.webp', 'feature' => true],
-      ['n' => '06', 't' => 'Developpement IT', 'd' => "Soyez trouvé au bon moment par les bonnes personnes. Référencement naturel, campagnes payantes et optimisation.", 'tags' => ['SEO', 'Google Ads', 'Social Ads'], 'img' => 'publicité.webp'],
-      ['n' => '07', 't' => 'DATA analytics ', 'd' => "Une marque qui crée l'émotion et marque les esprits. Identité, design et expérience cohérents partout.", 'tags' => ['Identité visuelle', 'Direction artistique', 'Print'], 'icon' => '🎨', 'img' => 'branding.png'],
-      ['n' => '08', 't' => 'Chatbot Whatsapp', 'd' => "On vous donne les clés du digital, en pratique. Ateliers sur-mesure pour rendre vos équipes autonomes.", 'tags' => ['Social media', 'Outils', 'Ateliers'], 'icon' => '🎓', 'img' => 'formation .png' ],
+      ['n' => '01', 't' => 'Stratégie omnicale', 'd' => "Positionnement, message, audiences et plan d'action. Chaque décision guidée par vos objectifs business.", 'tags' => ['Positionnement', 'Audit', 'Roadmap'], 'icon' => '🎯'],
+      ['n' => '02', 't' => 'Production des kits global', 'd' => "Des contenus qui font réagir, déclinés sur tous les canaux. On anime vos communautés et orchestre vos campagnes.", 'tags' => ['Community management', 'Contenu', 'Campagnes']],
+      ['n' => '03', 't' => 'Publicité Mobile', 'd' => "On transforme la donnée en décisions. Veille, social listening et pilotage par la performance.", 'tags' => ['Social listening', 'KPIs', 'Reporting'], 'icon' => '📊'],
+      ['n' => '04', 't' => 'Referencement SEO & IA search', 'd' => "Sites, applications et plateformes sur-mesure, pensés pour la performance et l'expérience utilisateur.", 'tags' => ['Sites web', 'Applications', 'UX/UI']],
+      ['n' => '05', 't' => 'Digitalisation IA / process', 'd' => "Automatisez la conversation 24/7 sur WhatsApp, web, Messenger et SMS. Qualification de leads et support.", 'tags' => ['WhatsApp', 'Assistant web', 'Messenger'], 'feature' => true],
+      ['n' => '06', 't' => 'Developpement IT', 'd' => "Soyez trouvé au bon moment par les bonnes personnes. Référencement naturel, campagnes payantes et optimisation.", 'tags' => ['SEO', 'Google Ads', 'Social Ads'],],
+      ['n' => '07', 't' => 'DATA analytics ', 'd' => "Une marque qui crée l'émotion et marque les esprits. Identité, design et expérience cohérents partout.", 'tags' => ['Identité visuelle', 'Direction artistique', 'Print'], 'icon' => '🎨'],
+      ['n' => '08', 't' => 'Chatbot Whatsapp', 'd' => "On vous donne les clés du digital, en pratique. Ateliers sur-mesure pour rendre vos équipes autonomes.", 'tags' => ['Social media', 'Outils', 'Ateliers'], 'icon' => '🎓' ],
     ];
   @endphp
 
@@ -79,7 +79,6 @@
             @isset($s['img'])
               <img src="{{ asset('images/' . $s['img']) }}" alt="{{ $s['t'] }}" width="600" height="375" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
             @else
-              <div class="h-full w-full bg-gradient-to-br {{ $s['grad'] }}"></div>
             @endisset
             <span class="absolute left-3.5 top-3.5 rounded-full bg-white/90 px-2.5 py-1 font-display text-[11px] font-bold text-ywc-blue shadow-sm">{{ $s['n'] }}</span>
           </div>
