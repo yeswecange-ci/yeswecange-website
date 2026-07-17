@@ -39,14 +39,14 @@
       ['n' => '07', 't' => 'Branding & Lean Marketing', 'd' => "A brand that creates emotion and leaves a mark. Consistent identity, design and experience everywhere.", 'tags' => ['Visual identity', 'Art direction', 'Print'], 'img' => 'branding.png', 'icon' => '🎨'],
       ['n' => '08', 't' => 'Training', 'd' => "We hand you the keys to digital, in practice. Tailored workshops to make your teams self-sufficient.", 'tags' => ['Social media', 'Tools', 'Workshops'], 'img' => 'formation .png', 'icon' => '🎓'],
     ] : [
-      ['n' => '01', 't' => 'Stratégie & Conception', 'd' => "Positionnement, message, audiences et plan d'action. Chaque décision guidée par vos objectifs business.", 'tags' => ['Positionnement', 'Audit', 'Roadmap'], 'icon' => '🎯', 'img' => 'strategiee.png'],
-      ['n' => '02', 't' => 'Social Media & Communication 360°', 'd' => "Des contenus qui font réagir, déclinés sur tous les canaux. On anime vos communautés et orchestre vos campagnes.", 'tags' => ['Community management', 'Contenu', 'Campagnes'], 'img' => 'com-digital.webp'],
-      ['n' => '03', 't' => 'Marketing Intelligence', 'd' => "On transforme la donnée en décisions. Veille, social listening et pilotage par la performance.", 'tags' => ['Social listening', 'KPIs', 'Reporting'], 'icon' => '📊', 'img' => 'marketing.png'],
-      ['n' => '04', 't' => 'Développement Web & Mobile', 'd' => "Sites, applications et plateformes sur-mesure, pensés pour la performance et l'expérience utilisateur.", 'tags' => ['Sites web', 'Applications', 'UX/UI'], 'img' => 'chatbot2.webp'],
-      ['n' => '05', 't' => 'Chatbots & WhatsApp', 'd' => "Automatisez la conversation 24/7 sur WhatsApp, web, Messenger et SMS. Qualification de leads et support.", 'tags' => ['WhatsApp', 'Assistant web', 'Messenger'], 'img' => 'chainewhatsapp.webp', 'feature' => true],
-      ['n' => '06', 't' => 'Référencement (SEO/SEA)', 'd' => "Soyez trouvé au bon moment par les bonnes personnes. Référencement naturel, campagnes payantes et optimisation.", 'tags' => ['SEO', 'Google Ads', 'Social Ads'], 'img' => 'publicité.webp'],
-      ['n' => '07', 't' => 'Branding & Lean Marketing', 'd' => "Une marque qui crée l'émotion et marque les esprits. Identité, design et expérience cohérents partout.", 'tags' => ['Identité visuelle', 'Direction artistique', 'Print'], 'icon' => '🎨', 'img' => 'branding.png'],
-      ['n' => '08', 't' => 'Formation', 'd' => "On vous donne les clés du digital, en pratique. Ateliers sur-mesure pour rendre vos équipes autonomes.", 'tags' => ['Social media', 'Outils', 'Ateliers'], 'icon' => '🎓', 'img' => 'formation .png' ],
+      ['n' => '01', 't' => 'Stratégie omnicale', 'd' => "Positionnement, message, audiences et plan d'action. Chaque décision guidée par vos objectifs business.", 'tags' => ['Positionnement', 'Audit', 'Roadmap'], 'icon' => '🎯', 'img' => 'strategiee.png'],
+      ['n' => '02', 't' => 'Production des kits global', 'd' => "Des contenus qui font réagir, déclinés sur tous les canaux. On anime vos communautés et orchestre vos campagnes.", 'tags' => ['Community management', 'Contenu', 'Campagnes'], 'img' => 'com-digital.webp'],
+      ['n' => '03', 't' => 'Publicité Mobile', 'd' => "On transforme la donnée en décisions. Veille, social listening et pilotage par la performance.", 'tags' => ['Social listening', 'KPIs', 'Reporting'], 'icon' => '📊', 'img' => 'marketing.png'],
+      ['n' => '04', 't' => 'Referencement SEO & IA search', 'd' => "Sites, applications et plateformes sur-mesure, pensés pour la performance et l'expérience utilisateur.", 'tags' => ['Sites web', 'Applications', 'UX/UI'], 'img' => 'chatbot2.webp'],
+      ['n' => '05', 't' => 'Digitalisation IA / process', 'd' => "Automatisez la conversation 24/7 sur WhatsApp, web, Messenger et SMS. Qualification de leads et support.", 'tags' => ['WhatsApp', 'Assistant web', 'Messenger'], 'img' => 'chainewhatsapp.webp', 'feature' => true],
+      ['n' => '06', 't' => 'Developpement IT', 'd' => "Soyez trouvé au bon moment par les bonnes personnes. Référencement naturel, campagnes payantes et optimisation.", 'tags' => ['SEO', 'Google Ads', 'Social Ads'], 'img' => 'publicité.webp'],
+      ['n' => '07', 't' => 'DATA analytics ', 'd' => "Une marque qui crée l'émotion et marque les esprits. Identité, design et expérience cohérents partout.", 'tags' => ['Identité visuelle', 'Direction artistique', 'Print'], 'icon' => '🎨', 'img' => 'branding.png'],
+      ['n' => '08', 't' => 'Chatbot Whatsapp', 'd' => "On vous donne les clés du digital, en pratique. Ateliers sur-mesure pour rendre vos équipes autonomes.", 'tags' => ['Social media', 'Outils', 'Ateliers'], 'icon' => '🎓', 'img' => 'formation .png' ],
     ];
   @endphp
 
@@ -150,8 +150,8 @@
 
   @include('partials.cta-banner', [
     'title' => $en ? 'Got a project in mind? Let’s make it stand out together.' : 'Un projet en tête ? Démarquons-le ensemble.',
-    'lead' => $en ? 'Free quote, reply within 24h. Tell us where you want to go, we’ll map the way.' : 'Devis gratuit, réponse sous 24h. Dites-nous où vous voulez aller, on trace le chemin.',
-    'cta' => $en ? 'Request a quote →' : 'Demander un devis →',
+    'lead' => $en ? 'Free audit, reply within 24h. Tell us where you want to go, we’ll map the way.' : 'Audit gratuit, réponse sous 24h. Dites-nous où vous voulez aller, on trace le chemin.',
+    'cta' => $en ? 'Request an audit →' : 'Demander un audit →',
     'href' => route('quote'),
   ])
 

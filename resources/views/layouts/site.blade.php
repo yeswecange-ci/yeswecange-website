@@ -29,7 +29,7 @@
       <nav class="hidden items-center gap-1 lg:flex" aria-label="{{ $en ? 'Main navigation' : 'Navigation principale' }}">
         <a href="{{ route('home') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('home') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.home') }}</a>
         <a href="{{ route('services') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('services') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.services') }}</a>
-        <a href="{{ route('realisations') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('realisations') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.realisations') }}</a>
+        <a href="{{ route('certifications') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('certifications') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.certifications') }}</a>
         <a href="{{ route('about') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('about') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.about') }}</a>
         <a href="{{ route('contact') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('contact') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.contact') }}</a>
         <span class="mx-2 h-5 w-px bg-ywc-border-soft"></span>
@@ -116,6 +116,22 @@
     </div>
   </footer>
 </div>
+
+@php
+  $waNumber = '2250777787780';
+  $waMessage = $en
+      ? "Hello 👋, I'm visiting the YesWeCange website and I'd like to know more."
+      : "Bonjour 👋, je viens du site YesWeCange et j'aimerais en savoir plus.";
+@endphp
+<a
+  href="https://wa.me/{{ $waNumber }}?text={{ rawurlencode($waMessage) }}"
+  target="_blank"
+  rel="noopener"
+  aria-label="WhatsApp"
+  class="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-ywc-whatsapp text-white shadow-[0_14px_34px_-10px_rgba(7,94,84,0.6)] transition hover:scale-105 sm:bottom-7 sm:right-7"
+>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 2C6.578 2 2.13 6.447 2.13 11.92c0 1.876.52 3.703 1.505 5.288L2 22l4.939-1.596a9.87 9.87 0 004.874 1.267h.005c5.472 0 9.92-4.447 9.92-9.92 0-2.65-1.032-5.14-2.906-7.014A9.86 9.86 0 0012.05 2zm0 18.16h-.004a8.23 8.23 0 01-4.196-1.152l-.301-.179-3.12 1.014.99-3.043-.198-.312a8.223 8.223 0 01-1.264-4.404c0-4.553 3.706-8.259 8.263-8.259 2.207 0 4.28.86 5.842 2.423a8.203 8.203 0 012.415 5.846c0 4.553-3.706 8.066-8.427 8.066z"/></svg>
+</a>
 
 @include('partials.cookie-banner')
 </body>

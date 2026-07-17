@@ -27,6 +27,7 @@ class Lead extends Model
         'subject',
         'message',
         'budget',
+        'appointment_at',
         'services',
         'status',
         'locale',
@@ -37,6 +38,7 @@ class Lead extends Model
 
     protected $casts = [
         'services' => 'array',
+        'appointment_at' => 'datetime',
         'read_at' => 'datetime',
     ];
 

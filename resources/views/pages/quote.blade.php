@@ -21,12 +21,12 @@
 
         @php
           $perks = $en ? [
-            ['Free & no commitment', 'Get a detailed quote at no cost.'],
+            ['Free & no commitment', 'Get a detailed audit at no cost.'],
             ['Reply within 24h', 'A real human gets back to you, fast.'],
             ['Custom-built', 'Scoped to your goals, budget and timeline.'],
             ['Paris × Abidjan experts', 'Two continents, one dedicated team.'],
           ] : [
-            ['Gratuit & sans engagement', 'Recevez un devis détaillé, sans frais.'],
+            ['Gratuit & sans engagement', 'Recevez un audit détaillé, sans frais.'],
             ['Réponse sous 24h', "Un vrai humain vous recontacte, vite."],
             ['Sur-mesure', 'Calibré sur vos objectifs, budget et délais.'],
             ['Experts Paris × Abidjan', 'Deux continents, une équipe dédiée.'],
@@ -62,17 +62,17 @@
     <div class="mx-auto max-w-7xl px-5 py-16 sm:px-[30px]">
       <div data-breveal class="mb-10 text-center">
         <div class="mb-3 text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $en ? 'How it works' : 'Comment ça marche' }}</div>
-        <h2 class="m-0 font-display text-[clamp(24px,3vw,38px)] font-bold tracking-[-0.02em]">{{ $en ? 'Three steps to your quote' : 'Trois étapes vers votre devis' }}</h2>
+        <h2 class="m-0 font-display text-[clamp(24px,3vw,38px)] font-bold tracking-[-0.02em]">{{ $en ? 'Three steps to your audit' : 'Trois étapes vers votre audit' }}</h2>
       </div>
       @php
         $steps = $en ? [
           ['01', 'You describe your project', 'Fill in the form — a few lines are enough to get started.'],
           ['02', 'We study & scope it', 'Our team analyses your needs and prepares a tailored proposal.'],
-          ['03', 'You get your quote', 'A clear, detailed quote within 24 hours. No commitment.'],
+          ['03', 'You get your audit', 'A clear, detailed audit within 24 hours. No commitment.'],
         ] : [
           ['01', 'Vous décrivez votre projet', 'Remplissez le formulaire — quelques lignes suffisent pour démarrer.'],
           ['02', 'On étudie & cadre', 'Notre équipe analyse vos besoins et prépare une proposition sur-mesure.'],
-          ['03', 'Vous recevez votre devis', 'Un devis clair et détaillé sous 24h. Sans engagement.'],
+          ['03', 'Vous recevez votre audit', 'Un audit clair et détaillé sous 24h. Sans engagement.'],
         ];
       @endphp
       <div data-breveal class="grid gap-4 sm:grid-cols-3">

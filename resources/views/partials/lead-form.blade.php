@@ -4,6 +4,12 @@
     $services = $en
         ? ['Strategy', 'Social Media', 'Data Mining', 'Chatbots & WhatsApp', 'SEO / SEA', 'Branding', 'Training']
         : ['Stratégie', 'Social Media', 'Data Mining', 'Chatbots & WhatsApp', 'SEO / SEA', 'Branding', 'Formation'];
+
+    $officeMessages = [
+        'paris' => $en ? "How can YesWeCange's Paris office help you?" : "Comment l'agence YesWeCange de Paris peut-elle vous aider ?",
+        'abidjan' => $en ? "How can YesWeCange's Abidjan office help you?" : "Comment l'agence YesWeCange d'Abidjan peut-elle vous aider ?",
+    ];
+    $messageValue = old('message', $officeMessages[request('office')] ?? '');
 @endphp
 
 @if (session('lead_success'))
@@ -74,6 +80,24 @@
         <option @selected(old('budget') === '> 50 000 €')>&gt; 50 000 €</option>
       </select>
     </div>
+
+    <div data-appointment-picker data-slots-url="{{ route('quote.slots') }}" class="grid gap-4 sm:grid-cols-2">
+      <input type="hidden" name="appointment_at" data-appointment-input value="{{ old('appointment_at') }}">
+      <div>
+        <label for="lf-appointment-date" class="mb-1.5 block text-[13px] font-bold text-ywc-ink">{{ __('site.contact.form_appointment_date') }} *</label>
+        <input id="lf-appointment-date" type="date" data-appointment-date min="{{ now()->addDay()->toDateString() }}" value="{{ old('appointment_at') ? \Illuminate\Support\Carbon::parse(old('appointment_at'))->toDateString() : '' }}" required class="w-full rounded-xl border border-ywc-border bg-white px-4 py-3 text-[15px] text-ywc-ink outline-none transition focus:border-ywc-blue focus:ring-2 focus:ring-ywc-blue/20">
+      </div>
+      <div>
+        <label class="mb-1.5 block text-[13px] font-bold text-ywc-ink">{{ __('site.contact.form_appointment_time') }} *</label>
+        <div
+          data-appointment-slots
+          data-msg-choose="{{ __('site.contact.form_appointment_choose_date') }}"
+          data-msg-loading="{{ __('site.contact.form_appointment_loading') }}"
+          data-msg-none="{{ __('site.contact.form_appointment_none') }}"
+          class="flex flex-wrap gap-2 pt-1 text-[13.5px] text-ywc-text-muted"
+        >{{ __('site.contact.form_appointment_choose_date') }}</div>
+      </div>
+    </div>
   @else
     <div>
       <label for="lf-subject" class="mb-1.5 block text-[13px] font-bold text-ywc-ink">{{ __('site.contact.form_subject') }}</label>
@@ -83,7 +107,7 @@
 
   <div>
     <label for="lf-message" class="mb-1.5 block text-[13px] font-bold text-ywc-ink">{{ __('site.contact.form_message') }} *</label>
-    <textarea id="lf-message" name="message" rows="5" required class="w-full rounded-xl border border-ywc-border bg-white px-4 py-3 text-[15px] text-ywc-ink outline-none transition focus:border-ywc-blue focus:ring-2 focus:ring-ywc-blue/20">{{ old('message') }}</textarea>
+    <textarea id="lf-message" name="message" rows="5" required class="w-full rounded-xl border border-ywc-border bg-white px-4 py-3 text-[15px] text-ywc-ink outline-none transition focus:border-ywc-blue focus:ring-2 focus:ring-ywc-blue/20">{{ $messageValue }}</textarea>
   </div>
 
   <label class="flex items-start gap-2.5 text-[13px] leading-[1.5] text-ywc-text-soft">

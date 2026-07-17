@@ -216,33 +216,31 @@
     </div>
   </section>
 
-  <!-- EQUIPE -->
+  <!-- AGENCES -->
   <section id="equipe" class="border-y border-ywc-border-soft bg-ywc-bg-soft">
     <div class="mx-auto max-w-7xl px-[30px] py-24">
       <div data-breveal class="mx-auto mb-[46px] max-w-[680px] text-center">
-        <div class="mb-[14px] text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $en ? 'Our team' : 'Notre équipe' }}</div>
-        <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">{{ $en ? 'Experts on two continents, one local culture' : 'Des experts sur deux continents, une culture locale' }}</h2>
+        <div class="mb-[14px] text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $en ? 'Our offices' : 'Nos agences' }}</div>
+        <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">{{ $en ? 'Two offices, one ambition' : 'Deux agences, une seule ambition' }}</h2>
       </div>
-      <div data-breveal class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <div class="rounded-[18px] border border-ywc-border bg-white p-6">
-          <div class="mb-3 text-xs font-bold tracking-[0.04em] text-ywc-blue">ABIDJAN · « babi »</div>
-          <h3 class="mb-[9px] font-display text-lg font-bold tracking-[-0.01em]">{{ $en ? 'Your everyday experts' : 'Vos experts au quotidien' }}</h3>
-          <p class="m-0 text-[13.5px] leading-[1.55] text-ywc-text-soft">{{ $en ? 'Social web, digital and communication — always listening to you.' : 'Web social, numérique et communication digitale, à votre écoute.' }}</p>
+      <div data-breveal class="grid gap-4 sm:grid-cols-2">
+        <div class="group relative overflow-hidden rounded-[24px] border border-ywc-border bg-white p-8 transition hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(10,10,15,0.25)] sm:p-10">
+          <div class="absolute -top-16 -right-16 h-[220px] w-[220px] rounded-full bg-[radial-gradient(circle,rgba(43,77,255,0.10),transparent_65%)]"></div>
+          <div class="relative">
+            <div class="mb-4 text-[12px] font-bold uppercase tracking-[0.08em] text-ywc-blue">Paris</div>
+            <h3 class="m-0 mb-3 font-display text-[clamp(24px,2.6vw,32px)] font-bold leading-[1.06] tracking-[-0.02em]">{{ $en ? 'Paris office' : 'Agence de Paris' }}</h3>
+            <p class="m-0 mb-7 text-[14.5px] leading-[1.6] text-ywc-text-soft">176 avenue Charles de Gaulle<br>92200 Neuilly-sur-Seine<br>+33 1 71 04 07 21</p>
+            <a href="{{ route('quote', ['office' => 'paris']) }}" class="inline-flex items-center gap-2 rounded-xl border border-ywc-blue px-5 py-3 text-[14px] font-bold text-ywc-blue no-underline transition group-hover:bg-ywc-blue group-hover:text-white">{{ $en ? 'This is Paris' : "Ici c'est Paris" }} →</a>
+          </div>
         </div>
-        <div class="rounded-[18px] border border-ywc-border bg-white p-6">
-          <div class="mb-3 text-xs font-bold tracking-[0.04em] text-ywc-blue">PARIS</div>
-          <h3 class="mb-[9px] font-display text-lg font-bold tracking-[-0.01em]">{{ $en ? 'Marketers & engineers' : 'Marketeurs & ingénieurs' }}</h3>
-          <p class="m-0 text-[13.5px] leading-[1.55] text-ywc-text-soft">{{ $en ? 'A team that innovates and anticipates market shifts.' : 'Une équipe qui innove et anticipe les évolutions du marché.' }}</p>
-        </div>
-        <div class="rounded-[18px] border border-ywc-border bg-white p-6">
-          <div class="mb-3 text-xs font-bold tracking-[0.04em] text-ywc-blue">BACK OFFICE</div>
-          <h3 class="mb-[9px] font-display text-lg font-bold tracking-[-0.01em]">Data & strategic planning</h3>
-          <p class="m-0 text-[13.5px] leading-[1.55] text-ywc-text-soft">{{ $en ? 'Researchers and planners analysing data and KPIs.' : 'Researchers et planners pour analyser data et KPIs.' }}</p>
-        </div>
-        <div class="rounded-[18px] bg-ywc-ink p-6 text-white">
-          <div class="mb-3 text-xs font-bold tracking-[0.04em] text-ywc-blue-pale">BAMAKO · MONTRÉAL</div>
-          <h3 class="mb-[9px] font-display text-lg font-bold tracking-[-0.01em]">{{ $en ? 'Going further' : 'Pour aller plus loin' }}</h3>
-          <p class="m-0 text-[13.5px] leading-[1.55] text-[#a8afc0]">{{ $en ? 'Gamification, targeted audiences and conversion optimisation.' : 'Jeux, audiences ciblées et optimisation des conversions.' }}</p>
+        <div class="group relative overflow-hidden rounded-[24px] bg-ywc-ink p-8 text-white transition hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(10,10,15,0.5)] sm:p-10">
+          <div class="absolute -top-16 -right-16 h-[220px] w-[220px] rounded-full bg-[radial-gradient(circle,rgba(43,77,255,0.28),transparent_65%)]"></div>
+          <div class="relative">
+            <div class="mb-4 text-[12px] font-bold uppercase tracking-[0.08em] text-ywc-blue-pale">Abidjan · « babi »</div>
+            <h3 class="m-0 mb-3 font-display text-[clamp(24px,2.6vw,32px)] font-bold leading-[1.06] tracking-[-0.02em] text-white">{{ $en ? 'Abidjan office' : "Agence d'Abidjan" }}</h3>
+            <p class="m-0 mb-7 text-[14.5px] leading-[1.6] text-[#c5cbd8]">Cocody, II Plateaux Vallons<br>Rue Des Jardins<br>+225 58 46 79 51</p>
+            <a href="{{ route('quote', ['office' => 'abidjan']) }}" class="inline-flex items-center gap-2 rounded-xl border border-white px-5 py-3 text-[14px] font-bold text-white no-underline transition group-hover:bg-white group-hover:text-ywc-ink">{{ $en ? 'This is Babi' : "Ici c'est Babi" }} →</a>
+          </div>
         </div>
       </div>
     </div>

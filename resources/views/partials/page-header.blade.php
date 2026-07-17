@@ -7,6 +7,7 @@
         $crumbLabel = match ($routeName) {
             'services' => __('site.nav.services'),
             'realisations' => __('site.nav.realisations'),
+            'certifications' => __('site.nav.certifications'),
             'about' => __('site.nav.about'),
             'faq' => __('site.nav.faq'),
             'contact' => __('site.nav.contact'),

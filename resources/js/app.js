@@ -28,14 +28,14 @@ window.ScrollTrigger = ScrollTrigger;
       { t: 'Branding & Lean Marketing', d: 'A brand that creates emotion and leaves a mark.', icon: '🎨', col: 'span 3', row: 'span 1', href: '/services' },
       { t: 'Training', d: 'We hand you the keys to digital, in practice.', icon: '🎓', col: 'span 3', row: 'span 1', href: '/services' },
     ] : [
-      { t: 'Chatbots & WhatsApp', d: 'On automatise la conversation 24/7 et on qualifie vos leads en continu.', tag: 'À la une', icon: '💬', col: 'span 3', row: 'span 2', dark: true, href: '#chatbots', pills: ['WhatsApp', 'Web', 'Messenger', 'SMS'] },
-      { t: 'Stratégie & Conception', d: 'Positionnement, message, plan d’action à forte valeur ajoutée.', icon: '🎯', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'Chatbot Whatsapp', d: 'On automatise la conversation 24/7 et on qualifie vos leads en continu.', tag: 'À la une', icon: '💬', col: 'span 3', row: 'span 2', dark: true, href: '#chatbots', pills: ['WhatsApp', 'Web', 'Messenger', 'SMS'] },
+      { t: 'Production des kits global', d: 'Positionnement, message, plan d’action à forte valeur ajoutée.', icon: '🎯', col: 'span 3', row: 'span 1', href: '/services' },
       { t: 'Social Media & Comm 360°', d: 'Des contenus qui font réagir, sur tous les canaux.', icon: '📱', col: 'span 3', row: 'span 1', href: '/services' },
-      { t: 'Marketing Intelligence', d: 'Marketing 3.0 et social business, décidés par la data.', icon: '📊', col: 'span 2', row: 'span 1', href: '/services' },
-      { t: 'Data Mining & Tech', d: 'Vos données deviennent audiences et leads.', icon: '🛰️', col: 'span 2', row: 'span 1', href: '/services' },
-      { t: 'Référencement SEO', d: 'Trouvé au bon moment par les bonnes personnes.', icon: '🔍', col: 'span 2', row: 'span 1', href: '/services' },
-      { t: 'Branding & Lean Marketing', d: 'Une marque qui crée l’émotion et marque les esprits.', icon: '🎨', col: 'span 3', row: 'span 1', href: '/services' },
-      { t: 'Formation', d: 'On vous donne les clés du digital, en pratique.', icon: '🎓', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'Publicité Mobile', d: 'Marketing 3.0 et social business, décidés par la data.', icon: '📊', col: 'span 2', row: 'span 1', href: '/services' },
+      { t: 'Referencement SEO & IA search', d: 'Vos données deviennent audiences et leads.', icon: '🛰️', col: 'span 2', row: 'span 1', href: '/services' },
+      { t: 'Digitalisation IA / process', d: 'Trouvé au bon moment par les bonnes personnes.', icon: '🔍', col: 'span 2', row: 'span 1', href: '/services' },
+      { t: 'Developpement IT', d: 'Une marque qui crée l’émotion et marque les esprits.', icon: '🎨', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'DATA analytics', d: 'On vous donne les clés du digital, en pratique.', icon: '🎓', col: 'span 3', row: 'span 1', href: '/services' },
     ];
     bento.innerHTML = items.map(s => {
       const dark = s.dark;
@@ -58,9 +58,7 @@ window.ScrollTrigger = ScrollTrigger;
   const cgrid = root.querySelector('[data-bclient-grid]');
   if (cgrid) {
     const logos = [
-      { n: 'Orange CI', file: 'orange-ci.png' },
       { n: 'Biofar', file: 'biofar.png' },
-      { n: 'Bracongo', file: 'braconfologo.png' },
       { n: 'Mercedes', file: 'mercedes.png' },
       { n: 'Bridge Bank', file: 'bridge-bank.png' },
       { n: 'Suzuki', file: 'suzuki.png' },
@@ -69,13 +67,21 @@ window.ScrollTrigger = ScrollTrigger;
       { n: 'Yamaha', file: 'yamaha.png' },
       { n: 'Toyota CI', file: 'toyota.png' },
       { n: 'Mitsubishi', file: 'mitsubishi.png' },
-      { n: 'Solibra', file: 'solibra.png' },
-      { n: 'Lonaci', file: 'lonaci.png' },
-      { n: 'Brakina', file: 'brakina.png' },
       { n: 'BAD', file: 'bad.png' },
       { n: 'Ecobank', file: 'ecobank.png' },
       { n: 'BNI', file: 'bni.png' },
       { n: 'nhood', file: 'nhood.png' },
+      { n: "Air Côte d'Ivoire", file: "logo-air-civ.png" },
+      { n: "Sunu Assurance", file: "sunu.png" },
+      { n: "Techno", file: "techno.jpg" },
+      { n: "La vache qui rit", file: "lavachequirit.jpg" },
+      { n: "L'oreal", file: "l'oreal.png" },
+      { n: "Proparco", file: "PROPARCO.png" },
+      { n: "Robank", file: "robank.jpeg" },
+      { n: "Sans Gel", file: "sangel.jpeg" },
+      { n: "Kiabu", file: "kiabi.jpg" },
+      { n: "Tv5 Monde", file: "tv5.jpeg" },
+      { n: "Yango", file: "yango.png" },
     ];
     const cards = logos.map(l => {
       return `<div class="b-client">
@@ -306,4 +312,69 @@ window.ScrollTrigger = ScrollTrigger;
   });
 
   panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
+})();
+
+// ===== appointment slot picker (quote/audit form) =====
+(function () {
+  document.querySelectorAll('[data-appointment-picker]').forEach((picker) => {
+    const dateInput = picker.querySelector('[data-appointment-date]');
+    const slotsBox = picker.querySelector('[data-appointment-slots]');
+    const valueInput = picker.querySelector('[data-appointment-input]');
+    if (!dateInput || !slotsBox || !valueInput) return;
+
+    const slotsUrl = picker.dataset.slotsUrl;
+    const msgChoose = slotsBox.dataset.msgChoose;
+    const msgLoading = slotsBox.dataset.msgLoading;
+    const msgNone = slotsBox.dataset.msgNone;
+
+    const renderMessage = (text) => {
+      slotsBox.innerHTML = '';
+      slotsBox.textContent = text;
+    };
+
+    const selectSlot = (btn) => {
+      slotsBox.querySelectorAll('button').forEach((b) => b.classList.remove('border-transparent', 'bg-ywc-blue', 'text-white'));
+      btn.classList.add('border-transparent', 'bg-ywc-blue', 'text-white');
+      valueInput.value = btn.dataset.value;
+    };
+
+    const loadSlots = async () => {
+      valueInput.value = '';
+      if (!dateInput.value) {
+        renderMessage(msgChoose);
+        return;
+      }
+
+      renderMessage(msgLoading);
+
+      try {
+        const res = await fetch(`${slotsUrl}?date=${encodeURIComponent(dateInput.value)}`, {
+          headers: { Accept: 'application/json' },
+        });
+        const data = await res.json();
+        const slots = data.slots || [];
+
+        if (!slots.length) {
+          renderMessage(msgNone);
+          return;
+        }
+
+        slotsBox.innerHTML = '';
+        slots.forEach((slot) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.dataset.value = slot.value;
+          btn.textContent = slot.label;
+          btn.className = 'rounded-full border border-ywc-border-soft bg-ywc-bg-soft px-4 py-2 font-semibold text-ywc-text-soft transition hover:border-ywc-blue';
+          btn.addEventListener('click', () => selectSlot(btn));
+          slotsBox.appendChild(btn);
+        });
+      } catch {
+        renderMessage(msgNone);
+      }
+    };
+
+    dateInput.addEventListener('change', loadSlots);
+    if (dateInput.value) loadSlots();
+  });
 })();

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome')->name('home');
 Route::view('/services', 'services')->name('services');
 Route::view('/realisations', 'realisations')->name('realisations');
+Route::view('/certifications', 'pages.certifications')->name('certifications');
 Route::view('/a-propos', 'pages.about')->name('about');
 Route::view('/faq', 'pages.faq')->name('faq');
 
@@ -23,6 +24,7 @@ Route::view('/faq', 'pages.faq')->name('faq');
 */
 Route::get('/contact', [ContactController::class, 'showContact'])->name('contact');
 Route::get('/devis', [ContactController::class, 'showQuote'])->name('quote');
+Route::get('/devis/creneaux', [ContactController::class, 'slots'])->name('quote.slots');
 Route::post('/contact', [ContactController::class, 'store'])
     ->middleware('throttle:6,1')
     ->name('contact.store');
