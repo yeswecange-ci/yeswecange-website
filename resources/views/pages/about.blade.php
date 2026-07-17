@@ -142,12 +142,12 @@
           [$iconGlobe, 'Dual culture', 'Paris sets the rigor, Abidjan sets the energy. Neither one waters down the other.'],
           [$iconRocket, 'Innovation', 'Chatbots, AI, automation: we ship what others are still presenting in slide decks.'],
         ] : [
-          [$iconTarget, 'Audace', "L'idée trop sage, c'est la première qu'on jette. Si elle ressemble à celle du concurrent, elle n'est pas prête."],
-          [$iconChart, 'Data-driven', "L'opinion est un point de départ, jamais une décision. Chaque choix est confronté aux audiences, aux KPIs, aux résultats."],
-          [$iconUsers, 'Partenariat', "On n'est pas un prestataire qu'on renouvelle. On est une équipe qu'on garde — c'est tout l'enjeu."],
-          [$iconZap, 'Réactivité', "Une réponse sous 24h, toujours. On avance avant que vous ayez à redemander."],
-          [$iconGlobe, 'Double culture', "Paris impose la rigueur, Abidjan apporte l'énergie. Aucune des deux ne dilue l'autre."],
-          [$iconRocket, 'Innovation', "Chatbots, IA, automatisation : on livre ce que d'autres présentent encore en PowerPoint."],
+          [$iconTarget, 'Excellence', "offrir d’excellents produits numériques sur le plan du design, de la technologie et du contenu."],
+          [$iconChart, 'Adaptation culturelle et locale', "contenu adapté à la culture locale et nous adaptons à votre marché."],
+          [$iconUsers, 'Création d’emplois locaux', "créer des emplois localement."],
+          [$iconZap, 'Esprit d’entreprise positif', "Une culture d’entreprise dynamique, humaine et motivante."],
+          [$iconGlobe, 'Innovation stratégique et technologique', "savoir-faire à la fois stratégique et technologique."],
+          [$iconRocket, 'Accompagnement personnalisé', "suivi personnalisé avant, pendant et après la réalisation de votre projet."],
         ];
       @endphp
       @foreach($values as $v)
