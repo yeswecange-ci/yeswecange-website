@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="{{ asset('images/logo_ywc.png') }}">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Manrope',system-ui,-apple-system,sans-serif;background:#eef1f6;color:#0a0a0f;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;-webkit-font-smoothing:antialiased}
+  body{font-family:'Helvetica Neue',Helvetica,Arial,system-ui,-apple-system,sans-serif;background:#eef1f6;color:#0a0a0f;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;-webkit-font-smoothing:antialiased}
   .card{max-width:520px;width:100%;text-align:center}
   .logo{height:64px;width:auto;margin:0 auto 32px}
   .code{font-size:clamp(72px,16vw,128px);font-weight:800;line-height:1;letter-spacing:-0.04em;background:linear-gradient(135deg,#2b4dff,#7e8fff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}

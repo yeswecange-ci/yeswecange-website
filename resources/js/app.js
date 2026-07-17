@@ -73,7 +73,7 @@ window.ScrollTrigger = ScrollTrigger;
       { n: "Sunu Assurance", file: "sunu.png" },
       { n: "Techno", file: "techno.jpg" },
       { n: "La vache qui rit", file: "lavachequirit.jpg" },
-      { n: "L'oreal", file: "l'oreal.png" },
+      { n: "L'oreal", file: "loreal.png" },
       { n: "Proparco", file: "PROPARCO.png" },
       { n: "Robank", file: "robank.jpeg" },
       { n: "Sans Gel", file: "sangel.jpeg" },

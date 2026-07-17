@@ -127,7 +127,7 @@
   <section id="services" class="mx-auto max-w-7xl px-[30px] py-20">
     <div data-breveal class="mx-auto mb-[46px] max-w-[680px] text-center">
       <div class="mb-[14px] text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $en ? 'Our expertise' : 'Nos expertises' }}</div>
-      <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">{{ $en ? 'A single partner for your entire strategy' : 'Un partenaire unique pour votre stratégie globale' }}</h2>
+      <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">{{ $en ? 'A single partner for your entire strategy' : 'Un partenaire unique pour votre stratégie d\'acquisition et de retention client' }}</h2>
     </div>
     <div data-bbento class="b-bento"></div>
     <div class="mt-9 text-center">
