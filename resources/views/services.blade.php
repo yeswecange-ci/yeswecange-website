@@ -140,10 +140,22 @@
           <p class="m-0 mb-7 max-w-[440px] text-[14.5px] leading-[1.6] text-ywc-text-soft">{{ $en
             ? 'WhatsApp, web, Messenger, SMS… We deploy assistants that qualify your leads, reply 24/7 and feed your data — and never sleep.'
             : "WhatsApp, web, Messenger, SMS… On déploie des assistants qui qualifient vos leads, répondent 24/7 et nourrissent votre data — sans jamais dormir." }}</p>
-          <a href="{{ route('home') }}#chatbots" class="inline-flex items-center gap-2 rounded-xl bg-ywc-blue px-6 py-3 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">{{ $en ? 'Discover the platform →' : 'Découvrir la plateforme →' }}</a>
+          <a href="https://api.whatsapp.com/send/?phone=2250777787780&text=Bonjour+%EF%BF%BD%2C+je+viens+du+site+YesWeCange+et+j%27aimerais+en+savoir+plus.&type=phone_number&app_absent=0" class="inline-flex items-center gap-2 rounded-xl bg-ywc-blue px-6 py-3 text-sm font-bold text-white no-underline transition hover:bg-ywc-blue-mid">{{ $en ? 'Discover the platform →' : 'Découvrir la plateforme →' }}</a>
         </div>
-        <div class="overflow-hidden rounded-[18px] border border-ywc-border">
-          <img src="{{ asset('images/chatbot2.webp') }}" alt="{{ $en ? 'YesWeCange chatbot platform' : 'Plateforme chatbot YesWeCange' }}" width="600" height="450" loading="lazy" decoding="async" class="h-full w-full object-cover">
+        <div class="flex justify-center">
+          <div class="relative w-full max-w-[300px] rounded-[30px] border border-[#262936] bg-[#15171f] p-[11px] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.5)]">
+            <div class="overflow-hidden rounded-[26px] bg-white">
+              <div class="flex items-center gap-2.5 bg-ywc-whatsapp px-4 py-[15px] text-white">
+                <span class="flex h-[34px] w-[34px] items-center justify-center overflow-hidden rounded-full bg-white"><img src="{{ asset('images/logo_mark.png') }}" alt="YesWeCange" class="h-[28px] w-[28px]"></span>
+                <div class="leading-[1.2]"><div class="text-[14.5px] font-bold">YesWeCange</div><div class="text-[11px] opacity-80">WhatsApp Business</div></div>
+              </div>
+              <div id="ywc-chatb-services" class="flex min-h-[308px] flex-col gap-2.5 bg-[#e9e2db] p-3.5 [background-image:radial-gradient(rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:14px_14px]"></div>
+              <div class="flex items-center gap-2.5 bg-[#f2f2f2] px-3.5 py-[11px]">
+                <div class="flex-1 rounded-full bg-white px-3.5 py-2 text-[12.5px] text-ywc-text-faint">{{ $en ? 'Write a message…' : 'Écrivez un message…' }}</div>
+                <span class="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-ywc-whatsapp text-white">➤</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

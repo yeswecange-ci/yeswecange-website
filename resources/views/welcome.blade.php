@@ -37,15 +37,72 @@
 
   <!-- TRUST CHIPS -->
   <section class="px-[30px] py-[30px]">
-    <div data-breveal class="flex flex-wrap justify-center gap-2.5">
-      <span class="rounded-full border border-ywc-border-soft bg-ywc-bg-soft px-4 py-[9px] text-sm font-semibold text-ywc-text-soft">{{ $en ? 'Strategy' : 'Stratégie' }}</span>
-      <span class="rounded-full border border-ywc-border-soft bg-ywc-bg-soft px-4 py-[9px] text-sm font-semibold text-ywc-text-soft">Social Media</span>
-      <span class="rounded-full border border-ywc-border-soft bg-ywc-bg-soft px-4 py-[9px] text-sm font-semibold text-ywc-text-soft">Data Mining</span>
-      <span class="rounded-full bg-ywc-blue px-4 py-[9px] text-sm font-semibold text-white">Chatbots</span>
-      <span class="rounded-full border border-ywc-border-soft bg-ywc-bg-soft px-4 py-[9px] text-sm font-semibold text-ywc-text-soft">SEO</span>
-      <span class="rounded-full border border-ywc-border-soft bg-ywc-bg-soft px-4 py-[9px] text-sm font-semibold text-ywc-text-soft">Branding</span>
-      <span class="rounded-full border border-ywc-border-soft bg-ywc-bg-soft px-4 py-[9px] text-sm font-semibold text-ywc-text-soft">{{ $en ? 'Training' : 'Formation' }}</span>
-      <span class="rounded-full border border-ywc-border-soft bg-ywc-bg-soft px-4 py-[9px] text-sm font-semibold text-ywc-text-soft">OuiSnap</span>
+    @php
+      $chips = [
+        'strategy' => [
+          'label' => $en ? 'Strategy' : 'Stratégie',
+          'text' => $en
+            ? 'Positioning, message, audiences and action plan — every decision guided by your business goals.'
+            : "Positionnement, message, audiences et plan d'action — chaque décision guidée par vos objectifs business.",
+        ],
+        'social' => [
+          'label' => 'Social Media',
+          'text' => $en
+            ? 'Content that sparks reactions, adapted to every channel. We run your communities and orchestrate your campaigns.'
+            : 'Des contenus qui font réagir, déclinés sur tous les canaux. On anime vos communautés et orchestre vos campagnes.',
+        ],
+        'data' => [
+          'label' => 'Data Mining',
+          'text' => $en
+            ? 'We turn data into decisions: targeted audiences, KPIs and qualified leads.'
+            : 'On transforme la donnée en décisions : audiences ciblées, KPIs et leads qualifiés.',
+        ],
+        'chatbots' => [
+          'label' => 'Chatbots',
+          'text' => $en
+            ? 'Automate conversation 24/7 on WhatsApp, web, Messenger and SMS — lead qualification and support.'
+            : 'Automatisez la conversation 24/7 sur WhatsApp, web, Messenger et SMS — qualification de leads et support.',
+        ],
+        'seo' => [
+          'label' => 'SEO',
+          'text' => $en
+            ? 'Be found at the right time by the right people: organic search, paid campaigns and optimisation.'
+            : 'Soyez trouvé au bon moment par les bonnes personnes : référencement naturel, campagnes payantes et optimisation.',
+        ],
+        'branding' => [
+          'label' => 'Branding',
+          'text' => $en
+            ? 'A brand that creates emotion and leaves a mark: consistent identity, design and experience everywhere.'
+            : "Une marque qui crée l'émotion et marque les esprits : identité, design et expérience cohérents partout.",
+        ],
+        'training' => [
+          'label' => $en ? 'Training' : 'Formation',
+          'text' => $en
+            ? 'We hand you the keys to digital, in practice — tailored workshops to make your teams self-sufficient.'
+            : 'On vous donne les clés du digital, en pratique — ateliers sur-mesure pour rendre vos équipes autonomes.',
+        ],
+        'ouisnap' => [
+          'label' => 'OuiSnap',
+          'text' => $en
+            ? 'OuiSnap — description coming soon.'
+            : 'OuiSnap — description à venir.',
+        ],
+      ];
+    @endphp
+    <div data-breveal data-chip-group class="flex flex-wrap justify-center gap-2.5">
+      @foreach ($chips as $key => $chip)
+        <button
+          type="button"
+          data-chip
+          data-chip-target="{{ $key }}"
+          class="rounded-full border px-4 py-[9px] text-sm font-semibold transition {{ $key === 'chatbots' ? 'is-active border-transparent bg-ywc-blue text-white' : 'border-ywc-border-soft bg-ywc-bg-soft text-ywc-text-soft hover:border-ywc-border-blue' }}"
+        >{{ $chip['label'] }}</button>
+      @endforeach
+    </div>
+    <div data-breveal class="mx-auto mt-6 max-w-[560px] rounded-2xl border border-ywc-border-soft bg-ywc-bg-soft px-6 py-5 text-center">
+      @foreach ($chips as $key => $chip)
+        <p data-chip-panel="{{ $key }}" class="m-0 text-[15px] font-bold leading-[1.6] text-ywc-ink {{ $key === 'chatbots' ? 'animate-ywc-fade-in' : 'hidden' }}">{{ $chip['text'] }}</p>
+      @endforeach
     </div>
   </section>
 

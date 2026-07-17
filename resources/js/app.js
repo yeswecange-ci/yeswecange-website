@@ -130,6 +130,7 @@ window.ScrollTrigger = ScrollTrigger;
 
   const c1 = root.querySelector('#ywc-chatb');
   const c2 = root.querySelector('#ywc-chatb2');
+  const c3 = root.querySelector('#ywc-chatb-services');
   const s1 = EN ? [
     ['Hi, I want more clients 🚀', 'them'],
     ['We’ve got you: strategy + chatbots.', 'me'],
@@ -152,8 +153,20 @@ window.ScrollTrigger = ScrollTrigger;
     ['Et un devis ?', 'them'],
     ['Gratuit, sous 24h 🎉', 'me'],
   ];
+  const s3 = EN ? [
+    ['Are you available on weekends?', 'them'],
+    ['Yes, our chatbot replies 24/7 ✅', 'me'],
+    ['And if I want a human?', 'them'],
+    ['One click and an advisor takes over 👋', 'me'],
+  ] : [
+    ['Vous êtes disponibles le week-end ?', 'them'],
+    ['Oui, notre chatbot répond 24/7 ✅', 'me'],
+    ['Et si je veux parler à un humain ?', 'them'],
+    ['Un conseiller prend le relais en un clic 👋', 'me'],
+  ];
   startChat(c1, s1, bubblePlain);
   startChat(c2, s2, bubbleWa);
+  startChat(c3, s3, bubbleWa);
 
   // ===== GSAP animations =====
   function waitGsap() {
@@ -270,6 +283,34 @@ window.ScrollTrigger = ScrollTrigger;
   }
 
   waitGsap();
+})();
+
+// ===== trust chips (home) — click to reveal description =====
+(function () {
+  document.querySelectorAll('[data-chip-group]').forEach((group) => {
+    const chips = group.querySelectorAll('[data-chip]');
+    const panels = document.querySelectorAll('[data-chip-panel]');
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        if (chip.classList.contains('is-active')) return;
+        chips.forEach((c) => {
+          c.classList.remove('is-active', 'border-transparent', 'bg-ywc-blue', 'text-white');
+          c.classList.add('border-ywc-border-soft', 'bg-ywc-bg-soft', 'text-ywc-text-soft');
+        });
+        chip.classList.add('is-active', 'border-transparent', 'bg-ywc-blue', 'text-white');
+        chip.classList.remove('border-ywc-border-soft', 'bg-ywc-bg-soft', 'text-ywc-text-soft');
+        panels.forEach((p) => {
+          const isTarget = p.dataset.chipPanel === chip.dataset.chipTarget;
+          p.classList.toggle('hidden', !isTarget);
+          p.classList.remove('animate-ywc-fade-in');
+          if (isTarget) {
+            void p.offsetWidth;
+            p.classList.add('animate-ywc-fade-in');
+          }
+        });
+      });
+    });
+  });
 })();
 
 // ===== generic category filter chips =====

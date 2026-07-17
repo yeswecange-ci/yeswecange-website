@@ -64,6 +64,14 @@
     .animate-ywcb-dash {
         animation: ywcb-dash 3s linear infinite;
     }
+
+    @keyframes ywc-fade-in {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-ywc-fade-in {
+        animation: ywc-fade-in 0.4s ease-out;
+    }
 }
 
 /* Markup injected at runtime by resources/js/app.js (bento grid + client wall) */
