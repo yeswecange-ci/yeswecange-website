@@ -198,18 +198,6 @@
         padding: 4px 10px;
         border-radius: 999px;
     }
-    .b-bento__watermark {
-        position: absolute;
-        right: -28px;
-        bottom: -28px;
-        width: 230px;
-        height: auto;
-        opacity: 0.13;
-        filter: brightness(0) invert(1);
-        pointer-events: none;
-        z-index: 0;
-    }
-
     .b-client-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
