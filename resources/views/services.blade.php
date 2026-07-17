@@ -75,14 +75,16 @@
     <div data-breveal class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       @foreach ($services as $s)
         <article class="group flex flex-col overflow-hidden rounded-[20px] border border-ywc-border bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(10,10,15,0.28)] {{ ($s['feature'] ?? false) ? 'sm:col-span-2 lg:col-span-1' : '' }}">
-          <div class="relative aspect-[16/10] overflow-hidden">
-            @isset($s['img'])
+          @isset($s['img'])
+            <div class="relative aspect-[16/10] overflow-hidden">
               <img src="{{ asset('images/' . $s['img']) }}" alt="{{ $s['t'] }}" width="600" height="375" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
-            @else
-            @endisset
-            <span class="absolute left-3.5 top-3.5 rounded-full bg-white/90 px-2.5 py-1 font-display text-[11px] font-bold text-ywc-blue shadow-sm">{{ $s['n'] }}</span>
-          </div>
+              <span class="absolute left-3.5 top-3.5 rounded-full bg-white/90 px-2.5 py-1 font-display text-[11px] font-bold text-ywc-blue shadow-sm">{{ $s['n'] }}</span>
+            </div>
+          @endisset
           <div class="flex flex-1 flex-col p-6">
+            @unless(isset($s['img']))
+              <span class="mb-3 font-display text-[11px] font-bold text-ywc-blue">{{ $s['n'] }}</span>
+            @endunless
             <h3 class="m-0 mb-2 font-display text-[17px] font-bold leading-[1.2] tracking-[-0.01em]">{{ $s['t'] }}</h3>
             <p class="m-0 mb-4 flex-1 text-[13.5px] leading-[1.55] text-ywc-text-soft">{{ $s['d'] }}</p>
             <div class="flex flex-wrap gap-1.5">
