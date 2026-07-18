@@ -3,8 +3,8 @@
         <h2 class="font-display text-xl font-bold tracking-[-0.01em] text-ywc-ink">Ajouter un service</h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+    <div>
+        <div class="max-w-3xl mx-auto">
             <form method="POST" action="{{ route('admin.services.store') }}" enctype="multipart/form-data" class="rounded-2xl border border-ywc-border bg-white p-6 space-y-6">
                 @csrf
                 @include('admin.services._form', ['service' => null])

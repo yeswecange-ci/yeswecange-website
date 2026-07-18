@@ -25,20 +25,20 @@ class SeoController extends Controller
             ['name' => 'legal.cookies', 'priority' => '0.2', 'freq' => 'yearly', 'view' => 'pages/legal/cookies.blade.php'],
         ];
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
+        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
 
         foreach ($routes as $route) {
-            $viewPath = resource_path('views/' . $route['view']);
+            $viewPath = resource_path('views/'.$route['view']);
             $lastmod = is_file($viewPath) ? date('Y-m-d', filemtime($viewPath)) : null;
 
             $xml .= "  <url>\n";
-            $xml .= '    <loc>' . e(route($route['name'])) . "</loc>\n";
+            $xml .= '    <loc>'.e(route($route['name']))."</loc>\n";
             if ($lastmod) {
-                $xml .= '    <lastmod>' . $lastmod . "</lastmod>\n";
+                $xml .= '    <lastmod>'.$lastmod."</lastmod>\n";
             }
-            $xml .= '    <changefreq>' . $route['freq'] . "</changefreq>\n";
-            $xml .= '    <priority>' . $route['priority'] . "</priority>\n";
+            $xml .= '    <changefreq>'.$route['freq']."</changefreq>\n";
+            $xml .= '    <priority>'.$route['priority']."</priority>\n";
             $xml .= "  </url>\n";
         }
 
@@ -52,7 +52,7 @@ class SeoController extends Controller
         $content = "User-agent: *\n";
         $content .= "Allow: /\n";
         $content .= "Disallow: /locale/\n\n";
-        $content .= 'Sitemap: ' . route('sitemap') . "\n";
+        $content .= 'Sitemap: '.route('sitemap')."\n";
 
         return response($content, 200, ['Content-Type' => 'text/plain']);
     }

@@ -43,7 +43,7 @@ class LeadController extends Controller
     public function update(Request $request, Lead $lead): RedirectResponse
     {
         $data = $request->validate([
-            'status' => ['required', 'in:' . implode(',', [
+            'status' => ['required', 'in:'.implode(',', [
                 Lead::STATUS_NEW,
                 Lead::STATUS_IN_PROGRESS,
                 Lead::STATUS_WON,

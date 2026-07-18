@@ -10,6 +10,7 @@ class LegalPage extends Model
     use HasLocalizedContent;
 
     public const MENTIONS = 'mentions-legales';
+
     public const TERMS = 'conditions-generales';
 
     protected $fillable = [

@@ -36,7 +36,7 @@ class LegalPageSeeder extends Seeder
 
     private function mentionsEn(): string
     {
-        return <<<HTML
+        return <<<'HTML'
             <h2>Site publisher</h2>
             <p>
                 This site is published by <strong>YesWeCange</strong>, a digital communication agency.<br>
@@ -86,7 +86,7 @@ class LegalPageSeeder extends Seeder
 
     private function mentionsFr(): string
     {
-        return <<<HTML
+        return <<<'HTML'
             <h2>Éditeur du site</h2>
             <p>
                 Le présent site est édité par <strong>YesWeCange</strong>, agence de communication digitale.<br>
@@ -136,7 +136,7 @@ class LegalPageSeeder extends Seeder
 
     private function termsEn(): string
     {
-        return <<<HTML
+        return <<<'HTML'
             <p>
                 These general terms govern the services provided by YesWeCange to its clients. Any order implies
                 unconditional acceptance of these terms. They may be supplemented by specific conditions set out in
@@ -200,7 +200,7 @@ class LegalPageSeeder extends Seeder
 
     private function termsFr(): string
     {
-        return <<<HTML
+        return <<<'HTML'
             <p>
                 Les présentes conditions générales régissent les prestations de services fournies par YesWeCange à ses
                 clients. Toute commande implique l'acceptation sans réserve des présentes conditions. Elles peuvent être

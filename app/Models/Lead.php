@@ -10,12 +10,17 @@ class Lead extends Model
     use HasFactory;
 
     public const TYPE_CONTACT = 'contact';
+
     public const TYPE_QUOTE = 'quote';
 
     public const STATUS_NEW = 'new';
+
     public const STATUS_IN_PROGRESS = 'in_progress';
+
     public const STATUS_WON = 'won';
+
     public const STATUS_LOST = 'lost';
+
     public const STATUS_ARCHIVED = 'archived';
 
     protected $fillable = [

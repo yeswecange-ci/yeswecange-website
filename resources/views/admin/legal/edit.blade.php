@@ -3,8 +3,8 @@
         <h2 class="font-display text-xl font-bold tracking-[-0.01em] text-ywc-ink">Modifier « {{ $page->title_fr }} »</h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+    <div>
+        <div class="max-w-3xl mx-auto">
             <x-auth-session-status class="mb-4 rounded-lg bg-ywc-bg-soft px-4 py-2" :status="session('status') ? 'Page enregistrée.' : null" />
 
             <form method="POST" action="{{ route('admin.legal.update', $page) }}" class="rounded-2xl border border-ywc-border bg-white p-6 space-y-6">

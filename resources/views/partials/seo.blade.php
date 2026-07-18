@@ -4,7 +4,7 @@
     $seoDescription = trim($__env->yieldContent('meta_description', $seoEn
         ? 'YesWeCange, the 360° digital agency that makes you stand out. Strategy, social media, data mining, WhatsApp chatbots, SEO and branding — between Paris and Abidjan.'
         : "YesWeCange, l'agence digitale 360° qui vous démarque. Stratégie, social media, data mining, chatbots WhatsApp, SEO et branding — entre Paris et Abidjan."));
-    $seoImagePath = $__env->yieldContent('meta_image', 'images/troupeau-mouton-noir.png');
+    $seoImagePath = $__env->yieldContent('meta_image', 'images/og-cover.jpg');
     $seoImage = asset($seoImagePath);
     [$seoImageW, $seoImageH] = @getimagesize(public_path($seoImagePath)) ?: [1200, 630];
     $canonical = $__env->yieldContent('canonical', url()->current());

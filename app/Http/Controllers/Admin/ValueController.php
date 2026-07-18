@@ -56,7 +56,7 @@ class ValueController extends Controller
     {
         $data = $request->validate([
             'order_column' => ['nullable', 'integer'],
-            'icon_key' => ['required', 'string', 'in:' . implode(',', array_keys(ValueIcons::all()))],
+            'icon_key' => ['required', 'string', 'in:'.implode(',', array_keys(ValueIcons::all()))],
             'title_fr' => ['required', 'string', 'max:160'],
             'title_en' => ['required', 'string', 'max:160'],
             'description_fr' => ['required', 'string', 'max:1000'],

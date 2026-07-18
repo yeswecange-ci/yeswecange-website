@@ -3,8 +3,8 @@
         <h2 class="font-display text-xl font-bold tracking-[-0.01em] text-ywc-ink">Ajouter une valeur</h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+    <div>
+        <div class="max-w-3xl mx-auto">
             <form method="POST" action="{{ route('admin.values.store') }}" class="rounded-2xl border border-ywc-border bg-white p-6 space-y-6">
                 @csrf
                 @include('admin.values._form', ['value' => null])

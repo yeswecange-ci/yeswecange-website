@@ -3,8 +3,8 @@
         <h2 class="font-display text-xl font-bold tracking-[-0.01em] text-ywc-ink">Leads</h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+    <div>
+        <div class="max-w-7xl mx-auto space-y-6">
             <form method="GET" class="flex flex-wrap items-end gap-3 rounded-2xl border border-ywc-border bg-white p-4">
                 <div>
                     <x-input-label for="type" value="Type" />

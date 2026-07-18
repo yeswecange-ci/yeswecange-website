@@ -3,8 +3,8 @@
         <h2 class="font-display text-xl font-bold tracking-[-0.01em] text-ywc-ink">Pages légales</h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+    <div>
+        <div class="max-w-3xl mx-auto">
             <div class="overflow-hidden rounded-2xl border border-ywc-border bg-white divide-y divide-ywc-border-soft">
                 @foreach ($pages as $page)
                     <div class="flex items-center justify-between gap-4 p-4">

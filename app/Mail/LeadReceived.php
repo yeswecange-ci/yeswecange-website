@@ -13,9 +13,7 @@ class LeadReceived extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public function __construct(public Lead $lead)
-    {
-    }
+    public function __construct(public Lead $lead) {}
 
     public function envelope(): Envelope
     {

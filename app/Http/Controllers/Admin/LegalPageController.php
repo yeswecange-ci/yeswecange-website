@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\LegalPage;
+use App\Support\HtmlSanitizer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -30,6 +31,11 @@ class LegalPageController extends Controller
             'body_fr' => ['required', 'string'],
             'body_en' => ['required', 'string'],
         ]);
+
+        // Le corps est rendu en HTML brut ({!! !!}) : on purge tout script/attribut
+        // dangereux avant stockage pour éviter tout XSS stocké.
+        $data['body_fr'] = HtmlSanitizer::clean($data['body_fr']);
+        $data['body_en'] = HtmlSanitizer::clean($data['body_en']);
 
         $legalPage->update($data);
 
