@@ -45,7 +45,7 @@ class CompanyValueSeeder extends Seeder
                 'icon_key' => 'globe',
                 'title_en' => 'Dual culture',
                 'title_fr' => 'Innovation stratégique et technologique',
-                'description_en' => "Paris sets the rigor, Abidjan sets the energy. Neither one waters down the other.",
+                'description_en' => 'Paris sets the rigor, Abidjan sets the energy. Neither one waters down the other.',
                 'description_fr' => 'savoir-faire à la fois stratégique et technologique.',
             ],
             [

@@ -1,14 +1,14 @@
 <?php
+
 /**
  * Convertit les PNG/JPG de public/images en WebP (qualité 82).
  * Usage : php scripts/convert-webp.php
  */
-
-$dir = __DIR__ . '/../public/images';
+$dir = __DIR__.'/../public/images';
 $quality = 82;
 $exts = ['png', 'jpg', 'jpeg'];
 
-$files = glob($dir . '/*.*');
+$files = glob($dir.'/*.*');
 $totalBefore = 0;
 $totalAfter = 0;
 
@@ -26,7 +26,8 @@ foreach ($files as $file) {
     };
 
     if (! $img) {
-        echo "✗ Échec lecture : " . basename($file) . PHP_EOL;
+        echo '✗ Échec lecture : '.basename($file).PHP_EOL;
+
         continue;
     }
 
@@ -48,15 +49,15 @@ foreach ($files as $file) {
     printf(
         "✓ %-28s %6s → %6s  (-%d%%)\n",
         basename($webp),
-        round($before / 1024) . 'K',
-        round($after / 1024) . 'K',
+        round($before / 1024).'K',
+        round($after / 1024).'K',
         round((1 - $after / $before) * 100)
     );
 }
 
 printf(
     "\nTotal : %s → %s  (-%d%%)\n",
-    round($totalBefore / 1024 / 1024, 1) . ' Mo',
-    round($totalAfter / 1024 / 1024, 1) . ' Mo',
+    round($totalBefore / 1024 / 1024, 1).' Mo',
+    round($totalAfter / 1024 / 1024, 1).' Mo',
     $totalBefore ? round((1 - $totalAfter / $totalBefore) * 100) : 0
 );

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LeadRequest;
 use App\Mail\LeadReceived;
 use App\Models\Lead;
 use App\Support\AppointmentSlots;
 use Carbon\CarbonImmutable;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -49,30 +51,10 @@ class ContactController extends Controller
      * Traite à la fois le formulaire rapide (section #contact) et le
      * formulaire détaillé des pages /contact et /devis.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(LeadRequest $request): RedirectResponse
     {
-        // Anti-spam honeypot : un bot remplit ce champ caché.
-        if ($request->filled('website')) {
-            return back()->with('contact_success', true);
-        }
-
-        $isQuote = $request->input('type') === Lead::TYPE_QUOTE;
-
-        $data = $request->validate([
-            'name' => ['required', 'string', 'max:120'],
-            'email' => ['required', 'email', 'max:190'],
-            'phone' => ['nullable', 'string', 'max:40'],
-            'company' => ['nullable', 'string', 'max:120'],
-            'subject' => ['nullable', 'string', 'max:160'],
-            'service' => ['nullable', 'string', 'max:120'],
-            'services' => ['nullable', 'array'],
-            'services.*' => ['string', 'max:60'],
-            'budget' => ['nullable', 'string', 'max:60'],
-            'appointment_at' => [$isQuote ? 'required' : 'nullable', 'date'],
-            'message' => ['required', 'string', 'max:5000'],
-            'type' => ['nullable', 'in:contact,quote'],
-            'consent' => ['accepted'],
-        ]);
+        $data = $request->validated();
+        $isQuote = ($data['type'] ?? null) === Lead::TYPE_QUOTE;
 
         if ($isQuote) {
             $slot = CarbonImmutable::parse($data['appointment_at']);
@@ -107,9 +89,11 @@ class ContactController extends Controller
                 'ip_address' => $request->ip(),
                 'user_agent' => $request->userAgent(),
             ]);
-        } catch (\Illuminate\Database\QueryException $e) {
-            // Deux visiteurs ont réservé le même créneau au même instant : le premier gagne.
-            if ($isQuote && str_contains($e->getMessage(), 'appointment_at')) {
+        } catch (QueryException $e) {
+            // Deux visiteurs ont réservé le même créneau au même instant : le premier
+            // gagne. SQLSTATE 23000 = violation de contrainte d'intégrité (index unique
+            // sur appointment_at), plus robuste qu'une recherche dans le message SQL.
+            if ($isQuote && $e->getCode() === '23000') {
                 return back()
                     ->withInput()
                     ->withErrors(['appointment_at' => __('site.contact.form_appointment_taken')]);

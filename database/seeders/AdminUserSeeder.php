@@ -24,14 +24,13 @@ class AdminUserSeeder extends Seeder
             $generated = true;
         }
 
-        User::updateOrCreate(
-            ['email' => $email],
-            [
-                'name' => 'Admin YesWeCange',
-                'password' => $password,
-                'is_admin' => true,
-            ]
-        );
+        // `is_admin` n'est volontairement pas "mass-assignable" (voir App\Models\User) :
+        // on l'affecte directement pour éviter qu'il ne soit ignoré par le fillable.
+        $user = User::firstOrNew(['email' => $email]);
+        $user->name = 'Admin YesWeCange';
+        $user->password = $password; // hashé automatiquement (cast "hashed")
+        $user->is_admin = true;
+        $user->save();
 
         if ($generated) {
             $this->command?->warn("Compte admin créé : {$email} / mot de passe : {$password}");

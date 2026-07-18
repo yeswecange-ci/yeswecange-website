@@ -3,8 +3,8 @@
         <h2 class="font-display text-xl font-bold tracking-[-0.01em] text-ywc-ink">{{ $lead->name }}</h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8 space-y-6">
+    <div>
+        <div class="max-w-3xl mx-auto space-y-6">
             <x-auth-session-status class="rounded-lg bg-ywc-bg-soft px-4 py-2" :status="session('status') === 'lead-updated' ? 'Statut mis à jour.' : null" />
 
             <div class="rounded-2xl border border-ywc-border bg-white p-6 space-y-4">
