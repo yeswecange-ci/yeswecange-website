@@ -29,25 +29,7 @@
 
   <!-- SERVICES GRID (visuel) -->
   @php
-    $services = $en ? [
-      ['n' => '01', 't' => 'Strategy & Design', 'd' => "Positioning, message, audiences and action plan. Every decision guided by your business goals.", 'tags' => ['Positioning', 'Audit', 'Roadmap'], 'icon' => '🎯'],
-      ['n' => '02', 't' => 'Social Media & 360° Communication', 'd' => "Content that sparks reactions, adapted to every channel. We run your communities and orchestrate your campaigns.", 'tags' => ['Community management', 'Content', 'Campaigns']],
-      ['n' => '03', 't' => 'Marketing Intelligence', 'd' => "We turn data into decisions. Monitoring, social listening and performance-driven management.", 'tags' => ['Social listening', 'KPIs', 'Reporting'], 'icon' => '📊'],
-      ['n' => '04', 't' => 'Web & Mobile Development', 'd' => "Custom sites, apps and platforms designed for performance and user experience.", 'tags' => ['Websites', 'Applications', 'UX/UI']],
-      ['n' => '05', 't' => 'Chatbots & WhatsApp', 'd' => "Automate conversation 24/7 on WhatsApp, web, Messenger and SMS. Lead qualification and support.", 'tags' => ['WhatsApp', 'Web assistant', 'Messenger'], 'feature' => true],
-      ['n' => '06', 't' => 'Search (SEO/SEA)', 'd' => "Be found at the right time by the right people. Organic search, paid campaigns and optimisation.", 'tags' => ['SEO', 'Google Ads', 'Social Ads'], ],
-      ['n' => '07', 't' => 'Branding & Lean Marketing', 'd' => "A brand that creates emotion and leaves a mark. Consistent identity, design and experience everywhere.", 'tags' => ['Visual identity', 'Art direction', 'Print'], 'icon' => '🎨'],
-      ['n' => '08', 't' => 'Training', 'd' => "We hand you the keys to digital, in practice. Tailored workshops to make your teams self-sufficient.", 'tags' => ['Social media', 'Tools', 'Workshops'], 'icon' => '🎓'],
-    ] : [
-      ['n' => '01', 't' => 'Stratégie omnicale', 'd' => "Positionnement, message, audiences et plan d'action. Chaque décision guidée par vos objectifs business.", 'tags' => ['Positionnement', 'Audit', 'Roadmap'], 'icon' => '🎯'],
-      ['n' => '02', 't' => 'Production des kits global', 'd' => "Des contenus qui font réagir, déclinés sur tous les canaux. On anime vos communautés et orchestre vos campagnes.", 'tags' => ['Community management', 'Contenu', 'Campagnes']],
-      ['n' => '03', 't' => 'Publicité Mobile', 'd' => "On transforme la donnée en décisions. Veille, social listening et pilotage par la performance.", 'tags' => ['Social listening', 'KPIs', 'Reporting'], 'icon' => '📊'],
-      ['n' => '04', 't' => 'Referencement SEO & IA search', 'd' => "Sites, applications et plateformes sur-mesure, pensés pour la performance et l'expérience utilisateur.", 'tags' => ['Sites web', 'Applications', 'UX/UI']],
-      ['n' => '05', 't' => 'Digitalisation IA / process', 'd' => "Automatisez la conversation 24/7 sur WhatsApp, web, Messenger et SMS. Qualification de leads et support.", 'tags' => ['WhatsApp', 'Assistant web', 'Messenger'], 'feature' => true],
-      ['n' => '06', 't' => 'Developpement IT', 'd' => "Soyez trouvé au bon moment par les bonnes personnes. Référencement naturel, campagnes payantes et optimisation.", 'tags' => ['SEO', 'Google Ads', 'Social Ads'],],
-      ['n' => '07', 't' => 'DATA analytics ', 'd' => "Une marque qui crée l'émotion et marque les esprits. Identité, design et expérience cohérents partout.", 'tags' => ['Identité visuelle', 'Direction artistique', 'Print'], 'icon' => '🎨'],
-      ['n' => '08', 't' => 'Chatbot Whatsapp', 'd' => "On vous donne les clés du digital, en pratique. Ateliers sur-mesure pour rendre vos équipes autonomes.", 'tags' => ['Social media', 'Outils', 'Ateliers'], 'icon' => '🎓' ],
-    ];
+    $services = \App\Models\Service::orderBy('order_column')->get();
   @endphp
 
   @push('head')
@@ -56,13 +38,13 @@
       '@context' => 'https://schema.org',
       '@type' => 'ItemList',
       'name' => $en ? 'YesWeCange services' : 'Services YesWeCange',
-      'itemListElement' => collect($services)->values()->map(fn ($s, $i) => [
+      'itemListElement' => $services->values()->map(fn ($s, $i) => [
           '@type' => 'ListItem',
           'position' => $i + 1,
           'item' => [
               '@type' => 'Service',
-              'name' => $s['t'],
-              'description' => $s['d'],
+              'name' => $s->localized('title'),
+              'description' => $s->localized('description'),
               'provider' => ['@type' => 'Organization', 'name' => 'YesWeCange', 'url' => url('/')],
               'areaServed' => ['FR', 'CI'],
           ],
@@ -74,21 +56,21 @@
   <section class="mx-auto max-w-7xl px-5 py-16 sm:px-[30px] sm:py-20">
     <div data-breveal class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       @foreach ($services as $s)
-        <article class="group flex flex-col overflow-hidden rounded-[20px] border border-ywc-border bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(10,10,15,0.28)] {{ ($s['feature'] ?? false) ? 'sm:col-span-2 lg:col-span-1' : '' }}">
-          @isset($s['img'])
+        <article class="group flex flex-col overflow-hidden rounded-[20px] border border-ywc-border bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(10,10,15,0.28)] {{ $s->feature ? 'sm:col-span-2 lg:col-span-1' : '' }}">
+          @isset($s->image)
             <div class="relative aspect-[16/10] overflow-hidden">
-              <img src="{{ asset('images/' . $s['img']) }}" alt="{{ $s['t'] }}" width="600" height="375" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
-              <span class="absolute left-3.5 top-3.5 rounded-full bg-white/90 px-2.5 py-1 font-display text-[11px] font-bold text-ywc-blue shadow-sm">{{ $s['n'] }}</span>
+              <img src="{{ asset('storage/' . $s->image) }}" alt="{{ $s->localized('title') }}" width="600" height="375" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+              <span class="absolute left-3.5 top-3.5 rounded-full bg-white/90 px-2.5 py-1 font-display text-[11px] font-bold text-ywc-blue shadow-sm">{{ sprintf('%02d', $loop->iteration) }}</span>
             </div>
           @endisset
           <div class="flex flex-1 flex-col p-6">
-            @unless(isset($s['img']))
-              <span class="mb-3 font-display text-[11px] font-bold text-ywc-blue">{{ $s['n'] }}</span>
+            @unless($s->image)
+              <span class="mb-3 font-display text-[11px] font-bold text-ywc-blue">{{ sprintf('%02d', $loop->iteration) }}</span>
             @endunless
-            <h3 class="m-0 mb-2 font-display text-[17px] font-bold leading-[1.2] tracking-[-0.01em]">{{ $s['t'] }}</h3>
-            <p class="m-0 mb-4 flex-1 text-[13.5px] leading-[1.55] text-ywc-text-soft">{{ $s['d'] }}</p>
+            <h3 class="m-0 mb-2 font-display text-[17px] font-bold leading-[1.2] tracking-[-0.01em]">{{ $s->localized('title') }}</h3>
+            <p class="m-0 mb-4 flex-1 text-[13.5px] leading-[1.55] text-ywc-text-soft">{{ $s->localized('description') }}</p>
             <div class="flex flex-wrap gap-1.5">
-              @foreach ($s['tags'] as $tag)
+              @foreach ($s->localized('tags') as $tag)
                 <span class="rounded-full bg-ywc-bg-soft px-2.5 py-1 text-[11.5px] font-semibold text-ywc-text-soft">{{ $tag }}</span>
               @endforeach
             </div>

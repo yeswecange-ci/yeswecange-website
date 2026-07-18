@@ -1,9 +1,13 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Alpine from 'alpinejs';
 
 gsap.registerPlugin(ScrollTrigger);
 window.gsap = gsap;
 window.ScrollTrigger = ScrollTrigger;
+
+window.Alpine = Alpine;
+Alpine.start();
 
 (function () {
   const root = document.getElementById('ywc-b');

@@ -126,35 +126,13 @@
     </div>
     <div data-breveal class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       @php
-        $iconAttrs = 'width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
-        $iconTarget = "<svg $iconAttrs><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><circle cx=\"12\" cy=\"12\" r=\"6\"></circle><circle cx=\"12\" cy=\"12\" r=\"2\"></circle></svg>";
-        $iconChart = "<svg $iconAttrs><line x1=\"18\" y1=\"20\" x2=\"18\" y2=\"10\"></line><line x1=\"12\" y1=\"20\" x2=\"12\" y2=\"4\"></line><line x1=\"6\" y1=\"20\" x2=\"6\" y2=\"14\"></line></svg>";
-        $iconUsers = "<svg $iconAttrs><path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle><path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"></path><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"></path></svg>";
-        $iconZap = "<svg $iconAttrs><polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"></polygon></svg>";
-        $iconGlobe = "<svg $iconAttrs><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"></path></svg>";
-        $iconRocket = "<svg $iconAttrs><path d=\"M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z\"></path><path d=\"M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z\"></path><path d=\"M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0\"></path><path d=\"M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5\"></path></svg>";
-
-        $values = $en ? [
-          [$iconTarget, 'Boldness', 'The safe idea is the one we throw out first. If it looks like everyone else\'s, it\'s not ready.'],
-          [$iconChart, 'Data-driven', 'Opinions are a starting point, not a decision. Every choice is checked against audiences, KPIs, results.'],
-          [$iconUsers, 'Partnership', 'We\'re not a vendor you renew. We\'re a team you keep — that\'s the whole point.'],
-          [$iconZap, 'Reactivity', 'You get an answer within 24h, always. We move before you have to ask twice.'],
-          [$iconGlobe, 'Dual culture', 'Paris sets the rigor, Abidjan sets the energy. Neither one waters down the other.'],
-          [$iconRocket, 'Innovation', 'Chatbots, AI, automation: we ship what others are still presenting in slide decks.'],
-        ] : [
-          [$iconTarget, 'Excellence', "offrir d’excellents produits numériques sur le plan du design, de la technologie et du contenu."],
-          [$iconChart, 'Adaptation culturelle et locale', "contenu adapté à la culture locale et nous adaptons à votre marché."],
-          [$iconUsers, 'Création d’emplois locaux', "créer des emplois localement."],
-          [$iconZap, 'Esprit d’entreprise positif', "Une culture d’entreprise dynamique, humaine et motivante."],
-          [$iconGlobe, 'Innovation stratégique et technologique', "savoir-faire à la fois stratégique et technologique."],
-          [$iconRocket, 'Accompagnement personnalisé', "suivi personnalisé avant, pendant et après la réalisation de votre projet."],
-        ];
+        $values = \App\Models\CompanyValue::orderBy('order_column')->get();
       @endphp
       @foreach($values as $v)
         <div class="rounded-[18px] border border-ywc-border bg-white p-6">
-          <div class="mb-3 text-2xl text-ywc-blue">{!! $v[0] !!}</div>
-          <h3 class="mb-2 font-display text-lg font-bold tracking-[-0.01em]">{{ $v[1] }}</h3>
-          <p class="m-0 text-[14px] leading-[1.55] text-ywc-text-soft">{{ $v[2] }}</p>
+          <div class="mb-3 text-2xl text-ywc-blue">{!! \App\Support\ValueIcons::svg($v->icon_key) !!}</div>
+          <h3 class="mb-2 font-display text-lg font-bold tracking-[-0.01em]">{{ $v->localized('title') }}</h3>
+          <p class="m-0 text-[14px] leading-[1.55] text-ywc-text-soft">{{ $v->localized('description') }}</p>
         </div>
       @endforeach
     </div>
