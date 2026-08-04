@@ -9,16 +9,13 @@
           <p class="mt-3.5 mb-9 max-w-[420px] text-[16px] leading-[1.55] text-[#d4dbff]">Contactez-nous dès maintenant pour un devis gratuit. On vous répond sous 24h.</p>
 
           <div class="grid gap-5">
-            <div>
-              <div class="mb-[7px] text-[11.5px] font-bold uppercase tracking-[0.05em] text-ywc-blue-faint">Agence de Paris</div>
-              <div class="text-[14.5px] leading-[1.5] text-[#edf1ff]">176 avenue Charles de Gaulle, 92200 Neuilly-sur-Seine · +33 1 71 04 07 21</div>
-            </div>
-            <div class="h-px bg-white/20"></div>
-            <div>
-              <div class="mb-[7px] text-[11.5px] font-bold uppercase tracking-[0.05em] text-ywc-blue-faint">Agence d'Abidjan</div>
-              <div class="text-[14.5px] leading-[1.5] text-[#edf1ff]">Cocody, II Plateaux Vallons, Rue Des Jardins · +225 58 46 79 51</div>
-            </div>
-            <div class="h-px bg-white/20"></div>
+            @foreach (\App\Models\OfficeLocation::orderBy('order_column')->get() as $office)
+              <div>
+                <div class="mb-[7px] text-[11.5px] font-bold uppercase tracking-[0.05em] text-ywc-blue-faint">{{ $office->localized('title') }}</div>
+                <div class="text-[14.5px] leading-[1.5] text-[#edf1ff]">{{ str_replace("\n", ', ', $office->address) }} · {{ $office->phone }}</div>
+              </div>
+              <div class="h-px bg-white/20"></div>
+            @endforeach
             <div>
               <div class="mb-[7px] text-[11.5px] font-bold uppercase tracking-[0.05em] text-ywc-blue-faint">Horaires</div>
               <div class="text-[14.5px] leading-[1.5] text-[#edf1ff]">Lundi – Samedi · 09h – 18h</div>

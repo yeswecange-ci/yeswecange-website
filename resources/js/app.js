@@ -421,3 +421,66 @@ Alpine.start();
     if (dateInput.value) loadSlots();
   });
 })();
+
+// ===== Graphiques admin (dashboard back-office) =====
+(function () {
+  const canvases = document.querySelectorAll('canvas[data-chart]');
+  if (!canvases.length) return;
+
+  import('chart.js/auto').then(({ default: Chart }) => {
+    const blue = '#2b4dff';
+    const statusColors = ['#2b4dff', '#f59e0b', '#2bb673', '#ef4444', '#8a92a3'];
+
+    canvases.forEach((canvas) => {
+      const labels = JSON.parse(canvas.dataset.labels || '[]');
+      const values = JSON.parse(canvas.dataset.values || '[]');
+
+      if (canvas.dataset.chart === 'leads-trend') {
+        new Chart(canvas, {
+          type: 'line',
+          data: {
+            labels,
+            datasets: [{
+              data: values,
+              borderColor: blue,
+              backgroundColor: 'rgba(43,77,255,0.08)',
+              tension: 0.35,
+              fill: true,
+              pointRadius: 0,
+              borderWidth: 2,
+            }],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              x: { ticks: { maxTicksLimit: 8 }, grid: { display: false } },
+              y: { beginAtZero: true, ticks: { precision: 0 }, grid: { color: '#eaecf2' } },
+            },
+          },
+        });
+      }
+
+      if (canvas.dataset.chart === 'leads-status') {
+        new Chart(canvas, {
+          type: 'doughnut',
+          data: {
+            labels,
+            datasets: [{
+              data: values,
+              backgroundColor: statusColors,
+              borderWidth: 0,
+            }],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '65%',
+            plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, padding: 12, font: { size: 11 } } } },
+          },
+        });
+      }
+    });
+  });
+})();

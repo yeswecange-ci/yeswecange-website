@@ -24,7 +24,7 @@ return [
         'privacy' => 'Confidentialité',
         'terms' => 'CGV',
         'cookies' => 'Cookies',
-        'tagline' => 'Ne suivez pas le troupeau. Démarquez-vous.',
+        'tagline' => 'Agence Growth • AI • Data.',
         'nav_title' => 'Navigation',
         'legal_title' => 'Informations légales',
         'follow' => 'Suivez-nous',

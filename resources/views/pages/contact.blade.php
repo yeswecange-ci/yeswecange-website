@@ -1,14 +1,14 @@
 @extends('layouts.site')
 
-@section('title', __('site.contact.title') . ' — YesWeCange')
-@section('meta_description', __('site.contact.lead'))
+@section('title', $texts['contact.header.title']->localized('value') . ' — YesWeCange')
+@section('meta_description', $texts['contact.header.lead']->localized('value'))
 
 @section('content')
 
   @include('partials.page-header', [
-    'eyebrow' => __('site.contact.eyebrow'),
-    'title' => __('site.contact.title'),
-    'lead' => __('site.contact.lead'),
+    'eyebrow' => $texts['contact.header.eyebrow']->localized('value'),
+    'title' => $texts['contact.header.title']->localized('value'),
+    'lead' => $texts['contact.header.lead']->localized('value'),
   ])
 
   <section class="mx-auto max-w-7xl px-5 py-16 sm:px-[30px] sm:py-20">
@@ -21,16 +21,13 @@
 
       {{-- Coordonnées --}}
       <aside data-breveal class="grid content-start gap-4">
-        <a href="tel:+33171040721" class="block rounded-2xl border border-ywc-border bg-ywc-bg-soft p-6 no-underline transition hover:border-ywc-border-blue">
-          <div class="mb-[7px] flex items-center gap-2 text-[11.5px] font-bold uppercase tracking-[0.05em] text-ywc-blue"><span>📍</span>{{ __('site.contact.paris') }}</div>
-          <div class="text-[15px] leading-[1.5] text-ywc-text">176 avenue Charles de Gaulle, 92200 Neuilly-sur-Seine</div>
-          <div class="mt-1 text-[15px] font-semibold text-ywc-blue">+33 1 71 04 07 21</div>
-        </a>
-        <a href="tel:+22558467951" class="block rounded-2xl border border-ywc-border bg-ywc-bg-soft p-6 no-underline transition hover:border-ywc-border-blue">
-          <div class="mb-[7px] flex items-center gap-2 text-[11.5px] font-bold uppercase tracking-[0.05em] text-ywc-blue"><span>📍</span>{{ __('site.contact.abidjan') }}</div>
-          <div class="text-[15px] leading-[1.5] text-ywc-text">Cocody, II Plateaux Vallons, Rue Des Jardins</div>
-          <div class="mt-1 text-[15px] font-semibold text-ywc-blue">+225 58 46 79 51</div>
-        </a>
+        @foreach (\App\Models\OfficeLocation::orderBy('order_column')->get() as $office)
+          <a href="tel:{{ str_replace(' ', '', $office->phone) }}" class="block rounded-2xl border border-ywc-border bg-ywc-bg-soft p-6 no-underline transition hover:border-ywc-border-blue">
+            <div class="mb-[7px] flex items-center gap-2 text-[11.5px] font-bold uppercase tracking-[0.05em] text-ywc-blue"><span>📍</span>{{ $office->localized('title') }}</div>
+            <div class="text-[15px] leading-[1.5] text-ywc-text">{{ str_replace("\n", ', ', $office->address) }}</div>
+            <div class="mt-1 text-[15px] font-semibold text-ywc-blue">{{ $office->phone }}</div>
+          </a>
+        @endforeach
         <a href="mailto:contact@yeswecange.com" class="block rounded-2xl border border-ywc-border bg-ywc-bg-soft p-6 no-underline transition hover:border-ywc-border-blue">
           <div class="mb-[7px] flex items-center gap-2 text-[11.5px] font-bold uppercase tracking-[0.05em] text-ywc-blue"><span>✉️</span>E-mail</div>
           <div class="text-[15px] font-semibold text-ywc-text">contact@yeswecange.com</div>

@@ -1,19 +1,15 @@
 @php $en = app()->getLocale() === 'en'; @endphp
 @extends('layouts.site')
 
-@section('title', ($en ? 'Certifications' : 'Certifications') . ' — YesWeCange')
-@section('meta_description', $en
-    ? 'The certifications and partnerships that back up our expertise, between Paris and Abidjan.'
-    : "Les certifications et partenariats qui garantissent notre expertise, entre Paris et Abidjan.")
+@section('title', 'Certifications — YesWeCange')
+@section('meta_description', $texts['certifications.header.lead']->localized('value'))
 
 @section('content')
 
   @include('partials.page-header', [
-    'eyebrow' => $en ? 'Certifications' : 'Certifications',
-    'title' => $en ? 'Expertise you can<br><span class="text-ywc-blue">verify.</span>' : 'Une expertise<br><span class="text-ywc-blue">vérifiable.</span>',
-    'lead' => $en
-        ? "The certifications and partnerships that back up the way we work."
-        : "Les certifications et partenariats qui garantissent la façon dont nous travaillons.",
+    'eyebrow' => $texts['certifications.header.eyebrow']->localized('value'),
+    'title' => $texts['certifications.header.title']->localized('value'),
+    'lead' => $texts['certifications.header.lead']->localized('value'),
   ])
 
   {{-- GRILLE CERTIFICATIONS --}}
@@ -23,8 +19,8 @@
     @endphp
 
     <div data-breveal class="mx-auto mb-12 max-w-[680px] text-center">
-      <div class="mb-3.5 text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $en ? 'Our credentials' : 'Nos accréditations' }}</div>
-      <h2 class="m-0 font-display text-[clamp(28px,3.4vw,44px)] font-bold leading-[1.06] tracking-[-0.03em]">{{ $en ? 'Recognised expertise' : 'Une expertise reconnue' }}</h2>
+      <div class="mb-3.5 text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $texts['certifications.section.eyebrow']->localized('value') }}</div>
+      <h2 class="m-0 font-display text-[clamp(28px,3.4vw,44px)] font-bold leading-[1.06] tracking-[-0.03em]">{{ $texts['certifications.section.title']->localized('value') }}</h2>
     </div>
 
     <div data-breveal class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -39,9 +35,9 @@
   </section>
 
   @include('partials.cta-banner', [
-    'title' => $en ? 'Ready to stand out?' : 'Prêt à vous démarquer ?',
-    'lead' => $en ? "Tell us about your project — we'll reply within 24h." : "Parlez-nous de votre projet — on vous répond sous 24h.",
-    'cta' => $en ? 'Start a project →' : 'Démarrer un projet →',
+    'title' => $texts['certifications.cta.title']->localized('value'),
+    'lead' => $texts['certifications.cta.lead']->localized('value'),
+    'cta' => $texts['certifications.cta.cta_label']->localized('value'),
     'href' => route('quote'),
   ])
 

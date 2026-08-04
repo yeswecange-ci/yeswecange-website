@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             CertificationSeeder::class,
             CompanyValueSeeder::class,
             LegalPageSeeder::class,
+            HomeContentSeeder::class,
+            PagesContentSeeder::class,
         ]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LeadRequest;
 use App\Mail\LeadReceived;
 use App\Models\Lead;
+use App\Models\SiteText;
 use App\Support\AppointmentSlots;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\QueryException;
@@ -18,12 +19,18 @@ class ContactController extends Controller
 {
     public function showContact(): View
     {
-        return view('pages.contact', ['type' => Lead::TYPE_CONTACT]);
+        return view('pages.contact', [
+            'type' => Lead::TYPE_CONTACT,
+            'texts' => SiteText::where('group', 'contact')->get()->keyBy('key'),
+        ]);
     }
 
     public function showQuote(): View
     {
-        return view('pages.quote', ['type' => Lead::TYPE_QUOTE]);
+        return view('pages.quote', [
+            'type' => Lead::TYPE_QUOTE,
+            'texts' => SiteText::where('group', 'quote')->get()->keyBy('key'),
+        ]);
     }
 
     /**

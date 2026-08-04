@@ -69,6 +69,30 @@
             @endforeach
         </div>
 
+        {{-- Graphiques --}}
+        <div class="grid gap-6 lg:grid-cols-3">
+            <div class="rounded-2xl border border-ywc-border bg-white p-6 lg:col-span-2">
+                <h3 class="mb-4 font-display text-base font-bold text-ywc-ink">Leads — 30 derniers jours</h3>
+                <div class="h-64">
+                    <canvas
+                        data-chart="leads-trend"
+                        data-labels="{{ json_encode(array_column($leadsTrend, 'date')) }}"
+                        data-values="{{ json_encode(array_column($leadsTrend, 'count')) }}"
+                    ></canvas>
+                </div>
+            </div>
+            <div class="rounded-2xl border border-ywc-border bg-white p-6">
+                <h3 class="mb-4 font-display text-base font-bold text-ywc-ink">Répartition par statut</h3>
+                <div class="h-64">
+                    <canvas
+                        data-chart="leads-status"
+                        data-labels="{{ json_encode(array_keys($leadsByStatus)) }}"
+                        data-values="{{ json_encode(array_values($leadsByStatus)) }}"
+                    ></canvas>
+                </div>
+            </div>
+        </div>
+
         <div class="grid gap-6 lg:grid-cols-3">
             {{-- Derniers leads --}}
             <div class="rounded-2xl border border-ywc-border bg-white lg:col-span-2">

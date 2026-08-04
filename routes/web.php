@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SeoController;
 use App\Models\LegalPage;
@@ -13,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 | Pages publiques
 |--------------------------------------------------------------------------
 */
-Route::view('/', 'welcome')->name('home');
-Route::view('/services', 'services')->name('services');
-Route::view('/realisations', 'realisations')->name('realisations');
-Route::view('/certifications', 'pages.certifications')->name('certifications');
-Route::view('/a-propos', 'pages.about')->name('about');
-Route::view('/faq', 'pages.faq')->name('faq');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/services', [PageController::class, 'services'])->name('services');
+Route::get('/realisations', [PageController::class, 'realisations'])->name('realisations');
+Route::get('/certifications', [PageController::class, 'certifications'])->name('certifications');
+Route::get('/a-propos', [PageController::class, 'about'])->name('about');
+Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +84,17 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('services', Admin\ServiceController::class)->except('show');
     Route::resource('certifications', Admin\CertificationController::class)->except('show');
     Route::resource('values', Admin\ValueController::class)->except('show');
+
+    Route::resource('trust-chips', Admin\TrustChipController::class)->except('show');
+    Route::resource('stats', Admin\StatController::class)->except('show');
+    Route::resource('chatbot-channels', Admin\ChatbotChannelController::class)->except('show');
+    Route::resource('testimonials', Admin\TestimonialController::class)->except('show');
+    Route::resource('office-locations', Admin\OfficeLocationController::class)->except('show');
+    Route::resource('faq-items', Admin\FaqItemController::class)->except('show');
+    Route::resource('portfolio-items', Admin\PortfolioItemController::class)->except('show');
+
+    Route::get('site-texts/{group}', [Admin\SiteTextController::class, 'edit'])->name('site-texts.edit');
+    Route::put('site-texts/{group}', [Admin\SiteTextController::class, 'update'])->name('site-texts.update');
 
     Route::get('legal', [Admin\LegalPageController::class, 'index'])->name('legal.index');
     Route::get('legal/{legalPage:slug}/edit', [Admin\LegalPageController::class, 'edit'])->name('legal.edit');
