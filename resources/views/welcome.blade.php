@@ -9,6 +9,7 @@
 
 @section('content')
 
+
   <!-- HERO -->
   <section id="top" class="relative overflow-hidden bg-ywc-bg">
     <div class="absolute inset-0">
