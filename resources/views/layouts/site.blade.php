@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="H0o1TMh8dbL4Vc0507W_b9wBzT8RIB9dFyHYNkh4jVA" />
+<meta name="msvalidate.01" content="7F61C7996EC87EF17F3420CCD78650F9" />
 @include('partials.seo')
 @php $en = app()->getLocale() === 'en'; @endphp
 <script>window.YWC_LOCALE = "{{ app()->getLocale() }}";</script>

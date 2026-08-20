@@ -17,6 +17,181 @@
     ],
   ])
 
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://yeswecange.com/services#webpage",
+      "url": "https://yeswecange.com/services",
+      "name": "Services | YesWeCange",
+      "description": "Découvrez les services de YesWeCange en stratégie digitale, production de contenus, data analytics, publicité, SEO, IA, développement IT et automatisation.",
+      "isPartOf": {
+        "@id": "https://yeswecange.com/#website"
+      },
+      "about": {
+        "@id": "https://yeswecange.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://yeswecange.com/services#services"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://yeswecange.com/services#services",
+      "name": "Services proposés par YesWeCange",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "@id": "https://yeswecange.com/services#strategie-omnicanale",
+            "name": "Stratégie omnicanale",
+            "serviceType": "Stratégie omnicanale",
+            "description": "Nous définissons votre positionnement, vos messages, vos audiences et votre plan d’action pour construire une stratégie omnicanale cohérente, alignée sur vos objectifs business.",
+            "provider": {
+              "@id": "https://yeswecange.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "@id": "https://yeswecange.com/services#production-kits-global",
+            "name": "Production des kits global",
+            "serviceType": "Production de contenus",
+            "description": "Nous concevons et déclinons des contenus adaptés à vos différents canaux de communication pour renforcer votre visibilité, engager vos communautés et accompagner vos campagnes.",
+            "provider": {
+              "@id": "https://yeswecange.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "@id": "https://yeswecange.com/services#datamining-analytics",
+            "name": "Datamining & analytics",
+            "serviceType": "Datamining et analytics",
+            "description": "Nous exploitons vos données pour identifier les opportunités de croissance, optimiser vos parcours d’acquisition et de conversion et piloter vos performances à partir d’indicateurs clés.",
+            "provider": {
+              "@id": "https://yeswecange.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "@id": "https://yeswecange.com/services#publicite-mobile",
+            "name": "Publicité Mobile",
+            "serviceType": "Publicité mobile",
+            "description": "Nous concevons et optimisons des campagnes publicitaires adaptées aux usages mobiles afin d’atteindre les bonnes audiences, générer de l’engagement et améliorer vos performances d’acquisition.",
+            "provider": {
+              "@id": "https://yeswecange.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "@id": "https://yeswecange.com/services#video",
+            "name": "Vidéo",
+            "serviceType": "Production vidéo",
+            "description": "Nous créons des contenus vidéo à fort impact, de la captation au tournage, en passant par l’animation 2D/3D, l’animatique et le motion design, pour donner vie à vos projets.",
+            "provider": {
+              "@id": "https://yeswecange.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "@id": "https://yeswecange.com/services#referencement-seo-ia-search",
+            "name": "Référencement SEO & IA Search",
+            "serviceType": "Référencement SEO et IA Search",
+            "description": "Nous optimisons votre présence dans les moteurs de recherche et les nouveaux environnements de recherche alimentés par l’IA afin d’améliorer votre visibilité et votre capacité à être trouvé par vos audiences.",
+            "provider": {
+              "@id": "https://yeswecange.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Service",
+            "@id": "https://yeswecange.com/services#digitalisation-ia-process",
+            "name": "Digitalisation IA / process",
+            "serviceType": "Digitalisation et automatisation par l’IA",
+            "description": "Nous intégrons l’intelligence artificielle et les outils digitaux à vos processus pour automatiser certaines tâches, améliorer votre efficacité opérationnelle et fluidifier l’expérience client.",
+            "provider": {
+              "@id": "https://yeswecange.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "@id": "https://yeswecange.com/services#developpement-it",
+            "name": "Développement IT",
+            "serviceType": "Développement informatique",
+            "description": "Nous concevons des sites web, applications et plateformes sur mesure, pensés pour répondre à vos besoins métiers tout en offrant une expérience utilisateur performante.",
+            "provider": {
+              "@id": "https://yeswecange.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Service",
+            "@id": "https://yeswecange.com/services#data-analytics",
+            "name": "DATA analytics",
+            "serviceType": "Data analytics",
+            "description": "Nous transformons vos données en informations exploitables grâce à des tableaux de bord, des analyses et des indicateurs de performance qui facilitent vos décisions et l’optimisation de vos actions.",
+            "provider": {
+              "@id": "https://yeswecange.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Service",
+            "@id": "https://yeswecange.com/services#chatbot-whatsapp",
+            "name": "Chatbot WhatsApp",
+            "serviceType": "Chatbot WhatsApp",
+            "description": "Nous concevons des assistants conversationnels automatisés sur WhatsApp et d’autres canaux pour qualifier vos prospects, répondre aux demandes et assurer un accompagnement disponible 24h/24.",
+            "provider": {
+              "@id": "https://yeswecange.com/#organization"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+@endpush
+
+
   <!-- SERVICES GRID (visuel) -->
   @php
     $services = \App\Models\Service::orderBy('order_column')->get();

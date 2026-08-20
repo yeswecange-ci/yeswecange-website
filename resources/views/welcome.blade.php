@@ -9,6 +9,72 @@
 
 @section('content')
 
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yeswecange.com/#organization",
+      "name": "YesWeCange",
+      "url": "https://yeswecange.com/",
+      "description": "YesWeCange est une agence spécialisée dans le webmarketing, l'intelligence artificielle et la performance digitale en Afrique.",
+
+      "telephone": [
+        "+225 58 46 79 51",
+        "+33 1 71 04 07 21"
+      ],
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Rue Des Jardins, 176 avenue Charles de Gaulle",
+          "addressLocality": "Cocody, II Plateaux Vallons",
+          "addressCountry": "CI"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "176 avenue Charles de Gaulle",
+          "postalCode": "92200",
+          "addressLocality": "Neuilly-sur-Seine",
+          "addressCountry": "FR"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/YesWeCange",
+        "https://x.com/yeswecange",
+        "https://fr.linkedin.com/company/yeswecange",
+        "https://www.instagram.com/yeswecangeagency/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yeswecange.com/#website",
+      "url": "https://yeswecange.com/",
+      "name": "YesWeCange",
+      "publisher": {
+        "@id": "https://yeswecange.com/#organization"
+      },
+      "inLanguage": "fr-FR"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yeswecange.com/#webpage",
+      "url": "https://yeswecange.com/",
+      "name": "YesWeCange — Accélérer votre croissance",
+      "description": "YesWeCange accompagne les entreprises dans leur croissance grâce au webmarketing, à l'intelligence artificielle et à la performance digitale.",
+      "isPartOf": {
+        "@id": "https://yeswecange.com/#website"
+      },
+      "about": {
+        "@id": "https://yeswecange.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+@endpush
+
 
   <!-- HERO -->
   <section id="top" class="relative overflow-hidden bg-ywc-bg">

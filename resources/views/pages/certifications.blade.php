@@ -12,6 +12,108 @@
     'lead' => $texts['certifications.header.lead']->localized('value'),
   ])
 
+@push('head')
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+        "@type": "CollectionPage",
+        "@id": "https://yeswecange.com/certifications#webpage",
+        "url": "https://yeswecange.com/certifications",
+        "name": "Certifications et expertises | YesWeCange",
+        "description": "Découvrez les certifications et partenariats professionnels de YesWeCange, témoignant de son expertise en marketing digital, publicité en ligne et transformation digitale.",
+        "isPartOf": {
+            "@id": "https://yeswecange.com/#website"
+        },
+        "about": {
+            "@id": "https://yeswecange.com/#organization"
+        },
+        "mainEntity": {
+            "@id": "https://yeswecange.com/certifications#certifications"
+        }
+        },
+        {
+        "@type": "ItemList",
+        "@id": "https://yeswecange.com/certifications#certifications",
+        "name": "Certifications et partenariats de YesWeCange",
+        "numberOfItems": 4,
+        "itemListElement": [
+            {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@type": "EducationalOccupationalCredential",
+                "@id": "https://yeswecange.com/certifications#facebook-marketing-partner",
+                "name": "Facebook Marketing Partner",
+                "credentialCategory": "Partenariat professionnel",
+                "recognizedBy": {
+                "@type": "Organization",
+                "name": "Meta"
+                },
+                "about": {
+                "@id": "https://yeswecange.com/#organization"
+                }
+            }
+            },
+            {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@type": "EducationalOccupationalCredential",
+                "@id": "https://yeswecange.com/certifications#google-partner-premier",
+                "name": "Google Partner Premier",
+                "credentialCategory": "Partenariat professionnel",
+                "recognizedBy": {
+                "@type": "Organization",
+                "name": "Google"
+                },
+                "about": {
+                "@id": "https://yeswecange.com/#organization"
+                }
+            }
+            },
+            {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@type": "EducationalOccupationalCredential",
+                "@id": "https://yeswecange.com/certifications#tiktok-marketing",
+                "name": "Certification TikTok Marketing",
+                "credentialCategory": "Certification professionnelle",
+                "recognizedBy": {
+                "@type": "Organization",
+                "name": "TikTok"
+                },
+                "about": {
+                "@id": "https://yeswecange.com/#organization"
+                }
+            }
+            },
+            {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+                "@type": "EducationalOccupationalCredential",
+                "@id": "https://yeswecange.com/certifications#fdfp",
+                "name": "Certification FDFP",
+                "credentialCategory": "Certification professionnelle",
+                "recognizedBy": {
+                "@type": "Organization",
+                "name": "FDFP"
+                },
+                "about": {
+                "@id": "https://yeswecange.com/#organization"
+                }
+            }
+            }
+        ]
+        }
+    ]
+    }
+    </script>
+@endpush
+
   {{-- GRILLE CERTIFICATIONS --}}
   <section class="mx-auto max-w-7xl px-5 py-16 sm:px-[30px] sm:py-20">
     @php
