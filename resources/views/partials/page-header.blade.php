@@ -28,12 +28,13 @@
       </nav>
 
       <script type="application/ld+json">
+{{-- JSON-LD : arobases doublees pour les echapper cote Blade (sinon la directive context casse la page en 500). --}}
       {!! json_encode([
-          '@context' => 'https://schema.org',
-          '@type' => 'BreadcrumbList',
+          '@@context' => 'https://schema.org',
+          '@@type' => 'BreadcrumbList',
           'itemListElement' => [
-              ['@type' => 'ListItem', 'position' => 1, 'name' => __('site.nav.home'), 'item' => route('home')],
-              ['@type' => 'ListItem', 'position' => 2, 'name' => $crumbLabel, 'item' => url()->current()],
+              ['@@type' => 'ListItem', 'position' => 1, 'name' => __('site.nav.home'), 'item' => route('home')],
+              ['@@type' => 'ListItem', 'position' => 2, 'name' => $crumbLabel, 'item' => url()->current()],
           ],
       ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
       </script>

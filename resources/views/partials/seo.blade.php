@@ -48,9 +48,10 @@
 
 {{-- Données structurées : Organisation + bureaux --}}
 <script type="application/ld+json">
+{{-- JSON-LD : arobases doublees pour les echapper cote Blade (sinon la directive context casse la page en 500). --}}
 {!! json_encode([
-    '@context' => 'https://schema.org',
-    '@type' => 'Organization',
+    '@@context' => 'https://schema.org',
+    '@@type' => 'Organization',
     'name' => 'YesWeCange',
     'url' => url('/'),
     'logo' => asset('images/logo_ywc.png'),
@@ -63,21 +64,21 @@
     ],
     'address' => [
         [
-            '@type' => 'PostalAddress',
+            '@@type' => 'PostalAddress',
             'streetAddress' => '176 avenue Charles de Gaulle',
             'postalCode' => '92200',
             'addressLocality' => 'Neuilly-sur-Seine',
             'addressCountry' => 'FR',
         ],
         [
-            '@type' => 'PostalAddress',
+            '@@type' => 'PostalAddress',
             'streetAddress' => 'Cocody, II Plateaux Vallons, Rue Des Jardins',
             'addressLocality' => 'Abidjan',
             'addressCountry' => 'CI',
         ],
     ],
     'contactPoint' => [
-        '@type' => 'ContactPoint',
+        '@@type' => 'ContactPoint',
         'telephone' => '+33 1 71 04 07 21',
         'contactType' => 'sales',
         'areaServed' => ['FR', 'CI'],
@@ -88,15 +89,16 @@
 
 {{-- Données structurées : Site web --}}
 <script type="application/ld+json">
+{{-- JSON-LD : arobases doublees pour les echapper cote Blade (sinon la directive context casse la page en 500). --}}
 {!! json_encode([
-    '@context' => 'https://schema.org',
-    '@type' => 'WebSite',
+    '@@context' => 'https://schema.org',
+    '@@type' => 'WebSite',
     'name' => 'YesWeCange',
     'alternateName' => 'YWC',
     'url' => url('/'),
     'inLanguage' => app()->getLocale() === 'en' ? 'en' : 'fr',
     'publisher' => [
-        '@type' => 'Organization',
+        '@@type' => 'Organization',
         'name' => 'YesWeCange',
         'logo' => asset('images/logo_ywc.png'),
     ],

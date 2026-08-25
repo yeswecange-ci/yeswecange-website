@@ -13,6 +13,8 @@
   ])
 
 @push('head')
+{{-- JSON-LD statique : le bloc verbatim ci-dessous empeche Blade d interpreter les cles en arobase (context) comme des directives, ce qui casserait la page en 500. --}}
+@verbatim
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
@@ -112,6 +114,7 @@
     ]
     }
     </script>
+@endverbatim
 @endpush
 
   {{-- GRILLE CERTIFICATIONS --}}

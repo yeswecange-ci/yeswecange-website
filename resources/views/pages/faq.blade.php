@@ -8,13 +8,14 @@
 
 @push('head')
 <script type="application/ld+json">
+{{-- JSON-LD : arobases doublees pour les echapper cote Blade (sinon la directive context casse la page en 500). --}}
 {!! json_encode([
-    '@context' => 'https://schema.org',
-    '@type' => 'FAQPage',
+    '@@context' => 'https://schema.org',
+    '@@type' => 'FAQPage',
     'mainEntity' => $faqItems->map(fn ($faq) => [
-        '@type' => 'Question',
+        '@@type' => 'Question',
         'name' => $faq->localized('question'),
-        'acceptedAnswer' => ['@type' => 'Answer', 'text' => $faq->localized('answer')],
+        'acceptedAnswer' => ['@@type' => 'Answer', 'text' => $faq->localized('answer')],
     ])->all(),
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
 </script>

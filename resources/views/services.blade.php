@@ -18,6 +18,8 @@
   ])
 
 @push('head')
+{{-- JSON-LD statique : le bloc verbatim ci-dessous empeche Blade d interpreter les cles en arobase (context) comme des directives, ce qui casserait la page en 500. --}}
+@verbatim
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -189,6 +191,7 @@
   ]
 }
 </script>
+@endverbatim
 @endpush
 
 
@@ -199,18 +202,19 @@
 
   @push('head')
   <script type="application/ld+json">
+{{-- JSON-LD : arobases doublees pour les echapper cote Blade (sinon la directive context casse la page en 500). --}}
   {!! json_encode([
-      '@context' => 'https://schema.org',
-      '@type' => 'ItemList',
+      '@@context' => 'https://schema.org',
+      '@@type' => 'ItemList',
       'name' => $en ? 'YesWeCange services' : 'Services YesWeCange',
       'itemListElement' => $services->values()->map(fn ($s, $i) => [
-          '@type' => 'ListItem',
+          '@@type' => 'ListItem',
           'position' => $i + 1,
           'item' => [
-              '@type' => 'Service',
+              '@@type' => 'Service',
               'name' => $s->localized('title'),
               'description' => $s->localized('description'),
-              'provider' => ['@type' => 'Organization', 'name' => 'YesWeCange', 'url' => url('/')],
+              'provider' => ['@@type' => 'Organization', 'name' => 'YesWeCange', 'url' => url('/')],
               'areaServed' => ['FR', 'CI'],
           ],
       ])->all(),
