@@ -29,6 +29,7 @@
         <a href="{{ route('home') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('home') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.home') }}</a>
         <a href="{{ route('services') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('services') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.services') }}</a>
         <a href="{{ route('certifications') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('certifications') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.certifications') }}</a>
+        <a href="{{ route('blog.index') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('blog.*') ? 'text-ywc-blue' : 'text-ywc-text' }}">Blog</a>
         <a href="{{ route('about') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('about') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.about') }}</a>
         <a href="{{ route('contact') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('contact') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.contact') }}</a>
         <span class="mx-2 h-5 w-px bg-ywc-border-soft"></span>
@@ -49,6 +50,7 @@
         <a href="{{ route('home') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('home') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.home') }}</a>
         <a href="{{ route('services') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('services') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.services') }}</a>
         <a href="{{ route('certifications') }}" class="rounded-full px-3.5 py-2 text-[14.5px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('certifications') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.certifications') }}</a>
+        <a href="{{ route('blog.index') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('blog.*') ? 'text-ywc-blue' : 'text-ywc-text' }}">Blog</a>
         <a href="{{ route('about') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('about') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.about') }}</a>
         <a href="{{ route('faq') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('faq') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.faq') }}</a>
         <a href="{{ route('contact') }}" class="rounded-xl px-4 py-3 text-[15px] font-semibold no-underline transition hover:bg-ywc-bg-soft {{ request()->routeIs('contact') ? 'text-ywc-blue' : 'text-ywc-text' }}">{{ __('site.nav.contact') }}</a>
@@ -76,6 +78,7 @@
         <ul class="flex flex-col gap-2 text-sm">
           <li><a href="{{ route('services') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.services') }}</a></li>
           <li><a href="{{ route('realisations') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.realisations') }}</a></li>
+          <li><a href="{{ route('blog.index') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">Blog</a></li>
           <li><a href="{{ route('about') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.about') }}</a></li>
           <li><a href="{{ route('faq') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.faq') }}</a></li>
           <li><a href="{{ route('contact') }}" class="text-ywc-text-soft no-underline hover:text-ywc-ink">{{ __('site.nav.contact') }}</a></li>

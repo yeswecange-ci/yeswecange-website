@@ -19,27 +19,23 @@ Alpine.start();
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ===== services bento =====
+  // ===== expertise bento =====
   const bento = root.querySelector('[data-bbento]');
   if (bento) {
     const items = EN ? [
-      { t: 'Chatbots & WhatsApp', d: 'We automate the conversation 24/7 and continuously qualify your leads.', tag: 'Featured', icon: '💬', col: 'span 3', row: 'span 2', dark: true, href: '#chatbots', pills: ['WhatsApp', 'Web', 'Messenger', 'SMS'] },
-      { t: 'Strategy & Design', d: 'Positioning, message, high-value action plan.', icon: '🎯', col: 'span 3', row: 'span 1', href: '/services' },
-      { t: 'Social Media & 360° Comm', d: 'Content that sparks reactions, across every channel.', icon: '📱', col: 'span 3', row: 'span 1', href: '/services' },
-      { t: 'Marketing Intelligence', d: 'Marketing 3.0 and social business, driven by data.', icon: '📊', col: 'span 2', row: 'span 1', href: '/services' },
-      { t: 'Data Mining & Tech', d: 'Your data becomes audiences and leads.', icon: '🛰️', col: 'span 2', row: 'span 1', href: '/services' },
-      { t: 'SEO', d: 'Found at the right time by the right people.', icon: '🔍', col: 'span 2', row: 'span 1', href: '/services' },
-      { t: 'Branding & Lean Marketing', d: 'A brand that creates emotion and leaves a mark.', icon: '🎨', col: 'span 3', row: 'span 1', href: '/services' },
-      { t: 'Training', d: 'We hand you the keys to digital, in practice.', icon: '🎓', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'WhatsApp Business API', d: 'Automate the conversation 24/7 and turn WhatsApp into a sales channel.', tag: 'Featured', icon: '💬', col: 'span 3', row: 'span 2', dark: true, href: '/expertise/whatsapp-business-api', pills: ['WhatsApp', 'CRM', 'Automation', '24/7 support'] },
+      { t: 'Growth & Performance Marketing', d: 'Fast tests, data and acquisition channels that actually convert.', icon: '📈', col: 'span 3', row: 'span 1', href: '/expertise/growth-performance-marketing-afrique' },
+      { t: 'SEO, GEO & AEO', d: 'Visible on Google and cited by generative AI (ChatGPT, Claude, Perplexity).', icon: '🔍', col: 'span 3', row: 'span 1', href: '/expertise/seo-geo-aeo' },
+      { t: 'AI Marketing & Automation', d: 'Automate leads, content and reporting without losing personalization.', icon: '🤖', col: 'span 2', row: 'span 1', href: '/expertise/ia-marketing-automatisation' },
+      { t: 'Google Ads & Meta Ads', d: 'Google Ads and Meta Ads campaigns driven by data.', icon: '📣', col: 'span 2', row: 'span 1', href: '/expertise/google-ads-meta-ads-afrique' },
+      { t: 'Tracking, Data & GTM/GA4', d: 'Server-side tracking and GA4 for reliable, GDPR-compliant data.', icon: '📊', col: 'span 2', row: 'span 1', href: '/expertise/tracking-data-ga4-gtm' },
     ] : [
-      { t: 'Chatbot Whatsapp', d: 'On automatise la conversation 24/7 et on qualifie vos leads en continu.', tag: 'À la une', icon: '💬', col: 'span 3', row: 'span 2', dark: true, href: '#chatbots', pills: ['WhatsApp', 'Web', 'Messenger', 'SMS'] },
-      { t: 'Production des kits global', d: 'Positionnement, message, plan d’action à forte valeur ajoutée.', icon: '🎯', col: 'span 3', row: 'span 1', href: '/services' },
-      { t: 'Social Media & Comm 360°', d: 'Des contenus qui font réagir, sur tous les canaux.', icon: '📱', col: 'span 3', row: 'span 1', href: '/services' },
-      { t: 'Publicité Mobile', d: 'Marketing 3.0 et social business, décidés par la data.', icon: '📊', col: 'span 2', row: 'span 1', href: '/services' },
-      { t: 'Referencement SEO & IA search', d: 'Vos données deviennent audiences et leads.', icon: '🛰️', col: 'span 2', row: 'span 1', href: '/services' },
-      { t: 'Digitalisation IA / process', d: 'Trouvé au bon moment par les bonnes personnes.', icon: '🔍', col: 'span 2', row: 'span 1', href: '/services' },
-      { t: 'Developpement IT', d: 'Une marque qui crée l’émotion et marque les esprits.', icon: '🎨', col: 'span 3', row: 'span 1', href: '/services' },
-      { t: 'DATA analytics', d: 'On vous donne les clés du digital, en pratique.', icon: '🎓', col: 'span 3', row: 'span 1', href: '/services' },
+      { t: 'WhatsApp Business API', d: 'On automatise la conversation 24/7 et on transforme WhatsApp en canal de vente.', tag: 'À la une', icon: '💬', col: 'span 3', row: 'span 2', dark: true, href: '/expertise/whatsapp-business-api', pills: ['WhatsApp', 'CRM', 'Automatisation', 'Support 24/7'] },
+      { t: 'Growth & Performance Marketing', d: 'Tests rapides, données et canaux d’acquisition qui convertissent.', icon: '📈', col: 'span 3', row: 'span 1', href: '/expertise/growth-performance-marketing-afrique' },
+      { t: 'SEO, GEO & AEO', d: 'Visible sur Google et cité par les IA génératives (ChatGPT, Claude, Perplexity).', icon: '🔍', col: 'span 3', row: 'span 1', href: '/expertise/seo-geo-aeo' },
+      { t: 'IA Marketing & Automatisation', d: 'Automatisez leads, contenu et reporting sans perdre en personnalisation.', icon: '🤖', col: 'span 2', row: 'span 1', href: '/expertise/ia-marketing-automatisation' },
+      { t: 'Google Ads & Meta Ads', d: 'Campagnes Google Ads et Meta Ads pilotées par la donnée.', icon: '📣', col: 'span 2', row: 'span 1', href: '/expertise/google-ads-meta-ads-afrique' },
+      { t: 'Tracking, Data & GTM/GA4', d: 'Tracking server-side et GA4 pour des données fiables et conformes RGPD.', icon: '📊', col: 'span 2', row: 'span 1', href: '/expertise/tracking-data-ga4-gtm' },
     ];
     bento.innerHTML = items.map(s => {
       const dark = s.dark;

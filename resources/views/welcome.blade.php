@@ -12,7 +12,7 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
@@ -80,59 +80,57 @@
   <section id="top" class="relative overflow-hidden bg-ywc-bg">
     <div class="absolute inset-0">
       <video src="{{ asset('images/videoywc.mp4') }}" autoplay loop muted playsinline preload="auto" poster="{{ asset('images/videoywc-poster.webp') }}" aria-hidden="true" class="block h-full w-full object-cover object-[68%_center] sm:object-[50%_center]"></video>
-      <div class="absolute inset-0 bg-gradient-to-r from-ywc-ink/65 via-ywc-ink/30 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-ywc-ink/85 via-ywc-ink/45 to-transparent"></div>
       <div class="absolute inset-x-0 bottom-0 h-[130px] bg-gradient-to-t from-ywc-bg/95 to-transparent"></div>
     </div>
     <div class="relative mx-auto flex min-h-[84vh] max-w-7xl flex-col justify-center px-5 pt-28 pb-16 sm:px-[30px] sm:pt-32 sm:pb-[88px]">
-      <div class="max-w-[600px]">
-        <h1 data-bhero class="m-0 mb-[22px] font-display text-[clamp(40px,5.6vw,84px)] font-bold leading-[0.97] tracking-[-0.04em] text-white [text-shadow:0_2px_30px_rgba(10,10,15,0.45)]">
-          <x-split-heading :text="$texts['home.hero.title']->localized('value')" highlight-class="bg-gradient-to-r from-ywc-blue-pale to-white bg-clip-text text-transparent" />
+      <div class="max-w-[640px] text-left">
+        <h1 data-bhero class="m-0 mb-[22px] font-display text-[clamp(26px,3.6vw,46px)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
+          <x-split-heading :text="$texts['home.hero.title']->localized('value')" highlight-class="bg-gradient-to-r from-[#1a237e] to-ywc-blue bg-clip-text text-transparent" />
         </h1>
-        <p data-bhero class="m-0 mb-8 max-w-[470px] text-[clamp(17px,1.4vw,20px)] leading-[1.55] text-white">{{ $texts['home.hero.subtitle']->localized('value') }}</p>
-        <div data-bhero class="flex flex-wrap gap-[13px]">
+        <div data-bhero class="flex flex-wrap justify-start gap-[13px]">
           <a href="#contact" class="rounded-xl bg-ywc-blue px-7 py-[15px] text-base font-bold text-white no-underline shadow-[0_14px_34px_-10px_rgba(43,77,255,0.6)] transition hover:bg-ywc-blue-mid">{{ $texts['home.hero.cta_primary']->localized('value') }}</a>
-          <a href="#chatbots" class="rounded-xl border-[1.5px] border-ywc-border bg-white/85 px-7 py-[15px] text-base font-bold text-ywc-ink no-underline backdrop-blur-sm transition hover:border-ywc-text-pale">{{ $texts['home.hero.cta_secondary']->localized('value') }}</a>
+          <a href="#chatbots" class="rounded-xl border-[1.5px] border-white/25 bg-white/10 px-7 py-[15px] text-base font-bold text-white no-underline backdrop-blur-sm transition hover:bg-white/20">{{ $texts['home.hero.cta_secondary']->localized('value') }}</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRUST CHIPS -->
-  <section class="px-[30px] py-[30px]">
-    <div data-breveal data-chip-group class="flex flex-wrap justify-center gap-2.5">
-      @foreach ($trustChips as $chip)
-        <button
-          type="button"
-          data-chip
-          data-chip-target="{{ $chip->key }}"
-          class="rounded-full border px-4 py-[9px] text-sm font-semibold transition {{ $chip->is($defaultChip) ? 'is-active border-transparent bg-ywc-blue text-white' : 'border-ywc-border-soft bg-ywc-bg-soft text-ywc-text-soft hover:border-ywc-border-blue' }}"
-        >{{ $chip->localized('label') }}</button>
-      @endforeach
+  <!-- AGENCE 360° + NOS EXPERTISES (format AEO) -->
+   @php $expertisePillars = collect(config('strategic_pages.expertise'))->map(fn ($p, $slug) => ['h1' => $p['h1'], 'href' => '/expertise/'.$slug, 'intro' => $p['intro']]); @endphp
+  <section class="mx-auto max-w-7xl px-5 py-16 sm:px-[30px]">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div data-breveal>
+        <h2 class="m-0 mb-4 font-display text-[28px] font-bold leading-[1.15] tracking-[-0.02em] text-ywc-ink sm:text-[36px]">Une agence 360°, pensée pour les réalités du marché africain</h2>
+        <p class="m-0 text-[17px] leading-[1.75] text-ywc-text">Beaucoup d'entreprises en Afrique francophone jonglent avec plusieurs prestataires spécialisés : un pour la publicité, un autre pour le site web, un troisième pour les réseaux sociaux. YesWeCange réunit ces expertises sous un même toit, avec une équipe qui comprend les usages locaux, la forte pénétration mobile, le poids de WhatsApp dans la relation client, la montée en puissance du paiement digital.</p>
+      </div>
+      <div data-breveal class="relative">
+        <img src="{{ asset('images/exp.jpeg') }}" alt="Une agence 360° YesWeCange" width="640" height="480" loading="lazy" decoding="async" class="h-full w-full rounded-[24px] object-cover shadow-[0_30px_60px_-30px_rgba(10,10,15,0.28)]">
+      </div>
     </div>
-    <div data-breveal class="mx-auto mt-6 max-w-[560px] rounded-2xl border border-ywc-border-soft bg-ywc-bg-soft px-6 py-5 text-center">
-      @foreach ($trustChips as $chip)
-        <p data-chip-panel="{{ $chip->key }}" class="m-0 text-[15px] font-bold leading-[1.6] text-ywc-ink {{ $chip->is($defaultChip) ? 'animate-ywc-fade-in' : 'hidden' }}">{{ $chip->localized('text') }}</p>
-      @endforeach
-    </div>
+
+    {{-- <h2 class="m-0 mb-1 text-center font-display text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-ywc-ink sm:text-[26px]">Nos expertises</h2>
+    <p class="m-0 mb-5 text-center text-[12.5px] font-semibold text-ywc-text-muted">← Faites défiler pour tout voir →</p> --}}
   </section>
 
-  <!-- CLIENTS / TRUST -->
-  <section id="clients" class="mx-auto max-w-7xl px-[30px] py-[70px] pb-5">
-    <div data-breveal class="mx-auto mb-9 max-w-[640px] text-center">
-      <div class="mb-[14px] text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $texts['home.trust.eyebrow']->localized('value') }}</div>
-      <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">{{ $texts['home.trust.title']->localized('value') }}</h2>
-      <p class="mt-3.5 text-base leading-[1.55] text-ywc-text-soft">{{ $texts['home.trust.intro']->localized('value') }}</p>
-    </div>
-    <div data-bclient-grid class="b-client-grid"></div>
-    <div data-breveal class="mt-[38px] flex flex-wrap justify-center gap-12">
-      @foreach ($stats as $stat)
-        <div class="text-center"><div class="font-display text-4xl font-bold tracking-[-0.02em] {{ $loop->first ? 'text-ywc-blue' : 'text-ywc-ink' }}">{{ $stat->value }}</div><div class="mt-0.5 text-[13.5px] text-ywc-text-muted">{{ $stat->localized('label') }}</div></div>
+ {{-- <div data-breveal class="mx-auto max-w-7xl px-5 pb-16 sm:px-[30px]">
+    <ol class="m-0 flex snap-x snap-mandatory gap-3.5 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      @foreach ($expertisePillars as $pillar)
+        <li class="w-[260px] flex-none snap-start list-none sm:w-[280px]">
+          <a href="{{ $pillar['href'] }}" class="group flex h-full flex-col items-start gap-3 rounded-2xl border border-ywc-border bg-white p-5 no-underline transition duration-300 hover:-translate-y-0.5 hover:border-ywc-border-blue hover:shadow-[0_24px_50px_-28px_rgba(10,10,15,0.22)]">
+            <span class="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-ywc-bg-soft font-display text-[13px] font-bold text-ywc-blue transition group-hover:bg-ywc-blue group-hover:text-white">{{ sprintf('%02d', $loop->iteration) }}</span>
+            <span>
+              <span class="block font-display text-[14.5px] font-bold leading-[1.3] text-ywc-ink">{{ \Illuminate\Support\Str::before($pillar['h1'], ' :') }}</span>
+              <span class="mt-1 block text-[13px] leading-[1.5] text-ywc-text-soft">{{ \Illuminate\Support\Str::limit($pillar['intro'], 90) }}</span>
+            </span>
+          </a>
+        </li>
       @endforeach
-    </div>
-  </section>
+    </ol>
+  </div> --}}
 
-  <!-- SERVICES BENTO -->
-  <section id="services" class="mx-auto max-w-7xl px-[30px] py-20">
+  <!-- EXPERTISE BENTO -->
+  <section id="expertise" class="mx-auto max-w-7xl px-[30px] py-20">
     <div data-breveal class="mx-auto mb-[46px] max-w-[680px] text-center">
       <div class="mb-[14px] text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $texts['home.services.eyebrow']->localized('value') }}</div>
       <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">{{ $texts['home.services.title']->localized('value') }}</h2>
@@ -233,8 +231,18 @@
         <div class="mb-[14px] text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $texts['home.offices.eyebrow']->localized('value') }}</div>
         <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">{{ $texts['home.offices.title']->localized('value') }}</h2>
       </div>
+      @php
+        // Abidjan/Dakar/Kinshasa ont désormais leur propre page de présentation ;
+        // seul Paris (siège, sans page dédiée) continue de mener au formulaire de devis.
+        $officeLocalPages = ['abidjan' => 'abidjan', 'Dakar' => 'dakar', 'Congo' => 'kinshasa'];
+      @endphp
       <div data-breveal class="grid gap-4 sm:grid-cols-2">
         @foreach ($officeLocations as $office)
+          @php
+            $officeHref = isset($officeLocalPages[$office->slug])
+                ? '/agence-digitale-'.$officeLocalPages[$office->slug]
+                : route('quote', ['office' => $office->slug]);
+          @endphp
           @if ($office->is_dark)
             <div class="group relative overflow-hidden rounded-[24px] bg-ywc-ink p-8 text-white transition hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(10,10,15,0.5)] sm:p-10">
               <div class="absolute -top-16 -right-16 h-[220px] w-[220px] rounded-full bg-[radial-gradient(circle,rgba(43,77,255,0.28),transparent_65%)]"></div>
@@ -242,7 +250,7 @@
                 <div class="mb-4 text-[12px] font-bold uppercase tracking-[0.08em] text-ywc-blue-pale">{{ $office->eyebrow }}</div>
                 <h3 class="m-0 mb-3 font-display text-[clamp(24px,2.6vw,32px)] font-bold leading-[1.06] tracking-[-0.02em] text-white">{{ $office->localized('title') }}</h3>
                 <p class="m-0 mb-7 text-[14.5px] leading-[1.6] text-[#c5cbd8]">{!! nl2br(e($office->address)) !!}<br>{{ $office->phone }}</p>
-                <a href="{{ route('quote', ['office' => $office->slug]) }}" class="inline-flex items-center gap-2 rounded-xl border border-white px-5 py-3 text-[14px] font-bold text-white no-underline transition group-hover:bg-white group-hover:text-ywc-ink">{{ $office->localized('cta_label') }} →</a>
+                <a href="{{ $officeHref }}" class="inline-flex items-center gap-2 rounded-xl border border-white px-5 py-3 text-[14px] font-bold text-white no-underline transition group-hover:bg-white group-hover:text-ywc-ink">{{ $office->localized('cta_label') }} →</a>
               </div>
             </div>
           @else
@@ -252,7 +260,7 @@
                 <div class="mb-4 text-[12px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $office->eyebrow }}</div>
                 <h3 class="m-0 mb-3 font-display text-[clamp(24px,2.6vw,32px)] font-bold leading-[1.06] tracking-[-0.02em]">{{ $office->localized('title') }}</h3>
                 <p class="m-0 mb-7 text-[14.5px] leading-[1.6] text-ywc-text-soft">{!! nl2br(e($office->address)) !!}<br>{{ $office->phone }}</p>
-                <a href="{{ route('quote', ['office' => $office->slug]) }}" class="inline-flex items-center gap-2 rounded-xl border border-ywc-blue px-5 py-3 text-[14px] font-bold text-ywc-blue no-underline transition group-hover:bg-ywc-blue group-hover:text-white">{{ $office->localized('cta_label') }} →</a>
+                <a href="{{ $officeHref }}" class="inline-flex items-center gap-2 rounded-xl border border-ywc-blue px-5 py-3 text-[14px] font-bold text-ywc-blue no-underline transition group-hover:bg-ywc-blue group-hover:text-white">{{ $office->localized('cta_label') }} →</a>
               </div>
             </div>
           @endif
@@ -261,6 +269,99 @@
     </div>
   </section>
 
+{{--   <!-- MAILLAGE — MARCHÉS LOCAUX -->
+  @php $localHubLinks = collect(config('strategic_pages.local'))->map(fn ($p, $slug) => ['label' => $p['h1'], 'href' => '/agence-digitale-'.$slug]); @endphp
+  <section class="mx-auto max-w-7xl px-[30px] pb-16">
+    <div data-breveal class="rounded-[24px] border border-ywc-border-soft bg-ywc-bg-soft p-7 sm:p-8">
+      <div class="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-ywc-text-muted">{{ $en ? 'Our markets in French-speaking Africa' : 'Nos marchés' }}</div>
+      <p class="m-0 mb-5 max-w-[640px] text-[14.5px] leading-[1.6] text-ywc-text-soft">{{ $en
+        ? 'The agency operates from its Abidjan headquarters across three priority markets: Ivory Coast, Senegal (Dakar) and DRC (Kinshasa), with an extension planned to Douala and Cotonou.'
+        : "L'agence intervient depuis son siège d'Abidjan sur trois marchés prioritaires : Côte d'Ivoire, Sénégal (Dakar) et RDC (Kinshasa), avec une extension prévue vers Douala et Cotonou." }}</p>
+      <div class="flex flex-wrap gap-2.5">
+        @foreach ($localHubLinks as $link)
+          <a href="{{ $link['href'] }}" class="rounded-full border border-ywc-border-soft bg-white px-4 py-2 text-[13.5px] font-semibold text-ywc-text-soft no-underline transition hover:border-ywc-border-blue hover:text-ywc-blue">{{ $link['label'] }}</a>
+        @endforeach
+      </div>
+    </div>
+  </section> --}}
+
+
+    <!-- CLIENTS / TRUST -->
+  <section id="clients" class="mx-auto max-w-7xl px-[30px] py-[70px] pb-5">
+    <div data-breveal class="mx-auto mb-9 max-w-[640px] text-center">
+      <div class="mb-[14px] text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">{{ $texts['home.trust.eyebrow']->localized('value') }}</div>
+      <h2 class="m-0 font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">{{ $texts['home.trust.title']->localized('value') }}</h2>
+      <p class="mt-3.5 text-base leading-[1.55] text-ywc-text-soft">{{ $texts['home.trust.intro']->localized('value') }}</p>
+    </div>
+    <div data-bclient-grid class="b-client-grid"></div>
+    <div data-breveal class="mt-[38px] flex flex-wrap justify-center gap-12">
+      @foreach ($stats as $stat)
+        <div class="text-center"><div class="font-display text-4xl font-bold tracking-[-0.02em] {{ $loop->first ? 'text-ywc-blue' : 'text-ywc-ink' }}">{{ $stat->value }}</div><div class="mt-0.5 text-[13.5px] text-ywc-text-muted">{{ $stat->localized('label') }}</div></div>
+      @endforeach
+    </div>
+  </section>
+
   @include('partials.contact-cta')
+
+    <!-- FAQ -->
+  @php $homeFaq = config('strategic_pages.core.home.faq', []); @endphp
+  @if (count($homeFaq))
+    @push('head')
+    <script type="application/ld+json">
+    {!! json_encode([
+        '@@context' => 'https://schema.org',
+        '@type' => 'FAQPage',
+        'mainEntity' => collect($homeFaq)->map(fn ($item) => [
+            '@type' => 'Question',
+            'name' => $item['q'],
+            'acceptedAnswer' => ['@type' => 'Answer', 'text' => $item['a']],
+        ])->all(),
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+    @endpush
+    <section class="mx-auto max-w-3xl px-5 py-16 sm:px-[30px]">
+      <div data-breveal class="mx-auto mb-9 max-w-[640px] text-center">
+        <h2 class="m-0 font-display text-[clamp(28px,3.2vw,42px)] font-bold leading-[1.06] tracking-[-0.03em]">{{ $en ? 'Frequently asked questions' : 'Questions fréquentes' }}</h2>
+      </div>
+      <div data-breveal>
+        <x-faq-accordion :items="$homeFaq" />
+      </div>
+    </section>
+  @endif
+
+  <!-- ARTICLES -->
+  @if ($latestArticles->isNotEmpty())
+    <section class="mx-auto max-w-7xl px-5 py-16 sm:px-[30px] sm:py-20">
+      <div data-breveal class="mb-9 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <div class="mb-[14px] text-[13px] font-bold uppercase tracking-[0.08em] text-ywc-blue">Blog</div>
+          <h2 class="m-0 font-display text-[clamp(28px,3.2vw,42px)] font-bold leading-[1.06] tracking-[-0.03em]">{{ $en ? 'Our latest articles' : 'Nos derniers articles' }}</h2>
+        </div>
+        <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-1.5 whitespace-nowrap text-[14.5px] font-bold text-ywc-blue no-underline hover:text-ywc-blue-mid">{{ $en ? 'See all articles' : 'Voir tous les articles' }} →</a>
+      </div>
+      <div data-breveal class="grid gap-7 sm:grid-cols-3">
+        @foreach ($latestArticles as $article)
+          <a href="{{ route('blog.show', $article) }}" class="group flex flex-col overflow-hidden rounded-2xl border border-ywc-border-soft bg-white no-underline transition duration-300 hover:-translate-y-1 hover:border-ywc-border-blue hover:shadow-[0_24px_50px_-28px_rgba(10,10,15,0.22)]">
+            <div class="aspect-[16/10] w-full overflow-hidden bg-ywc-bg-soft">
+              @if ($article->cover_image)
+                <img src="{{ asset('storage/' . $article->cover_image) }}" alt="" width="640" height="400" loading="lazy" decoding="async" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+              @else
+                <div class="flex h-full w-full items-center justify-center text-ywc-blue-pale">
+                  <x-icon name="clipboard" class="h-10 w-10" />
+                </div>
+              @endif
+            </div>
+            <div class="p-5 sm:p-6">
+              @if ($article->published_at)
+                <div class="mb-2 text-[12px] font-bold uppercase tracking-[0.06em] text-ywc-text-muted">{{ $article->published_at->translatedFormat('d M Y') }}</div>
+              @endif
+              <h3 class="m-0 mb-2 font-display text-[16.5px] font-bold leading-[1.25] tracking-[-0.01em] text-ywc-ink">{{ $article->localized('title') }}</h3>
+              <p class="m-0 text-[14px] leading-[1.55] text-ywc-text-soft">{{ $article->localized('excerpt') }}</p>
+            </div>
+          </a>
+        @endforeach
+      </div>
+    </section>
+  @endif
 
 @endsection

@@ -29,7 +29,7 @@
 
       <script type="application/ld+json">
       {!! json_encode([
-          '@context' => 'https://schema.org',
+          '@@context' => 'https://schema.org',
           '@type' => 'BreadcrumbList',
           'itemListElement' => [
               ['@type' => 'ListItem', 'position' => 1, 'name' => __('site.nav.home'), 'item' => route('home')],
@@ -37,18 +37,34 @@
           ],
       ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
       </script>
-      <h1 data-bhero class="m-0 mb-[18px] max-w-[760px] font-display text-[clamp(34px,4.6vw,60px)] font-bold leading-[1.02] tracking-[-0.03em] text-ywc-ink">{!! $title !!}</h1>
-      <p data-bhero class="m-0 max-w-[560px] text-[clamp(16px,1.2vw,18px)] leading-[1.55] text-ywc-text">{{ $lead }}</p>
+      <div class="{{ ! empty($chart) ? 'grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14' : '' }}">
+        <div>
+          <h1 data-bhero class="m-0 mb-[18px] max-w-[760px] font-display text-[clamp(34px,4.6vw,60px)] font-bold leading-[1.02] tracking-[-0.03em] text-ywc-ink">{!! $title !!}</h1>
+          <p data-bhero class="m-0 max-w-[560px] text-[clamp(16px,1.2vw,18px)] leading-[1.55] text-ywc-text">{{ $lead }}</p>
 
-      @isset($stats)
-        <div data-bhero class="mt-9 flex max-w-[640px] flex-wrap gap-8 border-t border-ywc-border-soft pt-7">
-          @foreach ($stats as $stat)
-            <div>
-              <div class="font-display text-xl font-bold tracking-[-0.02em] text-ywc-blue">{{ $stat['value'] }}</div>
-              <div class="mt-0.5 text-[13px] text-ywc-text-muted">{{ $stat['label'] }}</div>
+          @isset($cta)
+            <div data-bhero class="mt-8">
+              <a href="{{ $cta['href'] }}" class="inline-flex items-center gap-2 rounded-xl bg-ywc-blue px-7 py-[15px] text-base font-bold text-white no-underline shadow-[0_14px_34px_-10px_rgba(43,77,255,0.6)] transition hover:bg-ywc-blue-mid">{{ $cta['label'] }}</a>
             </div>
-          @endforeach
+          @endisset
+
+          @isset($stats)
+            <div data-bhero class="mt-9 flex max-w-[640px] flex-wrap gap-8 border-t border-ywc-border-soft pt-7">
+              @foreach ($stats as $stat)
+                <div>
+                  <div class="font-display text-xl font-bold tracking-[-0.02em] text-ywc-blue">{{ $stat['value'] }}</div>
+                  <div class="mt-0.5 text-[13px] text-ywc-text-muted">{{ $stat['label'] }}</div>
+                </div>
+              @endforeach
+            </div>
+          @endisset
         </div>
-      @endisset
+
+        @if (! empty($chart))
+          <div data-bhero class="flex justify-center lg:justify-end">
+            <x-hero-chart :kind="$chart" />
+          </div>
+        @endif
+      </div>
     </div>
   </section>

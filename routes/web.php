@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\Admin;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SeoController;
+use App\Http\Controllers\StrategicPageController;
 use App\Models\LegalPage;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +23,26 @@ Route::get('/realisations', [PageController::class, 'realisations'])->name('real
 Route::get('/certifications', [PageController::class, 'certifications'])->name('certifications');
 Route::get('/a-propos', [PageController::class, 'about'])->name('about');
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
+
+/*
+|--------------------------------------------------------------------------
+| Blog
+|--------------------------------------------------------------------------
+*/
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{article:slug}', [BlogController::class, 'show'])->name('blog.show');
+
+/*
+|--------------------------------------------------------------------------
+| Pages stratégiques — Expertise / Locales / Secteurs
+|--------------------------------------------------------------------------
+| Un seul gabarit (resources/views/pages/strategic.blade.php) alimenté par
+| config/strategic_pages.php. Ajouter une page = ajouter une entrée dans
+| ce fichier de config, aucune route ni contrôleur supplémentaire requis.
+*/
+Route::get('/expertise/{slug}', [StrategicPageController::class, 'expertise'])->name('expertise.show');
+Route::get('/agence-digitale-{ville}', [StrategicPageController::class, 'local'])->name('local.show');
+Route::get('/secteurs/{slug}', [StrategicPageController::class, 'secteur'])->name('secteur.show');
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +114,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('office-locations', Admin\OfficeLocationController::class)->except('show');
     Route::resource('faq-items', Admin\FaqItemController::class)->except('show');
     Route::resource('portfolio-items', Admin\PortfolioItemController::class)->except('show');
+    Route::resource('articles', Admin\ArticleController::class)->except('show');
 
     Route::get('site-texts/{group}', [Admin\SiteTextController::class, 'edit'])->name('site-texts.edit');
     Route::put('site-texts/{group}', [Admin\SiteTextController::class, 'update'])->name('site-texts.update');

@@ -272,6 +272,7 @@
         letter-spacing: -0.02em;
         color: var(--color-ywc-ink);
         margin: 2em 0 0.6em;
+        scroll-margin-top: 100px;
     }
     .legal-prose h2:first-child {
         margin-top: 0;
@@ -377,4 +378,33 @@
     z-index: 6;
     background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 55%);
     mix-blend-mode: screen;
+}
+
+/* ===== Mini-graphique de croissance animé (illustration décorative) ===== */
+.ywc-grow-bar {
+    transform-origin: bottom;
+    animation: ywc-grow-bar 2.6s ease-in-out infinite;
+}
+@keyframes ywc-grow-bar {
+    0%, 100% { transform: scaleY(0.45); }
+    50%      { transform: scaleY(1); }
+}
+.ywc-grow-line {
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+    animation: ywc-grow-line 2.6s ease-in-out infinite;
+}
+@keyframes ywc-grow-line {
+    0%   { stroke-dashoffset: 220; }
+    45%  { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 0; }
+}
+.ywc-bubble-pop {
+    animation: ywc-bubble-pop 3.6s ease-in-out infinite;
+}
+@keyframes ywc-bubble-pop {
+    0%   { opacity: 0; transform: translateY(6px) scale(0.96); }
+    12%  { opacity: 1; transform: translateY(0) scale(1); }
+    85%  { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(6px) scale(0.96); }
 }

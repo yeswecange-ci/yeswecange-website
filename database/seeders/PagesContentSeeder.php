@@ -52,13 +52,13 @@ class PagesContentSeeder extends Seeder
             [
                 'key' => 'services.header.title',
                 'label' => 'Titre (en-tête de page, HTML simple autorisé)',
-                'value_fr' => 'Un partenaire unique pour <span class="text-ywc-blue">toute</span> votre stratégie digitale.',
-                'value_en' => 'A single partner for <span class="text-ywc-blue">your entire</span> digital strategy.',
+                'value_fr' => 'Nos services : une agence 360° pour <span class="text-ywc-blue">toute</span> votre stratégie digitale.',
+                'value_en' => 'Our services: a 360° agency for <span class="text-ywc-blue">your entire</span> digital strategy.',
             ],
             [
                 'key' => 'services.header.lead',
-                'label' => 'Texte d\'intro (en-tête de page)',
-                'value_fr' => "De la stratégie à l'exécution, on couvre les 360° de votre communication. Une équipe, un cap, des résultats mesurables — à Paris comme à Abidjan.",
+                'label' => 'Texte d\'intro (en-tête de page) — réponse directe format AEO',
+                'value_fr' => "YesWeCange propose 10 services complémentaires — stratégie, contenu, publicité, data et technique — pensés pour être mobilisés séparément ou combinés dans une stratégie globale. Chaque service peut être précédé d'un audit gratuit pour identifier les priorités et éviter de payer pour des actions qui ne serviront pas vos objectifs.",
                 'value_en' => 'From strategy to execution, we cover all 360° of your communication. One team, one direction, measurable results — in Paris as in Abidjan.',
             ],
             [

@@ -5,6 +5,7 @@ return [
     'nav' => [
         'home' => 'Home',
         'services' => 'Services',
+        'expertise' => 'Expertise',
         'clients' => 'Clients',
         'chatbots' => 'Chatbots',
         'realisations' => 'Work',

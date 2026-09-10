@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\ChatbotChannel;
 use App\Models\OfficeLocation;
 use App\Models\SiteText;
@@ -21,6 +22,7 @@ class HomeController extends Controller
             'testimonials' => Testimonial::orderBy('order_column')->get(),
             'officeLocations' => OfficeLocation::orderBy('order_column')->get(),
             'texts' => SiteText::where('group', 'home')->get()->keyBy('key'),
+            'latestArticles' => Article::published()->orderByDesc('published_at')->limit(3)->get(),
         ]);
     }
 }

@@ -52,6 +52,8 @@ class AdminAccessTest extends TestCase
             '/admin/values',
             '/admin/values/create',
             '/admin/legal',
+            '/admin/articles',
+            '/admin/articles/create',
         ];
 
         foreach ($pages as $page) {

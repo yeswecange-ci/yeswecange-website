@@ -1,8 +1,8 @@
 @php $en = app()->getLocale() === 'en'; @endphp
 @extends('layouts.site')
 
-@section('title', 'Nos services — YesWeCange')
-@section('meta_description', $texts['services.header.lead']->localized('value'))
+@section('title', 'Nos Services — Stratégie, Publicité, Data & IA | YesWeCange')
+@section('meta_description', "10 services pour une stratégie digitale complète : growth marketing, publicité, WhatsApp Business, tracking, SEO/IA search... Devis personnalisé.")
 
 @section('content')
 
@@ -20,7 +20,7 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@@context": "https://schema.org",
   "@graph": [
     {
       "@type": "CollectionPage",
@@ -192,6 +192,54 @@
 @endpush
 
 
+  <!-- PREUVE + TABLEAU DES SERVICES (format AEO) -->
+{{--   <section class="mx-auto max-w-3xl px-5 pt-4 pb-14 sm:px-[30px]">
+    <div data-breveal>
+      <h2 class="m-0 mb-5 font-display text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-ywc-ink sm:text-[26px]">Nos 10 services</h2>
+      <div class="overflow-x-auto rounded-2xl border border-ywc-border shadow-[0_20px_50px_-32px_rgba(10,10,15,0.18)]">
+        <table class="w-full min-w-[480px] text-left text-[13.5px]">
+          <thead>
+            <tr class="bg-ywc-ink">
+              <th scope="col" class="px-5 py-3.5 font-display text-[11.5px] font-bold uppercase tracking-[0.06em] text-white">Service</th>
+              <th scope="col" class="px-5 py-3.5 font-display text-[11.5px] font-bold uppercase tracking-[0.06em] text-white">En bref</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ([
+                ['Stratégie omnicanale', 'Un plan d\'action unique qui aligne tous vos canaux', 'Growth & Performance Marketing', '/expertise/growth-performance-marketing-afrique'],
+                ['Production des kits global', 'Supports de communication cohérents pour tous vos marchés', null, null],
+                ['Datamining & analytics', 'Transformer vos données en décisions', 'Tracking, Data & GTM/GA4', '/expertise/tracking-data-ga4-gtm'],
+                ['Publicité mobile', 'Campagnes pensées pour un usage 100% mobile', 'Google Ads & Meta Ads Afrique', '/expertise/google-ads-meta-ads-afrique'],
+                ['Vidéo', 'Contenus vidéo pour les réseaux sociaux et la publicité', null, null],
+                ['Référencement SEO & IA Search', 'Être visible sur Google et dans les IA génératives', 'SEO, GEO & AEO', '/expertise/seo-geo-aeo'],
+                ['Digitalisation IA / process', 'Automatiser sans perdre en qualité', 'IA Marketing & Automatisation', '/expertise/ia-marketing-automatisation'],
+                ['Développement IT', 'Sites web et outils sur mesure', null, null],
+                ['DATA analytics', 'Reporting et pilotage de la performance', null, null],
+                ['Chatbot WhatsApp', 'Support client et vente automatisés', 'WhatsApp Business API', '/expertise/whatsapp-business-api'],
+            ] as $i => [$service, $brief, $seeAlsoLabel, $seeAlsoHref])
+              <tr class="border-t border-ywc-border-soft transition hover:bg-ywc-bg-soft {{ $i % 2 === 1 ? 'bg-ywc-bg-faint' : 'bg-white' }}">
+                <td class="px-5 py-4 align-top">
+                  <span class="flex items-center gap-2 font-display font-bold text-ywc-ink">
+                    <span class="h-1.5 w-1.5 flex-none rounded-full bg-ywc-blue"></span>
+                    {{ $service }}
+                  </span>
+                </td>
+                <td class="px-5 py-4 align-top text-ywc-text-soft">
+                  <div class="flex flex-col items-start gap-1.5">
+                    <span>{{ $brief }}</span>
+                    @if ($seeAlsoHref)
+                      <a href="{{ $seeAlsoHref }}" class="inline-flex items-center gap-1 rounded-full bg-ywc-bg-soft px-2.5 py-1 text-[12px] font-bold text-ywc-blue no-underline transition hover:bg-ywc-blue hover:text-white">{{ $seeAlsoLabel }} →</a>
+                    @endif
+                  </div>
+                </td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section> --}}
+
   <!-- SERVICES GRID (visuel) -->
   @php
     $services = \App\Models\Service::orderBy('order_column')->get();
@@ -200,7 +248,7 @@
   @push('head')
   <script type="application/ld+json">
   {!! json_encode([
-      '@context' => 'https://schema.org',
+      '@@context' => 'https://schema.org',
       '@type' => 'ItemList',
       'name' => $en ? 'YesWeCange services' : 'Services YesWeCange',
       'itemListElement' => $services->values()->map(fn ($s, $i) => [
@@ -219,6 +267,7 @@
   @endpush
 
   <section class="mx-auto max-w-7xl px-5 py-16 sm:px-[30px] sm:py-20">
+    <h2 class="m-0 mb-5 font-display text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-ywc-ink sm:text-[26px]">Nos 10 services</h2>
     <div data-breveal class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       @foreach ($services as $s)
         <article class="group flex flex-col overflow-hidden rounded-[20px] border border-ywc-border bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(10,10,15,0.28)] {{ $s->feature ? 'sm:col-span-2 lg:col-span-1' : '' }}">
@@ -244,6 +293,23 @@
       @endforeach
     </div>
   </section>
+
+ {{--  <!-- MAILLAGE — PAGES STRATÉGIQUES -->
+  @php
+    $expertisePages = collect(config('strategic_pages.expertise'))->map(fn ($p, $slug) => ['label' => $p['h1'], 'href' => '/expertise/'.$slug]);
+    $localPages = collect(config('strategic_pages.local'))->map(fn ($p, $slug) => ['label' => $p['h1'], 'href' => '/agence-digitale-'.$slug]);
+    $secteurPages = collect(config('strategic_pages.secteur'))->map(fn ($p, $slug) => ['label' => $p['h1'], 'href' => '/secteurs/'.$slug]);
+  @endphp
+  <section class="mx-auto max-w-7xl px-5 pb-16 sm:px-[30px]">
+    <div data-breveal class="rounded-[24px] border border-ywc-border-soft bg-ywc-bg-soft p-7 sm:p-8">
+      <div class="mb-4 text-[12px] font-bold uppercase tracking-[0.08em] text-ywc-text-muted">Nos expertises, zones et secteurs</div>
+      <div class="flex flex-wrap gap-2.5">
+        @foreach ($expertisePages->merge($secteurPages)->merge($localPages) as $link)
+          <a href="{{ $link['href'] }}" class="rounded-full border border-ywc-border-soft bg-white px-4 py-2 text-[13.5px] font-semibold text-ywc-text-soft no-underline transition hover:border-ywc-border-blue hover:text-ywc-blue">{{ $link['label'] }}</a>
+        @endforeach
+      </div>
+    </div>
+  </section> --}}
 
   <!-- NOTRE METHODE -->
   <section class="bg-ywc-ink py-24 text-white">
@@ -292,6 +358,30 @@
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  @php $servicesFaq = config('strategic_pages.core.services.faq', []); @endphp
+  @if (count($servicesFaq))
+    @push('head')
+    <script type="application/ld+json">
+    {!! json_encode([
+        '@@context' => 'https://schema.org',
+        '@type' => 'FAQPage',
+        'mainEntity' => collect($servicesFaq)->map(fn ($item) => [
+            '@type' => 'Question',
+            'name' => $item['q'],
+            'acceptedAnswer' => ['@type' => 'Answer', 'text' => $item['a']],
+        ])->all(),
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+    @endpush
+    <section class="mx-auto max-w-3xl px-5 pb-16 sm:px-[30px]">
+      <h2 class="m-0 mb-6 font-display text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-ywc-ink sm:text-[28px]">Questions fréquentes</h2>
+      <div data-breveal>
+        <x-faq-accordion :items="$servicesFaq" />
+      </div>
+    </section>
+  @endif
 
   @include('partials.cta-banner', [
     'title' => $texts['services.cta.title']->localized('value'),

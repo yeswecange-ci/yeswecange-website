@@ -216,25 +216,25 @@ class HomeContentSeeder extends Seeder
             [
                 'key' => 'home.seo.title',
                 'label' => "Titre SEO (affiché après « YesWeCange — »)",
-                'value_fr' => 'Accélérer votre croissance.',
+                'value_fr' => 'Agence Digitale en Afrique Francophone (Abidjan)',
                 'value_en' => 'Stand out.',
             ],
             [
                 'key' => 'home.seo.meta_description',
                 'label' => 'Meta description SEO',
-                'value_fr' => "YesWeCange, l'agence digitale 360° qui vous démarque : stratégie, social media, data mining, chatbots WhatsApp, SEO/SEA et branding — entre Paris et Abidjan.",
-                'value_en' => 'YesWeCange is the 360° digital agency that makes you stand out: strategy, social media, data mining, WhatsApp chatbots, SEO/SEA and branding — between Paris and Abidjan.',
+                'value_fr' => "Agence digitale basée à Abidjan : stratégie, publicité, data et IA marketing pour entreprises en Côte d'Ivoire, au Sénégal et en RDC. Audit gratuit.",
+                'value_en' => 'YesWeCange is a digital agency for French-speaking Africa: strategy, social media, data mining, WhatsApp chatbots, SEO/SEA and branding — between Abidjan and Paris.',
             ],
             [
                 'key' => 'home.hero.title',
                 'label' => 'Titre principal (hero) — une ligne par retour à la ligne, la dernière ligne est mise en valeur',
-                'value_fr' => "Ne suivez pas\nle troupeau.\nDémarquez-vous.",
+                'value_fr' => "YesWeCange, l'agence digitale\nqui fait grandir votre entreprise\nen Afrique francophone",
                 'value_en' => "Don't follow\nthe flock.\nStand out.",
             ],
             [
                 'key' => 'home.hero.subtitle',
-                'label' => 'Sous-titre (hero)',
-                'value_fr' => "Bien plus qu'une présence en ligne : nous façonnons votre identité digitale pour vous démarquer et surclasser votre concurrence. Le digital à 360° pour dominer votre marché.",
+                'label' => 'Sous-titre (hero) — réponse directe format AEO',
+                'value_fr' => "YesWeCange est une agence digitale à service complet basée à Abidjan (Cocody), avec un bureau complémentaire à Neuilly-sur-Seine. Elle accompagne des entreprises en Côte d'Ivoire, au Sénégal et en République Démocratique du Congo sur leur stratégie, leur publicité, leurs données et leur marketing propulsé par l'IA, avec des résultats mesurables.",
                 'value_en' => 'Much more than an online presence: we shape your digital identity to help you stand out and outperform your competition. 360° digital to dominate your market.',
             ],
             [
@@ -264,8 +264,8 @@ class HomeContentSeeder extends Seeder
             [
                 'key' => 'home.trust.intro',
                 'label' => 'Texte d\'intro (section « confiance »)',
-                'value_fr' => 'Startups, PME et grands comptes — en Europe et en Afrique — nous confient leur visibilité, leur contenu et leur relation client.',
-                'value_en' => 'Startups, SMBs and large accounts — across Europe and Africa — trust us with their visibility, content and customer relationships.',
+                'value_fr' => "En tant qu'agence digitale en Afrique francophone, nous accompagnons startups, PME et grands comptes — d'Abidjan à Paris — sur leur visibilité, leur contenu et leur relation client.",
+                'value_en' => 'As a digital agency for French-speaking Africa, we support startups, SMBs and large accounts — from Abidjan to Paris — on their visibility, content and customer relationships.',
             ],
             [
                 'key' => 'home.services.eyebrow',

@@ -1,9 +1,13 @@
 @php
     $seoEn = app()->getLocale() === 'en';
-    $seoTitle = trim($__env->yieldContent('title', config('app.name') . ($seoEn ? ' — Don\'t follow the flock. Stand out.' : ' — Ne suivez pas le troupeau. Démarquez-vous.')));
-    $seoDescription = trim($__env->yieldContent('meta_description', $seoEn
+    // @section('title', 'value')/@section('meta_description', 'value') (forme inline à 2 arguments)
+    // échappent déjà le texte une fois via Illuminate\View\Concerns\ManagesLayouts::startSection().
+    // On décode ici pour repartir d'un texte brut, afin que les {{ }} ci-dessous (et le JSON-LD)
+    // n'échappent qu'une seule fois et ne produisent pas de "&amp;#039;" ou "&amp;amp;".
+    $seoTitle = html_entity_decode(trim($__env->yieldContent('title', config('app.name') . ($seoEn ? ' — Don\'t follow the flock. Stand out.' : ' — Ne suivez pas le troupeau. Démarquez-vous.'))), ENT_QUOTES);
+    $seoDescription = html_entity_decode(trim($__env->yieldContent('meta_description', $seoEn
         ? 'YesWeCange, the 360° digital agency that makes you stand out. Strategy, social media, data mining, WhatsApp chatbots, SEO and branding — between Paris and Abidjan.'
-        : "YesWeCange, l'agence digitale 360° qui vous démarque. Stratégie, social media, data mining, chatbots WhatsApp, SEO et branding — entre Paris et Abidjan."));
+        : "YesWeCange, l'agence digitale 360° qui vous démarque. Stratégie, social media, data mining, chatbots WhatsApp, SEO et branding — entre Paris et Abidjan.")), ENT_QUOTES);
     $seoImagePath = $__env->yieldContent('meta_image', 'images/og-cover.jpg');
     $seoImage = asset($seoImagePath);
     [$seoImageW, $seoImageH] = @getimagesize(public_path($seoImagePath)) ?: [1200, 630];
@@ -49,7 +53,7 @@
 {{-- Données structurées : Organisation + bureaux --}}
 <script type="application/ld+json">
 {!! json_encode([
-    '@context' => 'https://schema.org',
+    '@@context' => 'https://schema.org',
     '@type' => 'Organization',
     'name' => 'YesWeCange',
     'url' => url('/'),
@@ -89,7 +93,7 @@
 {{-- Données structurées : Site web --}}
 <script type="application/ld+json">
 {!! json_encode([
-    '@context' => 'https://schema.org',
+    '@@context' => 'https://schema.org',
     '@type' => 'WebSite',
     'name' => 'YesWeCange',
     'alternateName' => 'YWC',

@@ -9,7 +9,7 @@
 @push('head')
 <script type="application/ld+json">
 {!! json_encode([
-    '@context' => 'https://schema.org',
+    '@@context' => 'https://schema.org',
     '@type' => 'FAQPage',
     'mainEntity' => $faqItems->map(fn ($faq) => [
         '@type' => 'Question',

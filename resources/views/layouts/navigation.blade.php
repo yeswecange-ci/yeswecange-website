@@ -144,6 +144,12 @@
             'label' => 'Réalisations — Portfolio',
             'icon' => '<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3.75l9.72 9.72a2.25 2.25 0 013.182 0l4.318-4.318M19.5 3.75l-4.318 4.318M19.5 20.25v-6h-6" /><path stroke-linecap="round" stroke-linejoin="round" d="M3 6.75V19.5a2.25 2.25 0 002.25 2.25h13.5A2.25 2.25 0 0021 19.5V6.75" />',
         ],
+        [
+            'route' => 'admin.articles.index',
+            'pattern' => 'admin.articles.*',
+            'label' => 'Blog — Articles',
+            'icon' => '<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zM9 15.75h6M9 12h3" />',
+        ],
     ];
 @endphp
 
